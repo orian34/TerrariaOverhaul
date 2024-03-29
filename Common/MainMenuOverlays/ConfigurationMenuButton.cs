@@ -1,6 +1,9 @@
-﻿using System.IO;
+﻿using System.Reflection;
 using Terraria;
-using TerrariaOverhaul.Core.Configuration;
+using Terraria.Audio;
+using Terraria.ID;
+using Terraria.ModLoader;
+using TerrariaOverhaul.Common.ConfigurationScreen;
 using TerrariaOverhaul.Core.Localization;
 
 namespace TerrariaOverhaul.Common.MainMenuOverlays;
@@ -11,29 +14,12 @@ public class ConfigurationMenuButton : MenuButton
 
 	protected override void OnClicked()
 	{
-		/*
-		Process.Start(new ProcessStartInfo(ConfigSystem.ConfigPath) {
-			UseShellExecute = true,
-			Verb = "open",
-		});
-		*/
-
-		string configFilePath = ConfigIO.FilePathWithoutExtension + ConfigIO.Formats[0].Extension;
-		string configDirectory = ConfigIO.Directory;
-		string configFileName = Path.GetFileName(configFilePath);
-
-		try {
-			Utils.OpenToURL(configFilePath);
+		if (typeof(ModLoader).GetField("isLoading", BindingFlags.NonPublic | BindingFlags.Static)?.GetValue(null) is true) {
+			return;
 		}
-		catch {
-			try {
-				Utils.OpenToURL(configDirectory);
-			}
-			catch {
-				if (Main.menuMode != 888) {
-					Utils.ShowFancyErrorMessage($"[c/FF7777:Unable to open Overhaul's configuration file for editing.]\r\nPlease manually navigate to [c/9fecf0:{configDirectory}] and modify [c/9fecf0:{configFileName}] with a text editor of your choosing.\r\n\r\nThe lack of a configuration GUI is temporary.", 0);
-				}
-			}
-		}
+
+		SoundEngine.PlaySound(SoundID.MenuOpen);
+		Main.MenuUI.SetState(ConfigurationState.Instance);
+		Main.menuMode = 888;
 	}
 }
