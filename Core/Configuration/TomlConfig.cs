@@ -43,6 +43,10 @@ public static class TomlConfig
 			categoryTable.AddLeadingTriviaNewLine();
 
 			foreach (var entry in categoryPair.Value.EntriesByName.OrderBy(p => p.Key).Select(p => p.Value)) {
+				if (entry.Category != categoryPair.Key) {
+					continue;
+				}
+
 				if (!entryValuesByName.TryGetValue(entry.Name, out object? value)) {
 					continue;
 				}
