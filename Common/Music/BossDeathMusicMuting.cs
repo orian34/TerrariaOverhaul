@@ -3,6 +3,7 @@ using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
 using TerrariaOverhaul.Core.AudioEffects;
+using TerrariaOverhaul.Core.Configuration;
 using TerrariaOverhaul.Core.Time;
 using TerrariaOverhaul.Utilities;
 
@@ -10,6 +11,8 @@ namespace TerrariaOverhaul.Common.Music;
 
 public sealed class BossDeathMusicMuting : GlobalNPC
 {
+	public static readonly ConfigEntry<bool> EnableBossDeathMusicStop = new(ConfigSide.ClientOnly, true, "Music");
+
 	private static readonly Gradient<float> volumeGradient = new(
 		(0.00f, 0f),
 		(0.75f, 0f),
@@ -23,6 +26,10 @@ public sealed class BossDeathMusicMuting : GlobalNPC
 
 	public override void HitEffect(NPC npc, NPC.HitInfo hit)
 	{
+		if (!EnableBossDeathMusicStop) {
+			return;
+		}
+
 		if (npc.life < 0) {
 			const float MuteTimeInSeconds = 5f;
 

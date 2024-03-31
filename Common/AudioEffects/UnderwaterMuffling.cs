@@ -3,6 +3,7 @@ using Microsoft.Xna.Framework;
 using Terraria;
 using Terraria.ModLoader;
 using TerrariaOverhaul.Core.AudioEffects;
+using TerrariaOverhaul.Core.Configuration;
 using TerrariaOverhaul.Core.Time;
 using TerrariaOverhaul.Utilities;
 
@@ -10,6 +11,8 @@ namespace TerrariaOverhaul.Common.AudioEffects;
 
 public sealed class UnderwaterMuffling : ModSystem
 {
+	public static readonly ConfigEntry<bool> EnableUnderwaterMuffling = new(ConfigSide.ClientOnly, true, "Ambience");
+
 	private static float globalIntensity;
 
 	public override void Load()
@@ -19,6 +22,11 @@ public sealed class UnderwaterMuffling : ModSystem
 
 	private static void OnSoundUpdate(Span<AudioEffectsSystem.SoundData> sounds)
 	{
+		if (!EnableUnderwaterMuffling) {
+			globalIntensity = 0f;
+			return;
+		}
+
 		const byte MinLocalLiquid = 128;
 		const float MaxLocalIntensity = 1.0f;
 		const float MaxGlobalIntensity = 1.0f;
