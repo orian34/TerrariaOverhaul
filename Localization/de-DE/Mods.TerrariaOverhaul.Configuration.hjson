@@ -273,6 +273,21 @@ Guns: {
 	}
 }
 
+Interface: {
+	// DisplayName: "Interface"
+	// Description: "Everything relating to Graphical User Interface and Heads-Up Displays."
+
+	EnableCrosshair: {
+		// DisplayName: "Enable Crosshair"
+		// Description: "When enabled, the mouse cursor will be replaced with an advanced animated crosshair when using projectile-firing weapons."
+	}
+
+	EnableCrosshairAnimations: {
+		// DisplayName: "Enable Crosshair Animations"
+		// Description: "Whether the crosshair should animate in reaction to weapons firing and going on cooldowns."
+	}
+}
+
 Melee: {
 	// DisplayName: "Melee"
 	// Description: "Overhaul completely reimagines the feel and flow of the game's melee weapons, allowing you to hack and slash like never before!"
@@ -543,20 +558,5 @@ Tweaks: {
 			When enabled, the operational system's cursor will be enabled when game interface is disabled using the F11 hotkey.
 			This is a tiny utility change that eases recording gameplay footage without UI, as recording software can disable capture of the OS cursor.
 			''' */
-	}
-}
-
-Interface: {
-	// DisplayName: "Interface"
-	// Description: "Everything relating to Graphical User Interface and Heads-Up Displays."
-
-	EnableCrosshair: {
-		// DisplayName: "Enable Crosshair"
-		// Description: "When enabled, the mouse cursor will be replaced with an advanced animated crosshair when using projectile-firing weapons."
-	}
-
-	EnableCrosshairAnimations: {
-		// DisplayName: "Enable Crosshair Animations"
-		// Description: "Whether the crosshair should animate in reaction to weapons firing and going on cooldowns."
 	}
 }

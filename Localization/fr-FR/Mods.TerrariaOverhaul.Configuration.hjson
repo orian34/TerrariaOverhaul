@@ -273,6 +273,21 @@ Guns: {
 	}
 }
 
+Interface: {
+	// DisplayName: "Interface"
+	// Description: "Everything relating to Graphical User Interface and Heads-Up Displays."
+
+	EnableCrosshair: {
+		// DisplayName: "Enable Crosshair"
+		// Description: "When enabled, the mouse cursor will be replaced with an advanced animated crosshair when using projectile-firing weapons."
+	}
+
+	EnableCrosshairAnimations: {
+		// DisplayName: "Enable Crosshair Animations"
+		// Description: "Whether the crosshair should animate in reaction to weapons firing and going on cooldowns."
+	}
+}
+
 Melee: {
 	DisplayName: "Corps-à-Corps"
 	Description: "Overhaul réimagine complètement la sensation et fluidité des armes de corps-à-corps, vous permettant de tout découper comme jamais!"
@@ -543,20 +558,5 @@ Tweaks: {
 			Le curseur du système d'exploitation sera actif quand l'IU est désactivée avec la touche F11.
 			C'est une petite fonction pour faciliter l'enregistrement de vidéo sans IU, car les logiciels d'enregistrements peuvent ignorer le curseur du système.
 			'''
-	}
-}
-
-Interface: {
-	// DisplayName: "Interface"
-	// Description: "Everything relating to Graphical User Interface and Heads-Up Displays."
-
-	EnableCrosshair: {
-		// DisplayName: "Enable Crosshair"
-		// Description: "When enabled, the mouse cursor will be replaced with an advanced animated crosshair when using projectile-firing weapons."
-	}
-
-	EnableCrosshairAnimations: {
-		// DisplayName: "Enable Crosshair Animations"
-		// Description: "Whether the crosshair should animate in reaction to weapons firing and going on cooldowns."
 	}
 }

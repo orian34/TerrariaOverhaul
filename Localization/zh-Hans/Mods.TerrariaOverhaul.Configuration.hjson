@@ -265,6 +265,21 @@ Guns: {
 	}
 }
 
+Interface: {
+	// DisplayName: "Interface"
+	// Description: "Everything relating to Graphical User Interface and Heads-Up Displays."
+
+	EnableCrosshair: {
+		// DisplayName: "Enable Crosshair"
+		// Description: "When enabled, the mouse cursor will be replaced with an advanced animated crosshair when using projectile-firing weapons."
+	}
+
+	EnableCrosshairAnimations: {
+		// DisplayName: "Enable Crosshair Animations"
+		// Description: "Whether the crosshair should animate in reaction to weapons firing and going on cooldowns."
+	}
+}
+
 Melee: {
 	DisplayName: "近战"
 	Description: "Overhaul彻底重制了游戏内近战武器的手感，允许你尽情砍杀！"
@@ -535,20 +550,5 @@ Tweaks: {
 			启用后，若使用F11热键隐藏游戏界面，将会显示系统鼠标光标。
 			这是一个微小的实用更改，可以在没有UI的情况下轻松录制游戏画面，因为录制软件可以设置不捕获系统光标。
 			'''
-	}
-}
-
-Interface: {
-	// DisplayName: "Interface"
-	// Description: "Everything relating to Graphical User Interface and Heads-Up Displays."
-
-	EnableCrosshair: {
-		// DisplayName: "Enable Crosshair"
-		// Description: "When enabled, the mouse cursor will be replaced with an advanced animated crosshair when using projectile-firing weapons."
-	}
-
-	EnableCrosshairAnimations: {
-		// DisplayName: "Enable Crosshair Animations"
-		// Description: "Whether the crosshair should animate in reaction to weapons firing and going on cooldowns."
 	}
 }

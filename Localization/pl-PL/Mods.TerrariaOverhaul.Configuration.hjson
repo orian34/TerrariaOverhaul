@@ -273,6 +273,21 @@ Guns: {
 	}
 }
 
+Interface: {
+	// DisplayName: "Interface"
+	// Description: "Everything relating to Graphical User Interface and Heads-Up Displays."
+
+	EnableCrosshair: {
+		// DisplayName: "Enable Crosshair"
+		// Description: "When enabled, the mouse cursor will be replaced with an advanced animated crosshair when using projectile-firing weapons."
+	}
+
+	EnableCrosshairAnimations: {
+		// DisplayName: "Enable Crosshair Animations"
+		// Description: "Whether the crosshair should animate in reaction to weapons firing and going on cooldowns."
+	}
+}
+
 Melee: {
 	DisplayName: "Walka Wręcz"
 	Description: "Overhaul kompletnie przeobraża odczucie i styl walki wręcz, pozwalając na doznania jak nigdy wcześniej!"
@@ -539,20 +554,5 @@ Tweaks: {
 			Gdy włączone, kursor systemu operacyjnego będzie widoczny gdy UI gry zostanie wyłączony klawiszem F11.
 			To malutka zmiania pomagająca w nagrywaniu rozgrywki bez UI, gdyż programy do nagrywania mogą ukryć kursor systemowy.
 			'''
-	}
-}
-
-Interface: {
-	// DisplayName: "Interface"
-	// Description: "Everything relating to Graphical User Interface and Heads-Up Displays."
-
-	EnableCrosshair: {
-		// DisplayName: "Enable Crosshair"
-		// Description: "When enabled, the mouse cursor will be replaced with an advanced animated crosshair when using projectile-firing weapons."
-	}
-
-	EnableCrosshairAnimations: {
-		// DisplayName: "Enable Crosshair Animations"
-		// Description: "Whether the crosshair should animate in reaction to weapons firing and going on cooldowns."
 	}
 }
