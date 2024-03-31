@@ -7,6 +7,7 @@ using Terraria.GameContent;
 using Terraria.ID;
 using Terraria.ModLoader;
 using TerrariaOverhaul.Common.Charging;
+using TerrariaOverhaul.Core.Configuration;
 using TerrariaOverhaul.Core.ItemComponents;
 using TerrariaOverhaul.Core.Time;
 
@@ -15,6 +16,8 @@ namespace TerrariaOverhaul.Common.Archery;
 [Autoload(Side = ModSide.Client)]
 public sealed class ItemArrowRendering : ItemComponent
 {
+	public static readonly ConfigEntry<bool> EnableArcheryArrowVisualization = new(ConfigSide.ClientOnly, true, "Archery");
+
 	public bool Visible { get; private set; }
 	public byte ArrowCount { get; private set; } = 1;
 	public float AnimationProgress { get; private set; }
@@ -35,6 +38,10 @@ public sealed class ItemArrowRendering : ItemComponent
 
 	private bool UpdateIsVisible(Item item, Player player)
 	{
+		if (!EnableArcheryArrowVisualization) {
+			return false;
+		}
+
 		// Only render while a use is in progress
 		if (!player.ItemAnimationActive) {
 			return false;

@@ -42,6 +42,7 @@
 - Added the following new options:
   **Accessibility:** `EnableJumpInputBuffering`.
   **Ambience:** `EnableUnderwaterMuffling`.
+  **Archery:** `EnableArcheryArrowVisualization`, `EnableBowSoundReplacements`, `EnableBowFiringDelays`, `EnableBowChargedShots`, `EnableBowChargeHovering`, `EnableBowHoverJumps`, `EnableArrowFragments`.
   **Balance:** `EnableDamageRandomizationRemoval`.
   **BloodAndGore:** `EnableAdvancedParticles`, `EnableGoreAudio`, `EnableGoreBleeding`, `EnableGoreBurning`, `EnableGoreGibbing`, `EnableGorePhysics`, `EnablePlayerCharacterGore`, `ParticleMultiplierSafe`, `ParticleMultiplierViolent`.
   **Guns:** `EnableAlternateGunFiringModes`, `EnableBulletCasings`, `EnableBulletImpactAudio`, `EnableGunSoundReplacements`, `EnableMuzzleflashes`, `EnableMinigunRecoilHovering`, `EnableStarCannonRecoilHovering`.

@@ -5,12 +5,16 @@ using Terraria.ModLoader;
 using TerrariaOverhaul.Common.BloodAndGore;
 using TerrariaOverhaul.Common.Tags;
 using TerrariaOverhaul.Content.Gores;
+using TerrariaOverhaul.Core.Configuration;
 using TerrariaOverhaul.Utilities;
 
 namespace TerrariaOverhaul.Common.ProjectileEffects;
 
+[Autoload(Side = ModSide.Client)]
 public sealed class ProjectileArrowGore : GlobalProjectile
 {
+	public static readonly ConfigEntry<bool> EnableArrowFragments = new(ConfigSide.ClientOnly, true, "Archery");
+
 	public override bool AppliesToEntity(Projectile entity, bool lateInstantiation)
 	{
 		return OverhaulProjectileTags.WoodenArrow.Has(entity.type);
@@ -18,7 +22,7 @@ public sealed class ProjectileArrowGore : GlobalProjectile
 
 	public override void OnKill(Projectile projectile, int timeLeft)
 	{
-		if (Main.dedServ) {
+		if (!EnableArrowFragments) {
 			return;
 		}
 

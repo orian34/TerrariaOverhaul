@@ -69,6 +69,45 @@ Aesthetics: {
 	}
 }
 
+Archery: {
+	DisplayName: "Archery"
+
+	EnableArrowFragments: {
+		DisplayName: "Enable Arrow Fragments"
+		Description: "When enabled, destroyed arrows will break into tiny pieces."
+	}
+
+	EnableBowFiringDelays: {
+		DisplayName: "Enable Bow Firing Delays"
+		Description: "When enabled, bows' primary use will be slightly delayed to make them more unique. This does not affect their damage output."
+	}
+
+	EnableBowSoundReplacements: {
+		DisplayName: "Enable Bow Sound Replacements"
+		Description: "When enabled, bows will receive new sound effects."
+	}
+
+	EnableBowChargedShots: {
+		DisplayName: "Enable Bow Charged Shots"
+		Description: "When enabled, most bows will be able to be charged via right click."
+	}
+
+	EnableBowChargeHovering: {
+		DisplayName: "Enable Bow Charge Hovering"
+		Description: "When enabled, archers will be able to temporarily hover in mid-air by charging a bow and holding the jump button."
+	}
+
+	EnableBowHoverJumps: {
+		DisplayName: "Enable Bow Hover Jumps"
+		Description: "When enabled, bows will launch archers when firing during a hover charge, acting as a double jump."
+	}
+
+	EnableArcheryArrowVisualization: {
+		DisplayName: "Enable Archery Arrow Visualization"
+		Description: "When enabled, arrows will be visible on bows and repeaters before they're fired."
+	}
+}
+
 Awareness: {
 	DisplayName: "Awareness"
 	Description:
