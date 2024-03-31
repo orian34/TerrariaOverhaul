@@ -10,7 +10,7 @@ namespace TerrariaOverhaul.Common.Melee;
 
 public sealed class ItemProjectileMeleeManaChanges : GlobalItem
 {
-	public static readonly ConfigEntry<bool> EnableProjectileSwordManaUsage = new(ConfigSide.Both, "Melee", nameof(EnableProjectileSwordManaUsage), () => true);
+	public static readonly ConfigEntry<bool> EnableProjectileSwordManaUsage = new(ConfigSide.Both, true, "Melee");
 
 	private bool useManaOnNextShoot;
 

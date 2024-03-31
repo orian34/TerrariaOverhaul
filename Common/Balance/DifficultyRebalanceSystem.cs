@@ -9,7 +9,7 @@ namespace TerrariaOverhaul.Common.Balance;
 
 internal sealed class DifficultyRebalanceSystem : ModSystem
 {
-	public static readonly ConfigEntry<bool> EnableDifficultyChanges = new(ConfigSide.Both, "Balance", nameof(EnableDifficultyChanges), () => true);
+	public static readonly ConfigEntry<bool> EnableDifficultyChanges = new(ConfigSide.Both, true, "Balance");
 
 	private static bool isEnabled;
 

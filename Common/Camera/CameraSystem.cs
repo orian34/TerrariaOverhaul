@@ -17,7 +17,7 @@ public sealed class CameraSystem : ModSystem
 
 	// Not ideal, but the game has no entity interpolation for camera smoothness to not make the local player spazz out.
 	// That can be implemented in the future, but current experiments were not fruitful, due to bad timings.
-	public static readonly ConfigEntry<bool> LimitCameraUpdateRate = new(ConfigSide.ClientOnly, "Camera", nameof(LimitCameraUpdateRate), () => true);
+	public static readonly ConfigEntry<bool> LimitCameraUpdateRate = new(ConfigSide.ClientOnly, true, "Camera");
 	
 	private readonly static SortedList<int, CameraModifierDelegate> cameraModifiers = new();
 

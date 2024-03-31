@@ -2,7 +2,6 @@
 using System.IO;
 using System.Linq;
 using System.Text;
-using Terraria.Localization;
 using Terraria.ModLoader;
 using Tomlyn;
 using Tomlyn.Model;
@@ -36,7 +35,7 @@ public static class TomlConfig
 		}
 
 		var categoriesByName = ConfigSystem.CategoriesByName;
-		var valuesByEntry = configExport.ValuesByEntry;
+		var entryValuesByName = configExport.EntryValuesByName;
 
 		foreach (var categoryPair in categoriesByName.OrderBy(p => p.Key)) {
 			var categoryTable = new TableSyntax(categoryPair.Key);
@@ -44,7 +43,7 @@ public static class TomlConfig
 			categoryTable.AddLeadingTriviaNewLine();
 
 			foreach (var entry in categoryPair.Value.EntriesByName.OrderBy(p => p.Key).Select(p => p.Value)) {
-				if (!valuesByEntry.TryGetValue(entry.Name, out object? value)) {
+				if (!entryValuesByName.TryGetValue(entry.Name, out object? value)) {
 					continue;
 				}
 
@@ -99,7 +98,7 @@ public static class TomlConfig
 			bool hadErrors = false;
 			var categoriesByName = ConfigSystem.CategoriesByName;
 
-			configExport.ValuesByEntry = new();
+			configExport.EntryValuesByName = new();
 
 			foreach (var categoryPair in rootTable) {
 				if (categoryPair.Value is not TomlTable categoryTable) {
@@ -124,7 +123,7 @@ public static class TomlConfig
 					catch { }
 
 					if (value != null) {
-						configExport.ValuesByEntry[entry.Name] = value;
+						configExport.EntryValuesByName[entry.Name] = value;
 					} else {
 						hadErrors = true;
 					}

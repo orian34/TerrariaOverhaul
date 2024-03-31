@@ -71,7 +71,7 @@ public sealed class ItemMeleeSwingVelocity : ItemComponent
 		};
 	}
 
-	public static readonly ConfigEntry<bool> EnableSwingVelocity = new(ConfigSide.Both, "Melee", nameof(EnableSwingVelocity), () => true);
+	public static readonly ConfigEntry<bool> EnableSwingVelocity = new(ConfigSide.Both, true, "Melee");
 
 	private readonly Dictionary<string, VelocityModifier> dashVelocityModifiers = new();
 	

@@ -22,7 +22,7 @@ namespace TerrariaOverhaul.Common.Ambience;
 [Autoload(Side = ModSide.Client)]
 public sealed class AmbienceSystem : ModSystem
 {
-	public static readonly ConfigEntry<bool> EnableAmbientSounds = new(ConfigSide.ClientOnly, "Ambience", nameof(EnableAmbientSounds), () => true);
+	public static readonly ConfigEntry<bool> EnableAmbientSounds = new(ConfigSide.ClientOnly, true, "Ambience");
 
 	private static readonly List<AmbienceTrack> Tracks = new();
 	private static readonly Tag VolumeTag = "Volume";

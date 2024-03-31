@@ -41,8 +41,8 @@ public sealed class TreeFallingSystem : ModSystem
 
 	private const int MinimalTreeHeight = 3;
 
-	public static readonly ConfigEntry<bool> EnableTreeFallingAnimations = new(ConfigSide.Both, "Aesthetics", nameof(EnableTreeFallingAnimations), () => true);
-	public static readonly ConfigEntry<bool> DestroyStumpsAfterTreeFalls = new(ConfigSide.Both, "Aesthetics", nameof(DestroyStumpsAfterTreeFalls), () => true);
+	public static readonly ConfigEntry<bool> EnableTreeFallingAnimations = new(ConfigSide.Both, true, "Aesthetics");
+	public static readonly ConfigEntry<bool> DestroyStumpsAfterTreeFalls = new(ConfigSide.Both, true, "Aesthetics");
 
 	private static bool isTreeBeingDestroyed;
 	private static bool isTreeHitRedirectedFromStump;

@@ -7,7 +7,6 @@ using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using Terraria.ModLoader;
 using TerrariaOverhaul.Core.Debugging;
-using TerrariaOverhaul.Utilities;
 
 namespace TerrariaOverhaul.Core.Configuration;
 
@@ -34,13 +33,9 @@ public sealed class ConfigSystem : ModSystem
 
 	public override void Load()
 	{
-		ForceInitializeStaticConstructors();
-
 		DebugSystem.Log("Initializing configuration...");
 
-		foreach (var entry in entriesByName.Values) {
-			entry.Initialize(Mod);
-		}
+		ForceInitializeStaticConstructors();
 
 		ConfigIO.LoadConfig();
 	}
@@ -77,7 +72,7 @@ public sealed class ConfigSystem : ModSystem
 						ranStaticConstructor = true;
 					}
 
-					RegisterEntry((IConfigEntry)field.GetValue(null)!);
+					RegisterEntry(mod, field);
 				}
 			}
 		}
@@ -87,13 +82,22 @@ public sealed class ConfigSystem : ModSystem
 	{
 		DebugSystem.Logger.Info("Resetting configuration...");
 
-		foreach (var entry in entriesByName.Values) {
+		foreach (var entry in entries) {
 			entry.LocalValue = entry.DefaultValue;
 		}
 	}
 
-	internal static void RegisterEntry(IConfigEntry entry)
+	private static void RegisterEntry(Mod mod, FieldInfo field)
 	{
+		var entry = (IConfigEntry)field.GetValue(null)!;
+
+		RegisterEntry(mod, entry, nameFallback: field.Name);
+	}
+
+	private static void RegisterEntry(Mod mod, IConfigEntry entry, string? nameFallback = null)
+	{
+		entry.Initialize(mod, nameFallback);
+
 		entries.Add(entry);
 		entriesByName.Add(entry.Name, entry);
 
@@ -106,10 +110,8 @@ public sealed class ConfigSystem : ModSystem
 			categoryData.EntriesByName.Add(entry.Name, entry);
 		}
 
-		AddToCategory(entry.Category);
-
-		foreach (string extraCategory in entry.ExtraCategories) {
-			AddToCategory(extraCategory);
+		foreach (string category in entry.Categories) {
+			AddToCategory(category);
 		}
 	}
 }

@@ -32,10 +32,10 @@ public static class NbtConfig
 		}
 
 		var entriesByName = ConfigSystem.EntriesByName;
-		var valuesByEntry = configExport.ValuesByEntry;
+		var entryValuesByName = configExport.EntryValuesByName;
 
 		foreach (var entry in entriesByName.Values.OrderBy(e => $"{e.Category}.{e.Name}")) {
-			if (!valuesByEntry.TryGetValue(entry.Name, out object? value)) {
+			if (!entryValuesByName.TryGetValue(entry.Name, out object? value)) {
 				continue;
 			}
 
@@ -88,7 +88,7 @@ public static class NbtConfig
 			bool hadErrors = false;
 			var categoriesByName = ConfigSystem.CategoriesByName;
 
-			configExport.ValuesByEntry = new();
+			configExport.EntryValuesByName = new();
 
 			foreach (var categoryPair in tag) {
 				if (categoryPair.Value is not TagCompound categoryTag) {
@@ -113,7 +113,7 @@ public static class NbtConfig
 					}
 
 					if (value != null) {
-						configExport.ValuesByEntry[entry.Name] = value;
+						configExport.EntryValuesByName[entry.Name] = value;
 					} else {
 						hadErrors = true;
 					}

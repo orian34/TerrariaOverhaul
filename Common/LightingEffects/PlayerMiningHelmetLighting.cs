@@ -11,7 +11,7 @@ namespace TerrariaOverhaul.Common.LightingEffects;
 [Autoload(Side = ModSide.Client)]
 public sealed class PlayerMiningHelmetLighting : ModPlayer
 {
-	public static readonly ConfigEntry<bool> EnableAimableFlashlights = new(ConfigSide.Both, "Aesthetics", nameof(EnableAimableFlashlights), () => true);
+	public static readonly ConfigEntry<bool> EnableAimableFlashlights = new(ConfigSide.Both, true, "Aesthetics");
 
 	public override void Load()
 	{

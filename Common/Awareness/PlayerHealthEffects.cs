@@ -20,8 +20,8 @@ public sealed class PlayerHealthEffects : ModPlayer
 		(50f, 0f)
 	);
 	// Configuration
-	public static readonly RangeConfigEntry<float> LowHealthSoundVolume = new(ConfigSide.ClientOnly, "Awareness", nameof(LowHealthSoundVolume), 0f, 1f, () => 1f);
-	public static readonly RangeConfigEntry<float> LowHealthFilteringIntensity = new(ConfigSide.ClientOnly, "Awareness", nameof(LowHealthFilteringIntensity), 0f, 1f, () => 1f);
+	public static readonly RangeConfigEntry<float> LowHealthSoundVolume = new(ConfigSide.ClientOnly, 1f, (0f, 1f), "Awareness");
+	public static readonly RangeConfigEntry<float> LowHealthFilteringIntensity = new(ConfigSide.ClientOnly, 1f, (0f, 1f), "Awareness");
 
 	private SlotId lowHealthSoundSlot;
 	private float lowHealthEffectIntensity;

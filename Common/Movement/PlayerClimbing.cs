@@ -18,7 +18,7 @@ namespace TerrariaOverhaul.Common.Movement;
 
 public sealed class PlayerClimbing : ModPlayer
 {
-	public static readonly ConfigEntry<bool> EnableClimbing = new(ConfigSide.Both, "Movement", nameof(EnableClimbing), () => true);
+	public static readonly ConfigEntry<bool> EnableClimbing = new(ConfigSide.Both, true, "Movement");
 
 	private Vector2 climbStartPos;
 	private Vector2 climbStartVelocity;

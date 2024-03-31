@@ -7,16 +7,16 @@ public class RangeConfigEntry<T> : ConfigEntry<T> where T : IComparable<T>
 	public T MinValue { get; }
 	public T MaxValue { get; }
 
-	public RangeConfigEntry(ConfigSide side, string categoryId, string nameId, T minValue, T maxValue, Func<T> defaultValueGetter) : base(side, categoryId, nameId, defaultValueGetter)
+	public RangeConfigEntry(ConfigSide side, T defaultValue, (T minValue, T maxValue) range, params string[] categories) : base(side, defaultValue, categories)
 	{
-		int comparison = minValue.CompareTo(maxValue);
+		int comparison = range.minValue.CompareTo(range.maxValue);
 
 		if (comparison > 0) {
 			throw new ArgumentException($"Minimal value must be less than or equal to maximum value.");
 		}
 
-		MinValue = minValue;
-		MaxValue = maxValue;
+		MinValue = range.minValue;
+		MaxValue = range.maxValue;
 		// Re-run a part of the original constructor. Inheritance is lovely, isn't it?
 		RemoteValue = DefaultValue;
 		LocalValue = DefaultValue;

@@ -12,7 +12,7 @@ namespace TerrariaOverhaul.Core.AudioEffects;
 [Autoload(Side = ModSide.Client)]
 public sealed class ReverbSystem : ModSystem
 {
-	public static readonly ConfigEntry<bool> EnableReverb = new(ConfigSide.ClientOnly, "Ambience", nameof(EnableReverb), () => true);
+	public static readonly ConfigEntry<bool> EnableReverb = new(ConfigSide.ClientOnly, true, "Ambience");
 
 	private static Action<SoundEffectInstance, float>? applyReverbFunc;
 

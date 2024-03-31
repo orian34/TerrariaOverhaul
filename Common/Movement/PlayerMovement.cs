@@ -17,11 +17,11 @@ public sealed class PlayerMovement : ModPlayer
 {
 	public static readonly int VelocityRecordSize = 5;
 
-	public static readonly ConfigEntry<bool> EnableVerticalAccelerationChanges = new(ConfigSide.Both, "Movement", nameof(EnableVerticalAccelerationChanges), () => true);
-	public static readonly ConfigEntry<bool> EnableHorizontalAccelerationChanges = new(ConfigSide.Both, "Movement", nameof(EnableHorizontalAccelerationChanges), () => true);
+	public static readonly ConfigEntry<bool> EnableVerticalAccelerationChanges = new(ConfigSide.Both, true, "Movement");
+	public static readonly ConfigEntry<bool> EnableHorizontalAccelerationChanges = new(ConfigSide.Both, true, "Movement");
 
 	// The way to disable this has been removed due to vanilla jump velocity logic resetting velocity and clashing with many different features
-	//public static readonly ConfigEntry<bool> EnableJumpPhysicsImprovements = new(ConfigSide.Both, "Movement", nameof(EnableJumpPhysicsImprovements), () => true);
+	//public static readonly ConfigEntry<bool> EnableJumpPhysicsImprovements = new(ConfigSide.Both, true, "Movement");
 
 	//public Timer NoJumpTime { get; set; }
 	//public Vector2 PrevVelocity { get; set; }

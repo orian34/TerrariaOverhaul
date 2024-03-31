@@ -17,7 +17,7 @@ namespace TerrariaOverhaul.Common.Decals;
 public sealed class DecalSystem : ModSystem
 {
 	public static readonly BlendState DefaultBlendState = BlendState.AlphaBlend;
-	public static readonly ConfigEntry<bool> EnableDecals = new(ConfigSide.ClientOnly, "BloodAndGore", nameof(EnableDecals), () => true);
+	public static readonly ConfigEntry<bool> EnableDecals = new(ConfigSide.ClientOnly, true, "BloodAndGore");
 	
 	private static readonly List<DecalStyle> decalStyles = new();
 

@@ -8,7 +8,7 @@ namespace TerrariaOverhaul.Common.Footsteps;
 
 public sealed class PlayerFootsteps : ModPlayer
 {
-	public static readonly ConfigEntry<bool> EnablePlayerFootsteps = new(ConfigSide.ClientOnly, "Ambience", nameof(EnablePlayerFootsteps), () => true);
+	public static readonly ConfigEntry<bool> EnablePlayerFootsteps = new(ConfigSide.ClientOnly, true, "Ambience");
 
 	private const double FootstepCooldown = 0.1;
 

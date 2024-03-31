@@ -10,8 +10,8 @@ namespace TerrariaOverhaul.Common.Camera;
 [Autoload(Side = ModSide.Client)]
 public sealed class SmoothCameraSystem : ModSystem
 {
-	//public static readonly ConfigEntry<bool> SmoothCamera = new(ConfigSide.ClientOnly, "Camera", nameof(SmoothCamera), () => true);
-	public static readonly RangeConfigEntry<float> CameraSmoothness = new(ConfigSide.ClientOnly, "Camera", nameof(CameraSmoothness), 0f, 2f, () => 1f);
+	//public static readonly ConfigEntry<bool> SmoothCamera = new(ConfigSide.ClientOnly, true, "Camera");
+	public static readonly RangeConfigEntry<float> CameraSmoothness = new(ConfigSide.ClientOnly, 1f, (0f, 1f), "Camera");
 
 	// The reason this isn't taken at the start of the modifier is because in that case this modifier will smooth out higher
 	// priority modifications, like screenshake.

@@ -10,14 +10,15 @@ public interface IConfigEntry
 	bool IsHidden { get; }
 	string Name { get; }
 	string Category { get; }
-	string[] ExtraCategories { get; }
+	ReadOnlySpan<string> Categories { get; }
 	object? Value { get; set; }
 	object? LocalValue { get; set; }
 	object? RemoteValue { get; set; }
 	object DefaultValue { get; }
 	ConfigSide Side { get; }
-	public LocalizedText? DisplayName { get; }
-	public LocalizedText? Description { get; }
+	LocalizedText? DisplayName { get; }
+	LocalizedText? Description { get; }
 
-	void Initialize(Mod mod);
+	// Dumb.
+	void Initialize(Mod mod, string? nameFallback = null);
 }

@@ -24,7 +24,7 @@ public class Axe : ItemOverhaul
 		PitchVariance = 0.1f,
 	};
 
-	public static readonly ConfigEntry<bool> EnableAxePowerAttacks = new(ConfigSide.Both, "Melee", nameof(EnableAxePowerAttacks), () => true);
+	public static readonly ConfigEntry<bool> EnableAxePowerAttacks = new(ConfigSide.Both, true, "Melee");
 
 	public override bool ShouldApplyItemOverhaul(Item item)
 	{

@@ -28,8 +28,8 @@ public class PlayerManaEffects : ModPlayer
 		(1f, 0f)
 	);
 	// Configuration
-	public static readonly RangeConfigEntry<float> LowManaSoundVolume = new(ConfigSide.ClientOnly, "Awareness", nameof(LowManaSoundVolume), 0f, 1f, () => 1f);
-	public static readonly RangeConfigEntry<float> ManaRegenerationSoundVolume = new(ConfigSide.ClientOnly, "Awareness", nameof(ManaRegenerationSoundVolume), 0f, 1f, () => 1f);
+	public static readonly RangeConfigEntry<float> LowManaSoundVolume = new(ConfigSide.ClientOnly, 1f, (0f, 1f), "Awareness");
+	public static readonly RangeConfigEntry<float> ManaRegenerationSoundVolume = new(ConfigSide.ClientOnly, 1f, (0f, 1f), "Awareness");
 
 	private SlotId lowManaSoundSlot;
 	private SlotId manaRegenSoundSlot;

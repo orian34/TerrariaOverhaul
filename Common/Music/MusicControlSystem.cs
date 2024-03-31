@@ -20,7 +20,7 @@ public sealed class MusicControlSystem : ModSystem
 
 	private const string VolumeVariable = "Volume";
 
-	public static readonly ConfigEntry<bool> EnableMusicPlaybackPositionPreservation = new(ConfigSide.ClientOnly, "Music", nameof(EnableMusicPlaybackPositionPreservation), () => true);
+	public static readonly ConfigEntry<bool> EnableMusicPlaybackPositionPreservation = new(ConfigSide.ClientOnly, true, "Music");
 
 	public static event TrackUpdateCallback? OnTrackUpdate;
 

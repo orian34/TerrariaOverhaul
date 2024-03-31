@@ -15,7 +15,7 @@ public sealed class BannerReworkSystem : ModSystem
 	private static bool bannerDamageDisabled;
 	private static ItemID.BannerEffect[]? defaultBannerEffects;
 
-	public static readonly ConfigEntry<bool> BannerReworkEnabled = new(ConfigSide.Both, "Balance", nameof(BannerReworkEnabled), () => true);
+	public static readonly ConfigEntry<bool> BannerReworkEnabled = new(ConfigSide.Both, true, "Balance");
 
 	public override void Load()
 	{

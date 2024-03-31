@@ -26,7 +26,7 @@ public sealed class RecoilSystem : ModSystem
 		}
 	}
 
-	public static readonly ConfigEntry<bool> EnableAimingRecoil = new(ConfigSide.ClientOnly, "Guns", nameof(EnableAimingRecoil), () => false);
+	public static readonly ConfigEntry<bool> EnableAimingRecoil = new(ConfigSide.ClientOnly, false, "Guns");
 
 	private static readonly List<CursorOffset> offsets = new();
 

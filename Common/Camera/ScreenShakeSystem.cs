@@ -25,7 +25,7 @@ public sealed class ScreenShakeSystem : ModSystem
 		public float Progress => Style.LengthInSeconds > 0f ? MathHelper.Clamp((TimeSystem.RenderTime - StartTime) / Style.LengthInSeconds, 0f, 1f) : 1f;
 	}
 
-	public static readonly RangeConfigEntry<float> ScreenShakeStrength = new(ConfigSide.ClientOnly, "Camera", nameof(ScreenShakeStrength), 0f, 1f, () => 1f);
+	public static readonly RangeConfigEntry<float> ScreenShakeStrength = new(ConfigSide.ClientOnly, 1f, (0f, 1f), "Camera");
 
 	private static readonly List<ScreenShakeInstance> screenShakes = new();
 

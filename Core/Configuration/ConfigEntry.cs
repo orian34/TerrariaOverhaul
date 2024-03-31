@@ -13,23 +13,22 @@ public class ConfigEntry<T> : IConfigEntry
 
 	private static Regex DefaultDisplayNameRegex => defaultDisplayNameRegex ??= new(@"([A-Z][a-z]+)(?=[A-Z])", RegexOptions.Compiled);
 
-	private readonly Func<T> defaultValueGetter;
-
+	private readonly T defaultValue;
 	private T? localValue;
 	private T? remoteValue;
 
-	public string Name { get; }
-	public string Category { get; }
+	public string Name { get; private set; }
+	public string[] Categories { get; }
 	public ConfigSide Side { get; }
 	public bool IsHidden { get; set; }
 	//public bool RequiresRestart { get; set; }
-	public string[] ExtraCategories { get; set; } = Array.Empty<string>();
 	public LocalizedText? DisplayName { get; internal set; }
 	public LocalizedText? Description { get; internal set; }
 	public Mod? Mod { get; private set; }
 
+	public string Category => Categories[0];
 	public Type ValueType => typeof(T);
-	public T DefaultValue => defaultValueGetter();
+	public T DefaultValue => defaultValue!;
 
 	public T? LocalValue {
 		get => ModifyGetValue(localValue);
@@ -70,13 +69,21 @@ public class ConfigEntry<T> : IConfigEntry
 		set => RemoteValue = (T?)value;
 	}
 	object IConfigEntry.DefaultValue => DefaultValue!;
+	ReadOnlySpan<string> IConfigEntry.Categories => Categories;
 
-	public ConfigEntry(ConfigSide side, string category, string name, Func<T> defaultValueGetter)
+	public ConfigEntry(ConfigSide side, T defaultValue, params string[] categories)
+		: this(null!, side, defaultValue, categories) { }
+
+	public ConfigEntry(string name, ConfigSide side, T defaultValue, params string[] categories)
 	{
+		if (categories?.Length is not > 0) {
+			throw new ArgumentException("At least one category must be provided.");
+		}
+
 		Name = name;
-		Category = category;
+		Categories = categories;
 		Side = side;
-		this.defaultValueGetter = defaultValueGetter;
+		this.defaultValue = defaultValue;
 		RemoteValue = DefaultValue;
 		LocalValue = DefaultValue;
 	}
@@ -85,9 +92,15 @@ public class ConfigEntry<T> : IConfigEntry
 
 	protected virtual T? ModifySetValue(T? value) => value;
 
-	public void Initialize(Mod mod)
+	public void Initialize(Mod mod, string? nameFallback)
 	{
 		Mod = mod;
+		Name ??= nameFallback!;
+
+		if (string.IsNullOrWhiteSpace(Name)) {
+			throw new InvalidOperationException("Config entry has no name defined.");
+		}
+
 		DisplayName = Language.GetOrRegister(
 			$"Mods.{Mod.Name}.Configuration.{Category}.{Name}.DisplayName",
 			() => DefaultDisplayNameRegex.Replace(Name, "$1 ")

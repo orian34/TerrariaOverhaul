@@ -25,7 +25,7 @@ public struct ConfigFormat
 public ref struct ConfigExport
 {
 	public Version? ModVersion = null;
-	public Dictionary<string, object> ValuesByEntry = new();
+	public Dictionary<string, object> EntryValuesByName = new();
 
 	public ConfigExport() { }
 }
@@ -164,7 +164,7 @@ public sealed class ConfigIO : ModSystem
 
 		var entriesByName = ConfigSystem.EntriesByName;
 
-		foreach (var pair in export.ValuesByEntry) {
+		foreach (var pair in export.EntryValuesByName) {
 			object value = pair.Value;
 
 			if (!entriesByName.TryGetValue(pair.Key, out var entry)) {
@@ -193,10 +193,10 @@ public sealed class ConfigIO : ModSystem
 		EnsureInitialized();
 
 		export.ModVersion = OverhaulMod.Instance.Version;
-		export.ValuesByEntry = new();
+		export.EntryValuesByName = new();
 
 		foreach (var entry in ConfigSystem.Entries) {
-			export.ValuesByEntry[entry.Name] = (fromLocal ? entry.LocalValue : entry.RemoteValue) ?? entry.DefaultValue;
+			export.EntryValuesByName[entry.Name] = (fromLocal ? entry.LocalValue : entry.RemoteValue) ?? entry.DefaultValue;
 		}
 	}
 

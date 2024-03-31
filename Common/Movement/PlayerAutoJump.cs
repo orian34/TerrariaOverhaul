@@ -6,9 +6,7 @@ namespace TerrariaOverhaul.Common.Movement;
 
 public sealed class PlayerAutoJump : ModPlayer
 {
-	public static readonly ConfigEntry<bool> EnableAutoJump = new(ConfigSide.Both, "Movement", nameof(EnableAutoJump), () => true) {
-		ExtraCategories = new[] { "Accessibility" }
-	};
+	public static readonly ConfigEntry<bool> EnableAutoJump = new(ConfigSide.Both, true, "Movement", "Accessibility");
 
 	public override void ResetEffects()
 	{

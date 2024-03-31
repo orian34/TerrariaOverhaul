@@ -11,7 +11,7 @@ namespace TerrariaOverhaul.Common.EntityEffects;
 
 public sealed class NpcBodyRotation : GlobalNPC
 {
-	public static readonly ConfigEntry<bool> EnableEnemyTiltingEffects = new(ConfigSide.ClientOnly, "Visuals", nameof(EnableEnemyTiltingEffects), () => true);
+	public static readonly ConfigEntry<bool> EnableEnemyTiltingEffects = new(ConfigSide.ClientOnly, true, "Visuals");
 
 	private float usedRotationOffset;
 

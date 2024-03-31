@@ -25,7 +25,7 @@ public class Hammer : ItemOverhaul
 		PitchVariance = 0.1f,
 	};
 
-	public static readonly ConfigEntry<bool> EnableHammerPowerAttacks = new(ConfigSide.Both, "Melee", nameof(EnableHammerPowerAttacks), () => true);
+	public static readonly ConfigEntry<bool> EnableHammerPowerAttacks = new(ConfigSide.Both, true, "Melee");
 
 	public override bool ShouldApplyItemOverhaul(Item item)
 	{

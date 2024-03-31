@@ -30,7 +30,7 @@ public partial class Broadsword : ItemOverhaul, IModifyItemNPCHitSound
 		PitchVariance = 0.1f
 	};
 
-	public static readonly ConfigEntry<bool> EnableBroadswordPowerAttacks = new(ConfigSide.Both, "Melee", nameof(EnableBroadswordPowerAttacks), () => true);
+	public static readonly ConfigEntry<bool> EnableBroadswordPowerAttacks = new(ConfigSide.Both, true, "Melee");
 
 	public override bool ShouldApplyItemOverhaul(Item item)
 	{
