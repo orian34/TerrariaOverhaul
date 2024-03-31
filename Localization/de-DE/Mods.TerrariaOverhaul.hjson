@@ -1,5 +1,3 @@
-Mods: {
-TerrariaOverhaul: {
 MainMenu: {
 	Configuration: "Konfiguration"
 	DiscordServer: "Discordserver"
@@ -223,6 +221,4 @@ Projectiles: {
 	MopProjectile: {
 		DisplayName: "{$Mods.TerrariaOverhaul.Items.Mop.DisplayName}"
 	}
-}
-}
 }
