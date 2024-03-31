@@ -40,6 +40,7 @@
 - Configuration files now use the `.toml` format instead of `.json`. It's a lot more human-friendly, and has a much simpler syntax. In addition to that, it also supports comments, so config entries' descriptions will now be included there.
 - Added the following new options:
   **Accessibility:** `EnableJumpInputBuffering`.
+  **BloodAndGore:** `EnableAdvancedParticles`, `EnableGoreAudio`, `EnableGoreBleeding`, `EnableGoreBurning`, `EnableGoreGibbing`, `EnableGorePhysics`, `EnablePlayerCharacterGore`, `ParticleMultiplierSafe`, `ParticleMultiplierViolent`.
   **Guns:** `EnableAlternateGunFiringModes`, `EnableBulletCasings`, `EnableBulletImpactAudio`, `EnableGunSoundReplacements`, `EnableMuzzleflashes`, `EnableMinigunRecoilHovering`, `EnableStarCannonRecoilHovering`.
   **Interface:** `EnableCrosshair`, `EnableCrosshairAnimations`.
   **Melee:** `EnableAxeSoundReplacements`, `EnableBroadswordSoundReplacements`, `EnableHammerSoundReplacements`, `EnableImprovedMeleeCollision`, `EnablePickaxeSoundReplacements`, `EnableMeleeAttackAiming`, `EnableMeleeKillingBlows`, `EnableMeleeVelocityBasedDamage`, `EnableMeleeVelocityBasedDamageIcon`.

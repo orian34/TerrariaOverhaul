@@ -18,6 +18,7 @@ public sealed class ProjectileSlimeGunParticles : GlobalProjectile
 					Position = projectile.Center,
 					Velocity = projectile.velocity * 60f + Main.rand.NextVector2Circular(20f, 20f),
 					Color = new Color(0, 80, 255, 100),
+					IsViolent = false,
 				}
 			};
 

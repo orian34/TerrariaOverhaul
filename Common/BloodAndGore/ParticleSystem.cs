@@ -8,6 +8,7 @@ using Terraria.Audio;
 using Terraria.ModLoader;
 using TerrariaOverhaul.Common.Camera;
 using TerrariaOverhaul.Common.Decals;
+using TerrariaOverhaul.Core.Configuration;
 using TerrariaOverhaul.Core.Time;
 using TerrariaOverhaul.Utilities;
 using BitOperations = System.Numerics.BitOperations;
@@ -27,6 +28,7 @@ public sealed class ParticleSystem : ModSystem
 		public static readonly ParticleData Default = new();
 		private static readonly Vector2 DefaultGravity = new(0.0f, 300.0f);
 
+		public bool IsViolent;
 		public uint LifeTime;
 		public float Rotation;
 		public Vector2 Position;
@@ -44,6 +46,9 @@ public sealed class ParticleSystem : ModSystem
 		public ParticleData() { }
 	}
 
+	public static readonly RangeConfigEntry<float> ParticleMultiplierSafe = new(ConfigSide.ClientOnly, 1f, (0f, 1f), "BloodAndGore");
+	public static readonly RangeConfigEntry<float> ParticleMultiplierViolent = new(ConfigSide.ClientOnly, 1f, (0f, 1f), "BloodAndGore");
+
 	public static readonly SoundStyle BloodDripSound = new($"{nameof(TerrariaOverhaul)}/Assets/Sounds/Gore/BloodDrip", 14) {
 		Volume = 0.3f,
 		PitchVariance = 0.2f
@@ -52,6 +57,10 @@ public sealed class ParticleSystem : ModSystem
 	private const int BitsPerMask = sizeof(ulong) * 8;
 
 	private static uint maxParticles;
+	private static (uint counter, uint divisor) particleCullingSafe = (0, 1);
+	private static (uint counter, uint divisor) particleCullingViolent = (0, 1);
+	private static ulong[] presenceMask = Array.Empty<ulong>();
+	private static ParticleData[] particles = Array.Empty<ParticleData>();
 
 	public static uint MaxParticles {
 		get => maxParticles;
@@ -63,12 +72,18 @@ public sealed class ParticleSystem : ModSystem
 		}
 	}
 
-	private static ParticleData[] particles = Array.Empty<ParticleData>();
-	private static ulong[] presenceMask = Array.Empty<ulong>();
-
 	public override void Load()
 	{
 		MaxParticles = 1024;
+	}
+
+	public override void PreUpdateDusts()
+	{
+		static uint ToIntDivisor(float multiplier)
+			=> multiplier <= 0f ? uint.MaxValue : (uint)(1f / multiplier);
+
+		particleCullingSafe.divisor = ToIntDivisor(ParticleMultiplierSafe);
+		particleCullingViolent.divisor = ToIntDivisor(ParticleMultiplierViolent);
 	}
 
 	public override void PostDrawTiles()
@@ -82,10 +97,17 @@ public sealed class ParticleSystem : ModSystem
 		Span<Color> colorSpan = stackalloc Color[newParticles.Length];
 
 		for (int i = 0; i < newParticles.Length; i++) {
+			ref readonly var newParticle = ref newParticles[i];
+			ref (uint counter, uint divisor) culling = ref (newParticle.IsViolent ? ref particleCullingViolent : ref particleCullingSafe);
+
+			if (unchecked(++culling.counter) % culling.divisor != 0) {
+				continue;
+			}
+
 			int index = AllocateIndex();
 
 			ref var particle = ref particles[index];
-			particle = newParticles[i];
+			particle = newParticle;
 
 			particle.OldPositions.Fill(particle.Position);
 			colorSpan[i] = particle.Color;
@@ -94,14 +116,15 @@ public sealed class ParticleSystem : ModSystem
 		BloodColorRecording.AddColors(colorSpan);
 	}
 
-	public static void ConfigureParticles(Span<ParticleData> particles, Vector2 position, Vector2 velocity, Color color)
+	public static void ConfigureParticles(Span<ParticleData> particles, Vector2 position, Vector2 velocity, Color color, bool isViolent)
 	{
 		for (int i = 0; i < particles.Length; i++) {
 			ref var particle = ref particles[i];
 
 			particle = new() {
 				Position = position,
-				Velocity = velocity * (Main.rand.NextVector2Circular(1.0f, 1.0f) + Vector2.One) * 0.5f
+				Velocity = velocity * (Main.rand.NextVector2Circular(1.0f, 1.0f) + Vector2.One) * 0.5f,
+				IsViolent = isViolent,
 			};
 
 			float intensity = Main.rand.Next(3) switch {

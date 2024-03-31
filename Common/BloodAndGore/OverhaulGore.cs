@@ -13,6 +13,7 @@ using TerrariaOverhaul.Common.EntitySources;
 using TerrariaOverhaul.Common.Fires;
 using TerrariaOverhaul.Common.PhysicalMaterials;
 using TerrariaOverhaul.Content.Gores;
+using TerrariaOverhaul.Core.Configuration;
 using TerrariaOverhaul.Core.PhysicalMaterials;
 using TerrariaOverhaul.Core.SimpleEntities;
 using TerrariaOverhaul.Core.Time;
@@ -27,6 +28,12 @@ public class OverhaulGore : Gore, ILoadable, IPhysicalMaterialProvider
 {
 	private const int GoreSoundMinCooldown = 10;
 	private const int GoreSoundMaxCooldown = 25;
+
+	public static readonly ConfigEntry<bool> EnableGoreAudio = new(ConfigSide.ClientOnly, true, "BloodAndGore");
+	public static readonly ConfigEntry<bool> EnableGoreGibbing = new(ConfigSide.ClientOnly, true, "BloodAndGore");
+	public static readonly ConfigEntry<bool> EnableGorePhysics = new(ConfigSide.ClientOnly, true, "BloodAndGore");
+	public static readonly ConfigEntry<bool> EnableGoreBleeding = new(ConfigSide.ClientOnly, true, "BloodAndGore");
+	public static readonly ConfigEntry<bool> EnableGoreBurning = new(ConfigSide.ClientOnly, true, "BloodAndGore");
 
 	public static readonly SoundStyle GoreHitSound = new($"{nameof(TerrariaOverhaul)}/Assets/Sounds/Gore/GoreHit", 3) {
 		Volume = 0.4f,
@@ -113,15 +120,23 @@ public class OverhaulGore : Gore, ILoadable, IPhysicalMaterialProvider
 			return;
 		}
 
-		if (Main.tileSolid[tile.TileType] && tile.HasTile) {
-			// MoveGoreUpwards(point);
-		} else if (tile.LiquidAmount > 0) {
-			OnLiquidCollision(tile);
+		if (EnableGorePhysics) {
+			if (Main.tileSolid[tile.TileType] && tile.HasTile) {
+				// MoveGoreUpwards(point);
+			} else if (tile.LiquidAmount > 0) {
+				OnLiquidCollision(tile);
+			}
+
+			Bouncing();
 		}
 
-		Bleeding();
-		Burning();
-		Bouncing();
+		if (EnableGoreBleeding) {
+			Bleeding();
+		}
+
+		if (EnableGoreBurning) {
+			Burning();
+		}
 
 		PrevVelocity = velocity;
 		PrevPosition = position;
@@ -179,6 +194,10 @@ public class OverhaulGore : Gore, ILoadable, IPhysicalMaterialProvider
 
 	public bool Damage(float damageScale = 1f, float effectMultiplier = 1f, bool silent = false)
 	{
+		if (!EnableGoreGibbing) {
+			return false;
+		}
+
 		if (Main.dedServ) {
 			return false;
 		}
@@ -258,6 +277,7 @@ public class OverhaulGore : Gore, ILoadable, IPhysicalMaterialProvider
 					Main.rand.NextFloat(-maxVerticalSpeed, 0f)
 				),
 				Color = BleedColor.Value,
+				IsViolent = true,
 			};
 		}
 
@@ -365,10 +385,9 @@ public class OverhaulGore : Gore, ILoadable, IPhysicalMaterialProvider
 	// Makeshift optimization to not spam PlaySound and not enumerate any lists to check if there's anything playing.
 	private static bool TryPlaySound(in SoundStyle? style, Vector2 position)
 	{
-		if (style == null) {
+		if (style == null || !EnableGoreAudio) {
 			return false;
 		}
-
 
 		var realStyle = style.Value;
 		ulong tick = Main.GameUpdateCount;

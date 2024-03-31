@@ -11,6 +11,7 @@ using Terraria.GameContent;
 using Terraria.ModLoader;
 using TerrariaOverhaul.Common.BloodAndGore;
 using TerrariaOverhaul.Content.Gores;
+using TerrariaOverhaul.Core.Configuration;
 using TerrariaOverhaul.Utilities;
 
 #pragma warning disable IDE0060 // Remove unused parameter
@@ -28,6 +29,8 @@ public sealed class PlayerGore : ModPlayer
 		Arms,
 		Legs,
 	}
+
+	public static readonly ConfigEntry<bool> EnablePlayerCharacterGore = new(ConfigSide.ClientOnly, true, "BloodAndGore");
 
 	private static DrawnPart currentlyDrawnPart;
 
@@ -69,7 +72,7 @@ public sealed class PlayerGore : ModPlayer
 	{
 		orig(player, damageSource, damage, hitDirection, pvp);
 
-		if (!ChildSafety.Disabled) {
+		if (!EnablePlayerCharacterGore || !ChildSafety.Disabled) {
 			return;
 		}
 
