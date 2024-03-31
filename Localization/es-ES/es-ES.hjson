@@ -1,228 +1,228 @@
 Mods: {
-	TerrariaOverhaul: {
-		MainMenu: {
-			Configuration: "Configuración"
-			DiscordServer: "Servidor de Discord"
-			ForumPage: "Foro"
-			WikiPage: "Wiki de Overhaul"
-			Github: "GitHub"
+TerrariaOverhaul: {
+MainMenu: {
+	Configuration: "Configuración"
+	DiscordServer: "Servidor de Discord"
+	ForumPage: "Foro"
+	WikiPage: "Wiki de Overhaul"
+	Github: "GitHub"
 
-			MusicPack: {
-				Get: "Descargar paquete de música"
-				Enable: "Activar paquete de música"
-			}
-		}
+	MusicPack: {
+		Get: "Descargar paquete de música"
+		Enable: "Activar paquete de música"
+	}
+}
 
-		Notifications: {
-			AudioFilteringTestFailure: "Advertencia: Terraria Overhaul no ha podido activar los efectos de filtrado de audio. Asegúrate de que tus controladores de audio están actualizados."
-		}
+Notifications: {
+	AudioFilteringTestFailure: "Advertencia: Terraria Overhaul no ha podido activar los efectos de filtrado de audio. Asegúrate de que tus controladores de audio están actualizados."
+}
 
-		DifficultyLevels: {
-			Creative: "Viaje"
-			Normal: "Soy demasiado joven para minar"
-			Expert: "Ponme las pilas"
-			Master: "Soy la reencarnación de Cthulhu"
-			WorldDescriptionCreative: "El modo creativo/accesible (Para los que quieren tener el control)"
-			WorldDescriptionNormal: "Menos daño de enemigos y mismas recompensas (Para los más relajados)"
-			WorldDescriptionExpert: "La nueva experiencia estándar (Para los que les gusta un reto justo)"
-			WorldDescriptionMaster: "Castigo extremo y nuevas recompensas (Para los más despiadados)"
-		}
+DifficultyLevels: {
+	Creative: "Viaje"
+	Normal: "Soy demasiado joven para minar"
+	Expert: "Ponme las pilas"
+	Master: "Soy la reencarnación de Cthulhu"
+	WorldDescriptionCreative: "El modo creativo/accesible (Para los que quieren tener el control)"
+	WorldDescriptionNormal: "Menos daño de enemigos y mismas recompensas (Para los más relajados)"
+	WorldDescriptionExpert: "La nueva experiencia estándar (Para los que les gusta un reto justo)"
+	WorldDescriptionMaster: "Castigo extremo y nuevas recompensas (Para los más despiadados)"
+}
 
-		Seasons: {
-			SelectSeason: "Elige la estación de inicio:"
-			CalendarCurrentSeason: "Ahora es {SeasonName}."
-			CalendarNextSeasonDays: "La estación de {SeasonName} llegará en {NumDays} día(s)."
-			CalendarNextSeasonTomorrow: "¡Mañana será {SeasonName}!"
+Seasons: {
+	SelectSeason: "Elige la estación de inicio:"
+	CalendarCurrentSeason: "Ahora es {SeasonName}."
+	CalendarNextSeasonDays: "La estación de {SeasonName} llegará en {NumDays} día(s)."
+	CalendarNextSeasonTomorrow: "¡Mañana será {SeasonName}!"
 
-			Spring: {
-				Name: "Primavera"
-			}
+	Spring: {
+		Name: "Primavera"
+	}
 
-			Summer: {
-				Name: "Verano"
-			}
+	Summer: {
+		Name: "Verano"
+	}
 
-			Autumn: {
-				Name: "Otoño"
-			}
+	Autumn: {
+		Name: "Otoño"
+	}
 
-			Winter: {
-				Name: "Invierno"
-			}
-		}
+	Winter: {
+		Name: "Invierno"
+	}
+}
 
-		Banners: {
-			BannerBuffDescription: "El botín y las monedas se duplican en los siguientes casos:"
-			BannerItemDescription: "Los jugadores cercanos reciben el doble de botín y dineros de lo siguiente:"
-		}
+Banners: {
+	BannerBuffDescription: "El botín y las monedas se duplican en los siguientes casos:"
+	BannerItemDescription: "Los jugadores cercanos reciben el doble de botín y dineros de lo siguiente:"
+}
 
-		ItemOverhauls: {
-			Archery: {
-				HoverShots:
-					'''
-					[[Flota en el aire]] al cargar un disparo mientras saltas
-					Realiza un [[tiro flotante]] para ganar aún más velocidad
-					'''
-				ManualCharging:
-					'''
-					Mantén presionado el clic derecho para [[cargar manualmente]] un disparo
-					Suelta el botón en cualquier momento para [[ajustar a medida]] la velocidad y el daño
-					'''
-			}
+ItemOverhauls: {
+	Archery: {
+		HoverShots:
+			'''
+			[[Flota en el aire]] al cargar un disparo mientras saltas
+			Realiza un [[tiro flotante]] para ganar aún más velocidad
+			'''
+		ManualCharging:
+			'''
+			Mantén presionado el clic derecho para [[cargar manualmente]] un disparo
+			Suelta el botón en cualquier momento para [[ajustar a medida]] la velocidad y el daño
+			'''
+	}
 
-			Melee: {
-				AirCombatInfo:
-					'''
-					¡[[Ataca a los enemigos en el aire]] para ganar velocidad, mantener tu altura, o para huir!
-					¡Usa las teclas de movimiento durante el golpe para controlar la velocidad!
-					'''
-				PowerStrikeInfo: "¡Carga [[golpes potenciados]] con el botón de uso alternativo!"
-				VelocityBasedDamageInfo:
-					'''
-					[[¡Mientras más rápido vayas, más fuerte golpeas!]]
-					¡Combina tus ataques con impulsos y usa la gravedad a tu favor!
-					'''
+	Melee: {
+		AirCombatInfo:
+			'''
+			¡[[Ataca a los enemigos en el aire]] para ganar velocidad, mantener tu altura, o para huir!
+			¡Usa las teclas de movimiento durante el golpe para controlar la velocidad!
+			'''
+		PowerStrikeInfo: "¡Carga [[golpes potenciados]] con el botón de uso alternativo!"
+		VelocityBasedDamageInfo:
+			'''
+			[[¡Mientras más rápido vayas, más fuerte golpeas!]]
+			¡Combina tus ataques con impulsos y usa la gravedad a tu favor!
+			'''
 
-				Broadsword: {
-					KillingBlow: "¡Golpe mortal!"
-					KillingBlowInfo:
-						'''
-						Da un [[golpe mortal]] al [[acertar un golpe potenciado]] a los enemigos heridos,
-						multiplicando el daño por [[x{0}]] cuando el golpe mataría al enemigo
-						'''
-				}
-			}
-		}
-
-		CommonTooltips: {
-			ShowCombatInfo: "[Mantén la tecla {Key} para mostrar información de combate]"
-			CombatInfo: "[Información de combate]"
-			RightClickAudioCuesToggle: "Presiona clic derecho en el ítem para activar/desactivar indicadores auditivos"
-			RightClickAudioCuesEnabled: "Indicadores auditivos activados"
-			RightClickAudioCuesDisabled: "Indicadores auditivos desactivados"
-
-			GrapplingHooks: {
-				ClassicPullTip: "Mantén presionada la tecla de gancho para una tracción clásica"
-			}
-		}
-
-		DeathText: {
-			Zombified: "Y entonces {PlayerName} se convirtió en un zombi."
-			ZombifiedScreenText: "Te has convertido en un zombi..."
-			ZombifiedName: "{PlayerName}, el Zombie"
-			Lightning: "{PlayerName} ha sido alcanzado por un rayo. ¡Au!"
-		}
-
-		Keybinds: {
-			Dodgeroll: {
-				DisplayName: "Rodar"
-			}
-		}
-
-		Tiles: {
-			Calendar: {
-				MapEntry: "{$Mods.TerrariaOverhaul.Items.Calendar.DisplayName}"
-			}
-
-			Gramophone: {
-				MapEntry: "{$Mods.TerrariaOverhaul.Items.Gramophone.DisplayName}"
-			}
-		}
-
-		Buffs: {
-			CriticalJudgement: {
-				DisplayName: "Juicio crítico"
-				Description:
-					'''
-					Su ataque ha sido inútil
-					Da tu veredicto con un golpe crítico
-					'''
-			}
-
-			HackAndSlash: {
-				DisplayName: "Cortar y tajar"
-				Description:
-					'''
-					Mientras más rápido te muevas, más fuerte golpeas
-					Multiplicador de daño cuerpo a cuerpo: x{Multiplier}
-					'''
-			}
-
-			ManaAbsorption: {
-				DisplayName: "Absorción de maná"
-				Description:
-					'''
-					Moviéndote rápido absorbes energía de lo que te rodea
-					Multiplicador de regeneración de maná base: x{Multiplier}
-					'''
-			}
-		}
-
-		Items: {
-			BunnyPaw: {
-				DisplayName: "Pata de conejo"
-				Tooltip:
-					'''
-					[c/fca9ea:Aumenta la velocidad de tus saltos con cada salto consecutivo]
-					[c/fca9ea:Combina saltos con ruedos para obtener aún más velocidad]
-					[c/8a2730:{$Mods.TerrariaOverhaul.CommonTooltips.RightClickAudioCuesToggle}]
-					'''
-			}
-
-			Charcoal: {
-				DisplayName: "Carbón vegetal"
-				Tooltip: "Aún está caliente"
-			}
-
-			Calendar: {
-				DisplayName: "Calendario"
-				Tooltip:
-					'''
-					Cuenta los días restantes para la siguiente estación
-					Haz clic derecho sobre él tras colocarlo para leerlo
-					'''
-			}
-
-			Gramophone: {
-				DisplayName: "Gramófono"
-				Tooltip: "Toca discos de música"
-			}
-
-			MusicDisc: {
-				DisplayName: "Disco de música"
-				Tooltip: "Puede reproducirse en un gramófono"
-			}
-
-			Mop: {
-				DisplayName: "Mopa"
-				Tooltip: "Mantiene tu hogar limpio de tripas y ojos triturados"
-			}
-
-			StoneAxe: {
-				DisplayName: "Hacha de piedra"
-				Tooltip: "Probablemente menos resistente que la madera"
-			}
-
-			StonePickaxe: {
-				DisplayName: "Pico de piedra"
-				Tooltip: "¡Excelente contra la tierra!"
-			}
-		}
-
-		NPCs: {
-			AshSlime: {
-				DisplayName: "Coágulo de cenizas"
-			}
-
-			AshZombie: {
-				DisplayName: "Cenizas andantes"
-			}
-		}
-
-		Projectiles: {
-			MopProjectile: {
-				DisplayName: "{$Mods.TerrariaOverhaul.Items.Mop.DisplayName}"
-			}
+		Broadsword: {
+			KillingBlow: "¡Golpe mortal!"
+			KillingBlowInfo:
+				'''
+				Da un [[golpe mortal]] al [[acertar un golpe potenciado]] a los enemigos heridos,
+				multiplicando el daño por [[x{0}]] cuando el golpe mataría al enemigo
+				'''
 		}
 	}
+}
+
+CommonTooltips: {
+	ShowCombatInfo: "[Mantén la tecla {Key} para mostrar información de combate]"
+	CombatInfo: "[Información de combate]"
+	RightClickAudioCuesToggle: "Presiona clic derecho en el ítem para activar/desactivar indicadores auditivos"
+	RightClickAudioCuesEnabled: "Indicadores auditivos activados"
+	RightClickAudioCuesDisabled: "Indicadores auditivos desactivados"
+
+	GrapplingHooks: {
+		ClassicPullTip: "Mantén presionada la tecla de gancho para una tracción clásica"
+	}
+}
+
+DeathText: {
+	Zombified: "Y entonces {PlayerName} se convirtió en un zombi."
+	ZombifiedScreenText: "Te has convertido en un zombi..."
+	ZombifiedName: "{PlayerName}, el Zombie"
+	Lightning: "{PlayerName} ha sido alcanzado por un rayo. ¡Au!"
+}
+
+Keybinds: {
+	Dodgeroll: {
+		DisplayName: "Rodar"
+	}
+}
+
+Tiles: {
+	Calendar: {
+		MapEntry: "{$Mods.TerrariaOverhaul.Items.Calendar.DisplayName}"
+	}
+
+	Gramophone: {
+		MapEntry: "{$Mods.TerrariaOverhaul.Items.Gramophone.DisplayName}"
+	}
+}
+
+Buffs: {
+	CriticalJudgement: {
+		DisplayName: "Juicio crítico"
+		Description:
+			'''
+			Su ataque ha sido inútil
+			Da tu veredicto con un golpe crítico
+			'''
+	}
+
+	HackAndSlash: {
+		DisplayName: "Cortar y tajar"
+		Description:
+			'''
+			Mientras más rápido te muevas, más fuerte golpeas
+			Multiplicador de daño cuerpo a cuerpo: x{Multiplier}
+			'''
+	}
+
+	ManaAbsorption: {
+		DisplayName: "Absorción de maná"
+		Description:
+			'''
+			Moviéndote rápido absorbes energía de lo que te rodea
+			Multiplicador de regeneración de maná base: x{Multiplier}
+			'''
+	}
+}
+
+Items: {
+	BunnyPaw: {
+		DisplayName: "Pata de conejo"
+		Tooltip:
+			'''
+			[c/fca9ea:Aumenta la velocidad de tus saltos con cada salto consecutivo]
+			[c/fca9ea:Combina saltos con ruedos para obtener aún más velocidad]
+			[c/8a2730:{$Mods.TerrariaOverhaul.CommonTooltips.RightClickAudioCuesToggle}]
+			'''
+	}
+
+	Charcoal: {
+		DisplayName: "Carbón vegetal"
+		Tooltip: "Aún está caliente"
+	}
+
+	Calendar: {
+		DisplayName: "Calendario"
+		Tooltip:
+			'''
+			Cuenta los días restantes para la siguiente estación
+			Haz clic derecho sobre él tras colocarlo para leerlo
+			'''
+	}
+
+	Gramophone: {
+		DisplayName: "Gramófono"
+		Tooltip: "Toca discos de música"
+	}
+
+	MusicDisc: {
+		DisplayName: "Disco de música"
+		Tooltip: "Puede reproducirse en un gramófono"
+	}
+
+	Mop: {
+		DisplayName: "Mopa"
+		Tooltip: "Mantiene tu hogar limpio de tripas y ojos triturados"
+	}
+
+	StoneAxe: {
+		DisplayName: "Hacha de piedra"
+		Tooltip: "Probablemente menos resistente que la madera"
+	}
+
+	StonePickaxe: {
+		DisplayName: "Pico de piedra"
+		Tooltip: "¡Excelente contra la tierra!"
+	}
+}
+
+NPCs: {
+	AshSlime: {
+		DisplayName: "Coágulo de cenizas"
+	}
+
+	AshZombie: {
+		DisplayName: "Cenizas andantes"
+	}
+}
+
+Projectiles: {
+	MopProjectile: {
+		DisplayName: "{$Mods.TerrariaOverhaul.Items.Mop.DisplayName}"
+	}
+}
+}
 }

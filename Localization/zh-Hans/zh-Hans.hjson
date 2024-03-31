@@ -1,228 +1,228 @@
 Mods: {
-	TerrariaOverhaul: {
-		MainMenu: {
-			Configuration: "配置"
-			DiscordServer: "Discord服务器"
-			ForumPage: "官方论坛页面"
-			WikiPage: "Overhaul维基"
-			Github: "GitHub"
+TerrariaOverhaul: {
+MainMenu: {
+	Configuration: "配置"
+	DiscordServer: "Discord服务器"
+	ForumPage: "官方论坛页面"
+	WikiPage: "Overhaul维基"
+	Github: "GitHub"
 
-			MusicPack: {
-				Get: "获取音乐包"
-				Enable: "开启音乐包"
-			}
-		}
+	MusicPack: {
+		Get: "获取音乐包"
+		Enable: "开启音乐包"
+	}
+}
 
-		Notifications: {
-			AudioFilteringTestFailure: "警告：TerrariaOverhaul无法激活音频过滤效果，请确保安装了最新的音频驱动。"
-		}
+Notifications: {
+	AudioFilteringTestFailure: "警告：TerrariaOverhaul无法激活音频过滤效果，请确保安装了最新的音频驱动。"
+}
 
-		DifficultyLevels: {
-			Creative: "旅途"
-			Normal: "我还年轻不想挖矿"
-			Expert: "大力上我"
-			Master: "我是克苏鲁的化身"
-			WorldDescriptionCreative: "创造/无障碍模式（为想要掌控一切的人准备）"
-			WorldDescriptionNormal: "敌人伤害较少，但掉落相同（适合悠闲的人）"
-			WorldDescriptionExpert: "新的标准体验（为你提供公平的挑战）"
-			WorldDescriptionMaster: "极端惩罚以及新的奖励（致真正的无情者）"
-		}
+DifficultyLevels: {
+	Creative: "旅途"
+	Normal: "我还年轻不想挖矿"
+	Expert: "大力上我"
+	Master: "我是克苏鲁的化身"
+	WorldDescriptionCreative: "创造/无障碍模式（为想要掌控一切的人准备）"
+	WorldDescriptionNormal: "敌人伤害较少，但掉落相同（适合悠闲的人）"
+	WorldDescriptionExpert: "新的标准体验（为你提供公平的挑战）"
+	WorldDescriptionMaster: "极端惩罚以及新的奖励（致真正的无情者）"
+}
 
-		Seasons: {
-			SelectSeason: "选择起始季节："
-			CalendarCurrentSeason: "现在的季节为：{SeasonName}。"
-			CalendarNextSeasonDays: "将会在{NumDays}天后进入{SeasonName}。"
-			CalendarNextSeasonTomorrow: "将会在明天进入{SeasonName}！"
+Seasons: {
+	SelectSeason: "选择起始季节："
+	CalendarCurrentSeason: "现在的季节为：{SeasonName}。"
+	CalendarNextSeasonDays: "将会在{NumDays}天后进入{SeasonName}。"
+	CalendarNextSeasonTomorrow: "将会在明天进入{SeasonName}！"
 
-			Spring: {
-				Name: "春季"
-			}
+	Spring: {
+		Name: "春季"
+	}
 
-			Summer: {
-				Name: "夏季"
-			}
+	Summer: {
+		Name: "夏季"
+	}
 
-			Autumn: {
-				Name: "秋季"
-			}
+	Autumn: {
+		Name: "秋季"
+	}
 
-			Winter: {
-				Name: "冬季"
-			}
-		}
+	Winter: {
+		Name: "冬季"
+	}
+}
 
-		Banners: {
-			BannerBuffDescription: "从以下生物中获得双倍战利品和钱币掉落："
-			BannerItemDescription: "附近的玩家从以下生物中获得双倍战利品和钱币掉落："
-		}
+Banners: {
+	BannerBuffDescription: "从以下生物中获得双倍战利品和钱币掉落："
+	BannerItemDescription: "附近的玩家从以下生物中获得双倍战利品和钱币掉落："
+}
 
-		ItemOverhauls: {
-			Archery: {
-				HoverShots:
-					'''
-					通过在跳跃时为武器蓄力以[[悬在半空]]
-					通过[[悬浮时射击]]以获得更高的速度
-					'''
-				ManualCharging:
-					'''
-					按住右键以[[手动蓄力]]武器
-					随时释放以[[最大化]]射击速度和伤害
-					'''
-			}
+ItemOverhauls: {
+	Archery: {
+		HoverShots:
+			'''
+			通过在跳跃时为武器蓄力以[[悬在半空]]
+			通过[[悬浮时射击]]以获得更高的速度
+			'''
+		ManualCharging:
+			'''
+			按住右键以[[手动蓄力]]武器
+			随时释放以[[最大化]]射击速度和伤害
+			'''
+	}
 
-			Melee: {
-				AirCombatInfo:
-					'''
-					[[攻击空中的敌人]]以获得速度，保持高度，以及撤退！
-					在攻击过程中使用方向键来控制你的移动！
-					'''
-				PowerStrikeInfo: "通过连续挥砍来为[[强力斩击]]蓄能！"
-				VelocityBasedDamageInfo:
-					'''
-					[[移动得越快 - 斩击就越狠！]]
-					将你的攻击与冲刺相结合，或利用重力加速度摧毁敌人！
-					'''
+	Melee: {
+		AirCombatInfo:
+			'''
+			[[攻击空中的敌人]]以获得速度，保持高度，以及撤退！
+			在攻击过程中使用方向键来控制你的移动！
+			'''
+		PowerStrikeInfo: "通过连续挥砍来为[[强力斩击]]蓄能！"
+		VelocityBasedDamageInfo:
+			'''
+			[[移动得越快 - 斩击就越狠！]]
+			将你的攻击与冲刺相结合，或利用重力加速度摧毁敌人！
+			'''
 
-				Broadsword: {
-					KillingBlow: "致命一击！"
-					KillingBlowInfo:
-						'''
-						通过[[强力斩击]]已受伤的敌人以施展[[致命一击]]
-						对于足以结果敌人的斩击，其伤害将乘以[[x{0}]]。
-						'''
-				}
-			}
-		}
-
-		CommonTooltips: {
-			ShowCombatInfo: "[按住{Key}键以显示战斗信息]"
-			CombatInfo: "[战斗信息]"
-			RightClickAudioCuesToggle: "右键点击以开关音效提示"
-			RightClickAudioCuesEnabled: "音效提示已开启"
-			RightClickAudioCuesDisabled: "音效提示已关闭"
-
-			GrapplingHooks: {
-				ClassicPullTip: "按住钩爪快捷键使用以像原版一样将玩家拉动"
-			}
-		}
-
-		DeathText: {
-			Zombified: "{PlayerName}成了只僵尸。"
-			ZombifiedScreenText: "你变成了一只僵尸..."
-			ZombifiedName: "僵尸{PlayerName}"
-			Lightning: "{PlayerName}遭了天谴！"
-		}
-
-		Keybinds: {
-			Dodgeroll: {
-				DisplayName: "翻滚"
-			}
-		}
-
-		Tiles: {
-			Calendar: {
-				MapEntry: "{$Mods.TerrariaOverhaul.Items.Calendar.DisplayName}"
-			}
-
-			Gramophone: {
-				MapEntry: "{$Mods.TerrariaOverhaul.Items.Gramophone.DisplayName}"
-			}
-		}
-
-		Buffs: {
-			CriticalJudgement: {
-				DisplayName: "致命判决"
-				Description:
-					'''
-					敌人的攻击皆为徒劳
-					以暴击降下你的审判
-					'''
-			}
-
-			HackAndSlash: {
-				DisplayName: "砍杀"
-				Description:
-					'''
-					移动得越快，砍得就越狠
-					近战伤害 x{Multiplier}
-					'''
-			}
-
-			ManaAbsorption: {
-				DisplayName: "魔力汲取"
-				Description:
-					'''
-					以迅捷之势，你吸取周围的魔能
-					基础魔力再生速度 x{Multiplier}
-					'''
-			}
-		}
-
-		Items: {
-			BunnyPaw: {
-				DisplayName: "兔爪"
-				Tooltip:
-					'''
-					[c/fca9ea:每次成功的连跳，都会增加连跳所提供的加速度大小]
-					[c/fca9ea:将连跳和翻滚结合以获得更高的加速度提升乘数]
-					[c/8a2730:{$Mods.TerrariaOverhaul.CommonTooltips.RightClickAudioCuesToggle}]
-					'''
-			}
-
-			Charcoal: {
-				DisplayName: "黑炭"
-				Tooltip: "热乎着呢"
-			}
-
-			Calendar: {
-				DisplayName: "日历"
-				Tooltip:
-					'''
-					计算到达下一季度的剩余天数
-					放置后右键点击即可使用
-					'''
-			}
-
-			Gramophone: {
-				DisplayName: "留声机"
-				Tooltip: "播放音乐光碟"
-			}
-
-			MusicDisc: {
-				DisplayName: "音乐光碟"
-				Tooltip: "可在留声机处播放"
-			}
-
-			Mop: {
-				DisplayName: "扫帚"
-				Tooltip: "让你的房子里不再散落着怪物内脏和眼球碎片"
-			}
-
-			StoneAxe: {
-				DisplayName: "石斧"
-				Tooltip: "还不如拿根木棍"
-			}
-
-			StonePickaxe: {
-				DisplayName: "石镐"
-				Tooltip: "拿去敲泥土吧！"
-			}
-		}
-
-		NPCs: {
-			AshSlime: {
-				DisplayName: "块状凝灰"
-			}
-
-			AshZombie: {
-				DisplayName: "凝灰尸块"
-			}
-		}
-
-		Projectiles: {
-			MopProjectile: {
-				DisplayName: "{$Mods.TerrariaOverhaul.Items.Mop.DisplayName}"
-			}
+		Broadsword: {
+			KillingBlow: "致命一击！"
+			KillingBlowInfo:
+				'''
+				通过[[强力斩击]]已受伤的敌人以施展[[致命一击]]
+				对于足以结果敌人的斩击，其伤害将乘以[[x{0}]]。
+				'''
 		}
 	}
+}
+
+CommonTooltips: {
+	ShowCombatInfo: "[按住{Key}键以显示战斗信息]"
+	CombatInfo: "[战斗信息]"
+	RightClickAudioCuesToggle: "右键点击以开关音效提示"
+	RightClickAudioCuesEnabled: "音效提示已开启"
+	RightClickAudioCuesDisabled: "音效提示已关闭"
+
+	GrapplingHooks: {
+		ClassicPullTip: "按住钩爪快捷键使用以像原版一样将玩家拉动"
+	}
+}
+
+DeathText: {
+	Zombified: "{PlayerName}成了只僵尸。"
+	ZombifiedScreenText: "你变成了一只僵尸..."
+	ZombifiedName: "僵尸{PlayerName}"
+	Lightning: "{PlayerName}遭了天谴！"
+}
+
+Keybinds: {
+	Dodgeroll: {
+		DisplayName: "翻滚"
+	}
+}
+
+Tiles: {
+	Calendar: {
+		MapEntry: "{$Mods.TerrariaOverhaul.Items.Calendar.DisplayName}"
+	}
+
+	Gramophone: {
+		MapEntry: "{$Mods.TerrariaOverhaul.Items.Gramophone.DisplayName}"
+	}
+}
+
+Buffs: {
+	CriticalJudgement: {
+		DisplayName: "致命判决"
+		Description:
+			'''
+			敌人的攻击皆为徒劳
+			以暴击降下你的审判
+			'''
+	}
+
+	HackAndSlash: {
+		DisplayName: "砍杀"
+		Description:
+			'''
+			移动得越快，砍得就越狠
+			近战伤害 x{Multiplier}
+			'''
+	}
+
+	ManaAbsorption: {
+		DisplayName: "魔力汲取"
+		Description:
+			'''
+			以迅捷之势，你吸取周围的魔能
+			基础魔力再生速度 x{Multiplier}
+			'''
+	}
+}
+
+Items: {
+	BunnyPaw: {
+		DisplayName: "兔爪"
+		Tooltip:
+			'''
+			[c/fca9ea:每次成功的连跳，都会增加连跳所提供的加速度大小]
+			[c/fca9ea:将连跳和翻滚结合以获得更高的加速度提升乘数]
+			[c/8a2730:{$Mods.TerrariaOverhaul.CommonTooltips.RightClickAudioCuesToggle}]
+			'''
+	}
+
+	Charcoal: {
+		DisplayName: "黑炭"
+		Tooltip: "热乎着呢"
+	}
+
+	Calendar: {
+		DisplayName: "日历"
+		Tooltip:
+			'''
+			计算到达下一季度的剩余天数
+			放置后右键点击即可使用
+			'''
+	}
+
+	Gramophone: {
+		DisplayName: "留声机"
+		Tooltip: "播放音乐光碟"
+	}
+
+	MusicDisc: {
+		DisplayName: "音乐光碟"
+		Tooltip: "可在留声机处播放"
+	}
+
+	Mop: {
+		DisplayName: "扫帚"
+		Tooltip: "让你的房子里不再散落着怪物内脏和眼球碎片"
+	}
+
+	StoneAxe: {
+		DisplayName: "石斧"
+		Tooltip: "还不如拿根木棍"
+	}
+
+	StonePickaxe: {
+		DisplayName: "石镐"
+		Tooltip: "拿去敲泥土吧！"
+	}
+}
+
+NPCs: {
+	AshSlime: {
+		DisplayName: "块状凝灰"
+	}
+
+	AshZombie: {
+		DisplayName: "凝灰尸块"
+	}
+}
+
+Projectiles: {
+	MopProjectile: {
+		DisplayName: "{$Mods.TerrariaOverhaul.Items.Mop.DisplayName}"
+	}
+}
+}
 }

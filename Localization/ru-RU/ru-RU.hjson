@@ -1,228 +1,228 @@
 Mods: {
-	TerrariaOverhaul: {
-		MainMenu: {
-			Configuration: "Конфигурация"
-			DiscordServer: "Сервер Discord"
-			ForumPage: "Форум"
-			WikiPage: "Overhaul Вики"
-			Github: "GitHub"
+TerrariaOverhaul: {
+MainMenu: {
+	Configuration: "Конфигурация"
+	DiscordServer: "Сервер Discord"
+	ForumPage: "Форум"
+	WikiPage: "Overhaul Вики"
+	Github: "GitHub"
 
-			MusicPack: {
-				Get: "Получить комплект музыки"
-				Enable: "Включить комплект музыки"
-			}
-		}
+	MusicPack: {
+		Get: "Получить комплект музыки"
+		Enable: "Включить комплект музыки"
+	}
+}
 
-		Notifications: {
-			AudioFilteringTestFailure: "Внимание: TerrariaOverhaul не может активировать звуковые фильтры. Убедитесь что у вас обновлён/установлен аудиодрайвер."
-		}
+Notifications: {
+	AudioFilteringTestFailure: "Внимание: TerrariaOverhaul не может активировать звуковые фильтры. Убедитесь что у вас обновлён/установлен аудиодрайвер."
+}
 
-		DifficultyLevels: {
-			Creative: "Приключение"
-			Normal: "Шахты меня пугают"
-			Expert: "Обрати меня в нежить"
-			Master: "Я воплощение Ктулху"
-			WorldDescriptionCreative: "Режим творчества или доступности (Для тех, кто хочет иметь полный контроль)"
-			WorldDescriptionNormal: "Меньше урона от врагов, но такие же награды (Для беззаботных и расслабленных)"
-			WorldDescriptionExpert: "Новый стандарт сложности (Для тех, кто любит справедливые вызовы)"
-			WorldDescriptionMaster: "Жестокие наказания и новые награды (Для по-настоящему беспощадных)"
-		}
+DifficultyLevels: {
+	Creative: "Приключение"
+	Normal: "Шахты меня пугают"
+	Expert: "Обрати меня в нежить"
+	Master: "Я воплощение Ктулху"
+	WorldDescriptionCreative: "Режим творчества или доступности (Для тех, кто хочет иметь полный контроль)"
+	WorldDescriptionNormal: "Меньше урона от врагов, но такие же награды (Для беззаботных и расслабленных)"
+	WorldDescriptionExpert: "Новый стандарт сложности (Для тех, кто любит справедливые вызовы)"
+	WorldDescriptionMaster: "Жестокие наказания и новые награды (Для по-настоящему беспощадных)"
+}
 
-		Seasons: {
-			SelectSeason: "Выберите начальное время года:"
-			CalendarCurrentSeason: "Сейчас у нас - {SeasonName}"
-			CalendarNextSeasonDays: "{SeasonName} наступит через: {NumDays} дн."
-			CalendarNextSeasonTomorrow: "{SeasonName} наступит завтра!"
+Seasons: {
+	SelectSeason: "Выберите начальное время года:"
+	CalendarCurrentSeason: "Сейчас у нас - {SeasonName}"
+	CalendarNextSeasonDays: "{SeasonName} наступит через: {NumDays} дн."
+	CalendarNextSeasonTomorrow: "{SeasonName} наступит завтра!"
 
-			Spring: {
-				Name: "Весна"
-			}
+	Spring: {
+		Name: "Весна"
+	}
 
-			Summer: {
-				Name: "Лето"
-			}
+	Summer: {
+		Name: "Лето"
+	}
 
-			Autumn: {
-				Name: "Осень"
-			}
+	Autumn: {
+		Name: "Осень"
+	}
 
-			Winter: {
-				Name: "Зима"
-			}
-		}
+	Winter: {
+		Name: "Зима"
+	}
+}
 
-		Banners: {
-			BannerBuffDescription: "Удваивает выпадение предметов и монет с:"
-			BannerItemDescription: "Ближайшие игроки получат эффект двойного выпадения предметов и монет с:"
-		}
+Banners: {
+	BannerBuffDescription: "Удваивает выпадение предметов и монет с:"
+	BannerItemDescription: "Ближайшие игроки получат эффект двойного выпадения предметов и монет с:"
+}
 
-		ItemOverhauls: {
-			Archery: {
-				/* HoverShots:
-					'''
-					[[Hover in the air]] by charging your weapon as you're jumping
-					Perform a [[hover-shot]] to get even more velocity
-					''' */
-				/* ManualCharging:
-					'''
-					Hold right click to [[manually charge]] your weapon
-					Release it at any time to [[fine-tune]] the shot speed & damage
-					''' */
-			}
+ItemOverhauls: {
+	Archery: {
+		/* HoverShots:
+			'''
+			[[Hover in the air]] by charging your weapon as you're jumping
+			Perform a [[hover-shot]] to get even more velocity
+			''' */
+		/* ManualCharging:
+			'''
+			Hold right click to [[manually charge]] your weapon
+			Release it at any time to [[fine-tune]] the shot speed & damage
+			''' */
+	}
 
-			Melee: {
-				/* AirCombatInfo:
-					'''
-					[[Attack enemies mid-air]] to gain speed, stay elevated, or to retreat!
-					Use the movement keys during a strike to control the velocity you gain!
-					''' */
-				// PowerStrikeInfo: "Charge up [[Power Strikes]] via alternate use!"
-				/* VelocityBasedDamageInfo:
-					'''
-					[[The faster you move - the harder you strike!]]
-					Combine your attacks with dashes and even use gravity to your advantage!
-					''' */
+	Melee: {
+		/* AirCombatInfo:
+			'''
+			[[Attack enemies mid-air]] to gain speed, stay elevated, or to retreat!
+			Use the movement keys during a strike to control the velocity you gain!
+			''' */
+		// PowerStrikeInfo: "Charge up [[Power Strikes]] via alternate use!"
+		/* VelocityBasedDamageInfo:
+			'''
+			[[The faster you move - the harder you strike!]]
+			Combine your attacks with dashes and even use gravity to your advantage!
+			''' */
 
-				Broadsword: {
-					// KillingBlow: "Killing Blow!"
-					/* KillingBlowInfo:
-						'''
-						Perform [[Killing Blows]] by [[power striking]] already hurt foes,
-						multiplying damage by [[x{0}]] whenever that would finish the enemy
-						''' */
-				}
-			}
-		}
-
-		CommonTooltips: {
-			ShowCombatInfo: "[Зажмите {Key} для подробной информации]"
-			CombatInfo: "[Боевая информация]"
-			RightClickAudioCuesToggle: "Нажмите правой кнопкой на предмете, чтобы переключить звуковые подсказки"
-			RightClickAudioCuesEnabled: "Звуковые подсказки теперь включены"
-			RightClickAudioCuesDisabled: "Звуковые подсказки теперь выключены"
-
-			GrapplingHooks: {
-				ClassicPullTip: "Зажмите кнопку захвата крюка для классической тяги"
-			}
-		}
-
-		DeathText: {
-			Zombified: "А потом {PlayerName} был зомби..."
-			ZombifiedScreenText: "Вы стали зомби..."
-			ZombifiedName: "Зомби {PlayerName}"
-			Lightning: "{PlayerName} был ударен молнией. Ауч!"
-		}
-
-		Keybinds: {
-			Dodgeroll: {
-				DisplayName: "Перекат"
-			}
-		}
-
-		Tiles: {
-			Calendar: {
-				// MapEntry: "{$Mods.TerrariaOverhaul.Items.Calendar.DisplayName}"
-			}
-
-			Gramophone: {
-				// MapEntry: "{$Mods.TerrariaOverhaul.Items.Gramophone.DisplayName}"
-			}
-		}
-
-		Buffs: {
-			CriticalJudgement: {
-				// DisplayName: "Critical Judgement"
-				/* Description:
-					'''
-					Their assault was proven futile
-					Unleash your judgement with a critical strike
-					''' */
-			}
-
-			HackAndSlash: {
-				// DisplayName: "Hack And Slash"
-				/* Description:
-					'''
-					The faster you move, the harder you strike
-					Melee damage multiplier: x{Multiplier}
-					''' */
-			}
-
-			ManaAbsorption: {
-				DisplayName: "Поглощение маны"
-				Description:
-					'''
-					Быстро передвигаясь, вы поглощаете энергию из всего, что вокруг вас
-					Базовый множитель регенерации маны: x{Multiplier}
-					'''
-			}
-		}
-
-		Items: {
-			BunnyPaw: {
-				DisplayName: "Кроличья лапка"
-				Tooltip:
-					'''
-					[c/fca9ea:Увеличивает ускорение при распрыжке от каждого удачного последовательного прыжка]
-					[c/fca9ea:Объединяйте распрыжку с перекатами для ещё более высоких множителей]
-					[c/8a2730:{$Mods.TerrariaOverhaul.CommonTooltips.RightClickAudioCuesToggle}]
-					'''
-			}
-
-			Charcoal: {
-				DisplayName: "Древесный уголь"
-				Tooltip: "Он всё ещё тёплый"
-			}
-
-			Calendar: {
-				DisplayName: "Календарь"
-				Tooltip:
-					'''
-					Показывает количество дней до начала следующего сезона
-					Нажмите правой кнопкой мыши после установки на стену
-					'''
-			}
-
-			Gramophone: {
-				DisplayName: "Граммофон"
-				Tooltip: "Проигрывает музыкальные диски"
-			}
-
-			MusicDisc: {
-				DisplayName: "Музыкальный диск"
-				Tooltip: "Может быть проигран в граммофоне"
-			}
-
-			Mop: {
-				DisplayName: "Швабра"
-				Tooltip: "Очищает ваш дом от кишок и разрубленных глазных яблок"
-			}
-
-			StoneAxe: {
-				DisplayName: "Каменный топор"
-				Tooltip: "Возможно, дерево прочнее, чем это"
-			}
-
-			StonePickaxe: {
-				DisplayName: "Каменная кирка"
-				Tooltip: "Отлична против грязи! Наверное..."
-			}
-		}
-
-		NPCs: {
-			AshSlime: {
-				DisplayName: "Пепельный сгусток"
-			}
-
-			AshZombie: {
-				DisplayName: "Ходячий пепел"
-			}
-		}
-
-		Projectiles: {
-			MopProjectile: {
-				DisplayName: "{$Mods.TerrariaOverhaul.Items.Mop.DisplayName}"
-			}
+		Broadsword: {
+			// KillingBlow: "Killing Blow!"
+			/* KillingBlowInfo:
+				'''
+				Perform [[Killing Blows]] by [[power striking]] already hurt foes,
+				multiplying damage by [[x{0}]] whenever that would finish the enemy
+				''' */
 		}
 	}
+}
+
+CommonTooltips: {
+	ShowCombatInfo: "[Зажмите {Key} для подробной информации]"
+	CombatInfo: "[Боевая информация]"
+	RightClickAudioCuesToggle: "Нажмите правой кнопкой на предмете, чтобы переключить звуковые подсказки"
+	RightClickAudioCuesEnabled: "Звуковые подсказки теперь включены"
+	RightClickAudioCuesDisabled: "Звуковые подсказки теперь выключены"
+
+	GrapplingHooks: {
+		ClassicPullTip: "Зажмите кнопку захвата крюка для классической тяги"
+	}
+}
+
+DeathText: {
+	Zombified: "А потом {PlayerName} был зомби..."
+	ZombifiedScreenText: "Вы стали зомби..."
+	ZombifiedName: "Зомби {PlayerName}"
+	Lightning: "{PlayerName} был ударен молнией. Ауч!"
+}
+
+Keybinds: {
+	Dodgeroll: {
+		DisplayName: "Перекат"
+	}
+}
+
+Tiles: {
+	Calendar: {
+		// MapEntry: "{$Mods.TerrariaOverhaul.Items.Calendar.DisplayName}"
+	}
+
+	Gramophone: {
+		// MapEntry: "{$Mods.TerrariaOverhaul.Items.Gramophone.DisplayName}"
+	}
+}
+
+Buffs: {
+	CriticalJudgement: {
+		// DisplayName: "Critical Judgement"
+		/* Description:
+			'''
+			Their assault was proven futile
+			Unleash your judgement with a critical strike
+			''' */
+	}
+
+	HackAndSlash: {
+		// DisplayName: "Hack And Slash"
+		/* Description:
+			'''
+			The faster you move, the harder you strike
+			Melee damage multiplier: x{Multiplier}
+			''' */
+	}
+
+	ManaAbsorption: {
+		DisplayName: "Поглощение маны"
+		Description:
+			'''
+			Быстро передвигаясь, вы поглощаете энергию из всего, что вокруг вас
+			Базовый множитель регенерации маны: x{Multiplier}
+			'''
+	}
+}
+
+Items: {
+	BunnyPaw: {
+		DisplayName: "Кроличья лапка"
+		Tooltip:
+			'''
+			[c/fca9ea:Увеличивает ускорение при распрыжке от каждого удачного последовательного прыжка]
+			[c/fca9ea:Объединяйте распрыжку с перекатами для ещё более высоких множителей]
+			[c/8a2730:{$Mods.TerrariaOverhaul.CommonTooltips.RightClickAudioCuesToggle}]
+			'''
+	}
+
+	Charcoal: {
+		DisplayName: "Древесный уголь"
+		Tooltip: "Он всё ещё тёплый"
+	}
+
+	Calendar: {
+		DisplayName: "Календарь"
+		Tooltip:
+			'''
+			Показывает количество дней до начала следующего сезона
+			Нажмите правой кнопкой мыши после установки на стену
+			'''
+	}
+
+	Gramophone: {
+		DisplayName: "Граммофон"
+		Tooltip: "Проигрывает музыкальные диски"
+	}
+
+	MusicDisc: {
+		DisplayName: "Музыкальный диск"
+		Tooltip: "Может быть проигран в граммофоне"
+	}
+
+	Mop: {
+		DisplayName: "Швабра"
+		Tooltip: "Очищает ваш дом от кишок и разрубленных глазных яблок"
+	}
+
+	StoneAxe: {
+		DisplayName: "Каменный топор"
+		Tooltip: "Возможно, дерево прочнее, чем это"
+	}
+
+	StonePickaxe: {
+		DisplayName: "Каменная кирка"
+		Tooltip: "Отлична против грязи! Наверное..."
+	}
+}
+
+NPCs: {
+	AshSlime: {
+		DisplayName: "Пепельный сгусток"
+	}
+
+	AshZombie: {
+		DisplayName: "Ходячий пепел"
+	}
+}
+
+Projectiles: {
+	MopProjectile: {
+		DisplayName: "{$Mods.TerrariaOverhaul.Items.Mop.DisplayName}"
+	}
+}
+}
 }
