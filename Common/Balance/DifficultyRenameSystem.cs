@@ -14,8 +14,6 @@ internal sealed class DifficultyRenameSystem : ModSystem
 	private const string KeyVanilla = "UI";
 	private const string KeyMod = $"Mods.{nameof(TerrariaOverhaul)}.DifficultyLevels";
 
-	public static readonly ConfigEntry<bool> EnableDifficultyRenames = new(ConfigSide.ClientOnly, true, "Balance");
-
 	private static readonly Dictionary<string, string> textBackups = new();
 	private static readonly string[] keys = {
 		"Creative",
@@ -28,6 +26,8 @@ internal sealed class DifficultyRenameSystem : ModSystem
 		"WorldDescriptionMaster",
 	};
 	private static bool isEnabled;
+
+	private static bool ShouldBeEnabled => DifficultyRebalanceSystem.EnableDifficultyChanges;
 
 	public override void Load()
 	{
@@ -51,17 +51,15 @@ internal sealed class DifficultyRenameSystem : ModSystem
 
 		Main.OnPreDraw += OnPreDraw;
 
-		if (EnableDifficultyRenames) {
+		if (ShouldBeEnabled) {
 			Apply();
 		}
 	}
 
 	private static void OnPreDraw(GameTime gameTime)
 	{
-		bool shouldBeEnabled = EnableDifficultyRenames;
-
-		if (isEnabled != shouldBeEnabled) {
-			if (shouldBeEnabled) {
+		if (isEnabled != ShouldBeEnabled) {
+			if (!isEnabled) {
 				Apply();
 			} else {
 				Undo();
