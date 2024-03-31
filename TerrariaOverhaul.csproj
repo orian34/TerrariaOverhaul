@@ -18,7 +18,26 @@
 	</ItemGroup>
 
 	<ItemGroup>
-		<LocalizationFiles Include="Localization\*.hjson" />
+		<!-- This wasn't expanding right for whatever reason. No time to figure this out. -->
+		<!-- <LocalizationFiles Include="Localization\**\*.hjson" /> -->
+		<LocalizationFiles Include="Localization\de-DE\Mods.TerrariaOverhaul.hjson" />
+		<LocalizationFiles Include="Localization\de-DE\Mods.TerrariaOverhaul.Configuration.hjson" />
+		<LocalizationFiles Include="Localization\en-US\Mods.TerrariaOverhaul.hjson" />
+		<LocalizationFiles Include="Localization\en-US\Mods.TerrariaOverhaul.Configuration.hjson" />
+		<LocalizationFiles Include="Localization\es-ES\Mods.TerrariaOverhaul.hjson" />
+		<LocalizationFiles Include="Localization\es-ES\Mods.TerrariaOverhaul.Configuration.hjson" />
+		<LocalizationFiles Include="Localization\fr-FR\Mods.TerrariaOverhaul.hjson" />
+		<LocalizationFiles Include="Localization\fr-FR\Mods.TerrariaOverhaul.Configuration.hjson" />
+		<LocalizationFiles Include="Localization\it-IT\Mods.TerrariaOverhaul.hjson" />
+		<LocalizationFiles Include="Localization\it-IT\Mods.TerrariaOverhaul.Configuration.hjson" />
+		<LocalizationFiles Include="Localization\pl-PL\Mods.TerrariaOverhaul.hjson" />
+		<LocalizationFiles Include="Localization\pl-PL\Mods.TerrariaOverhaul.Configuration.hjson" />
+		<LocalizationFiles Include="Localization\pt-BR\Mods.TerrariaOverhaul.hjson" />
+		<LocalizationFiles Include="Localization\pt-BR\Mods.TerrariaOverhaul.Configuration.hjson" />
+		<LocalizationFiles Include="Localization\ru-RU\Mods.TerrariaOverhaul.hjson" />
+		<LocalizationFiles Include="Localization\ru-RU\Mods.TerrariaOverhaul.Configuration.hjson" />
+		<LocalizationFiles Include="Localization\zh-Hans\Mods.TerrariaOverhaul.hjson" />
+		<LocalizationFiles Include="Localization\zh-Hans\Mods.TerrariaOverhaul.Configuration.hjson" />
 
 		<Compile Remove="Old\**" />
 		<Compile Remove="lib\**" />
@@ -48,7 +67,7 @@
 		-->
 
 		<Message Text="Generating localization statistics..." Importance="high" />
-		<GenerateLocalizationStats ResultsOutputPath="Localization\README.md" MainFile="Localization\en-US.hjson" LocalizationFiles="@(LocalizationFiles)" />
+		<GenerateLocalizationStats ResultsOutputPath="Localization\README.md" MainCulture="en-US" LocalizationFiles="@(LocalizationFiles)" />
 	</Target>
 
 </Project>
