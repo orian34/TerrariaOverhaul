@@ -59,11 +59,11 @@ public class Hammer : ItemOverhaul
 
 		// Components
 
-		if (ItemMeleeAirCombat.EnableAirCombat) {
+		if (ItemMeleeAirCombat.EnableMeleeAirCombat) {
 			item.EnableComponent<ItemMeleeAirCombat>();
 		}
 
-		if (ItemMeleeSwingVelocity.EnableSwingVelocity) {
+		if (ItemMeleeSwingVelocity.EnableMeleeSwingVelocity) {
 			item.EnableComponent<ItemMeleeSwingVelocity>(c => {
 				c.DashVelocity = new Vector2(3.0f, 3.5f);
 				c.MaxDashVelocity = new Vector2(0.0f, 5.0f);

@@ -123,7 +123,7 @@ Mods: {
 				// DisplayName: "Balance & Difficulty"
 				// Description: "Overhaul implements multiple changes to game balance, and strives to turn game modes to into proper difficulty levels."
 
-				BannerReworkEnabled: {
+				EnableBannerRework: {
 					// DisplayName: "Banner Rework Enabled"
 					/* Description:
 						'''
@@ -213,7 +213,7 @@ Mods: {
 				// DisplayName: "Melee"
 				// Description: "Overhaul completely reimagines the feel and flow of the game's melee weapons, allowing you to hack and slash like never before!"
 
-				EnableAirCombat: {
+				EnableMeleeAirCombat: {
 					// DisplayName: "Enable Air Combat"
 					/* Description:
 						'''
@@ -232,7 +232,7 @@ Mods: {
 						''' */
 				}
 
-				EnableSwingVelocity: {
+				EnableMeleeSwingVelocity: {
 					// DisplayName: "Enable Swing Velocity"
 					/* Description:
 						'''

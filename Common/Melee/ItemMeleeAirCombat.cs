@@ -10,7 +10,7 @@ namespace TerrariaOverhaul.Common.Melee;
 
 public sealed class ItemMeleeAirCombat : ItemComponent
 {
-	public static readonly ConfigEntry<bool> EnableAirCombat = new(ConfigSide.Both, true, "Melee");
+	public static readonly ConfigEntry<bool> EnableMeleeAirCombat = new(ConfigSide.Both, true, "Melee");
 
 	public Vector2 MinAddedSpeed { get; set; } = Vector2.One * 2.0f;
 	public Vector2 MaxAddedSpeed { get; set; } = Vector2.One * 9.0f;

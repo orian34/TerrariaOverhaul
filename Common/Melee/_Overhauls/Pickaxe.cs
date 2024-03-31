@@ -54,7 +54,7 @@ public class Pickaxe : ItemOverhaul
 		item.EnableComponent<ItemMeleeAttackAiming>();
 		item.EnableComponent<ItemVelocityBasedDamage>();
 
-		if (ItemMeleeSwingVelocity.EnableSwingVelocity) {
+		if (ItemMeleeSwingVelocity.EnableMeleeSwingVelocity) {
 			item.EnableComponent<ItemMeleeSwingVelocity>(c => {
 				c.DashVelocity = new Vector2(0.5f, 0.5f);
 				c.MaxDashVelocity = new Vector2(0f, 5f);

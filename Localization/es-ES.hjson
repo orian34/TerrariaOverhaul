@@ -123,7 +123,7 @@ Mods: {
 				// DisplayName: "Balance & Difficulty"
 				// Description: "Overhaul implements multiple changes to game balance, and strives to turn game modes to into proper difficulty levels."
 
-				BannerReworkEnabled: {
+				EnableBannerRework: {
 					DisplayName: "Activar ajuste de estandartes"
 					Description:
 						'''
@@ -213,7 +213,7 @@ Mods: {
 				DisplayName: "Combate cuerpo a cuerpo"
 				Description: "Overhaul reimagina completamente el flujo del combate cuerpo a cuerpo, permitiéndote pelear como nunca antes!"
 
-				EnableAirCombat: {
+				EnableMeleeAirCombat: {
 					DisplayName: "Activar combate aéreo"
 					Description:
 						'''
@@ -232,7 +232,7 @@ Mods: {
 						'''
 				}
 
-				EnableSwingVelocity: {
+				EnableMeleeSwingVelocity: {
 					DisplayName: "Activar aceleración al atacar"
 					Description:
 						'''

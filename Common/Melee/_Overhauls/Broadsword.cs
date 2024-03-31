@@ -67,11 +67,11 @@ public partial class Broadsword : ItemOverhaul, IModifyItemNPCHitSound
 		// Put in place until https://github.com/Mirsario/TerrariaOverhaul/issues/198 is resolved.
 		bool isProjectileOnlySword = item.noMelee;
 
-		if (ItemMeleeAirCombat.EnableAirCombat && !isProjectileOnlySword) {
+		if (ItemMeleeAirCombat.EnableMeleeAirCombat && !isProjectileOnlySword) {
 			item.EnableComponent<ItemMeleeAirCombat>();
 		}
 
-		if (ItemMeleeSwingVelocity.EnableSwingVelocity) {
+		if (ItemMeleeSwingVelocity.EnableMeleeSwingVelocity) {
 			item.EnableComponent<ItemMeleeSwingVelocity>(c => {
 				c.DashVelocity = new Vector2(2.5f, 4.0f);
 				c.MaxDashVelocity = new Vector2(0f, 5.5f);

@@ -123,7 +123,7 @@ Mods: {
 				// DisplayName: "Balance & Difficulty"
 				// Description: "Overhaul implements multiple changes to game balance, and strives to turn game modes to into proper difficulty levels."
 
-				BannerReworkEnabled: {
+				EnableBannerRework: {
 					DisplayName: "Zmiany Działania Sztandarów"
 					Description:
 						'''
@@ -213,7 +213,7 @@ Mods: {
 				DisplayName: "Walka Wręcz"
 				Description: "Overhaul kompletnie przeobraża odczucie i styl walki wręcz, pozwalając na doznania jak nigdy wcześniej!"
 
-				EnableAirCombat: {
+				EnableMeleeAirCombat: {
 					DisplayName: "Włącz Walkę w Powietrzu"
 					Description:
 						'''
@@ -232,7 +232,7 @@ Mods: {
 						'''
 				}
 
-				EnableSwingVelocity: {
+				EnableMeleeSwingVelocity: {
 					DisplayName: "Wlącz Zryw Przy Zamachu"
 					Description:
 						'''

@@ -15,7 +15,7 @@ public sealed class BannerReworkSystem : ModSystem
 	private static bool bannerDamageDisabled;
 	private static ItemID.BannerEffect[]? defaultBannerEffects;
 
-	public static readonly ConfigEntry<bool> BannerReworkEnabled = new(ConfigSide.Both, true, "Balance");
+	public static readonly ConfigEntry<bool> EnableBannerRework = new(ConfigSide.Both, true, "Balance");
 
 	public override void Load()
 	{
@@ -41,7 +41,7 @@ public sealed class BannerReworkSystem : ModSystem
 
 	public override void PreUpdatePlayers()
 	{
-		bool enable = BannerReworkEnabled.Value;
+		bool enable = EnableBannerRework.Value;
 
 		if (enable != bannerDamageDisabled) {
 			if (enable) {
@@ -58,7 +58,7 @@ public sealed class BannerReworkSystem : ModSystem
 
 	private static bool ShouldDoubleLoot(NPC npc)
 	{
-		if (npc.type < NPCID.None || !BannerReworkEnabled) {
+		if (npc.type < NPCID.None || !EnableBannerRework) {
 			return false;
 		}
 		
@@ -86,7 +86,7 @@ public sealed class BuffBannerRework : GlobalBuff
 {
 	public override void ModifyBuffText(int type, ref string buffName, ref string tip, ref int rare)
 	{
-		if (BannerReworkSystem.BannerReworkEnabled && type == BuffID.MonsterBanner) {
+		if (BannerReworkSystem.EnableBannerRework && type == BuffID.MonsterBanner) {
 			tip = OverhaulMod.Instance.GetTextValue("Banners.BannerBuffDescription");
 		}
 	}
@@ -96,7 +96,7 @@ public sealed class ItemBannerRework : GlobalItem
 {
 	public override void ModifyTooltips(Item item, List<TooltipLine> tooltips)
 	{
-		if (!BannerReworkSystem.BannerReworkEnabled || !item.consumable || item.createTile <= -1) {
+		if (!BannerReworkSystem.EnableBannerRework || !item.consumable || item.createTile <= -1) {
 			return;
 		}
 
