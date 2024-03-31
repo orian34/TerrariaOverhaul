@@ -12,7 +12,7 @@ public readonly record struct ItemCapture(IEntitySource Source, Vector2 Position
 public sealed class ItemCapturing : ModSystem
 {
 	private static readonly Stack<List<ItemCapture>> listStack = new();
-	private static readonly Ref<uint> skipCounter = new();
+	private static uint skipCounter;
 
 	public override void Load()
 	{
@@ -26,11 +26,11 @@ public sealed class ItemCapturing : ModSystem
 		=> Capture(captures = new());
 
 	public static CounterHandle Suspend()
-		=> new(skipCounter);
+		=> new(ref skipCounter);
 
 	private static int NewItemDetour(On_Item.orig_NewItem_IEntitySource_int_int_int_int_int_int_bool_int_bool_bool orig, IEntitySource source, int x, int y, int width, int height, int type, int stack, bool noBroadcast, int prefix, bool noGrabDelay, bool reverseLookup)
 	{
-		if (listStack.TryPeek(out var list) && skipCounter.Value == 0) {
+		if (listStack.TryPeek(out var list) && skipCounter == 0) {
 			list.Add(new ItemCapture(source, Main.rand.NextVector2(x, y, x + width, y + height), type, stack, prefix));
 
 			return Main.maxItems;

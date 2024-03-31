@@ -1,29 +1,30 @@
-﻿using Terraria;
+﻿using System;
+using System.Runtime.InteropServices;
 
 namespace TerrariaOverhaul.Utilities;
 
 public ref struct CounterHandle
 {
 	// Can't use ref fields in C# 10.0
-	private Ref<uint>? counter;
+	private Span<uint> counter;
 
-	public CounterHandle(Ref<uint> counter)
+	public CounterHandle(ref uint counter)
 	{
-		this.counter = counter;
+		this.counter = MemoryMarshal.CreateSpan(ref counter, 1);
 
 		checked {
-			counter.Value++;
+			counter++;
 		}
 	}
 
 	public void Dispose()
 	{
-		if (counter != null) {
+		if (counter.Length != 0) {
 			checked {
-				counter.Value--;
+				counter[0]--;
 			}
 
-			counter = null;
+			counter = default;
 		}
 	}
 }
