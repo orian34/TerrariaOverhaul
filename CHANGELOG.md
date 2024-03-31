@@ -41,6 +41,7 @@
 - Added the following new options:
   **Accessibility:** `EnableJumpInputBuffering`.
   **Guns:** `EnableAlternateGunFiringModes`, `EnableBulletCasings`, `EnableBulletImpactAudio`, `EnableGunSoundReplacements`, `EnableMuzzleflashes`, `EnableMinigunRecoilHovering`, `EnableStarCannonRecoilHovering`.
+  **Interface:** `EnableCrosshair`, `EnableCrosshairAnimations`.
   **Melee:** `EnableAxeSoundReplacements`, `EnableBroadswordSoundReplacements`, `EnableHammerSoundReplacements`, `EnableImprovedMeleeCollision`, `EnablePickaxeSoundReplacements`, `EnableMeleeAttackAiming`, `EnableMeleeKillingBlows`, `EnableMeleeVelocityBasedDamage`, `EnableMeleeVelocityBasedDamageIcon`.
   **Movement:** `EnableDodgerolls`, `EnableDodgerollAudioCues`, `EnableRollJumps`.
   **Visuals:** `EnableVisualWeaponRecoil`.

@@ -7,6 +7,7 @@ using Terraria;
 using Terraria.DataStructures;
 using Terraria.ModLoader;
 using Terraria.UI;
+using TerrariaOverhaul.Core.Configuration;
 using TerrariaOverhaul.Core.Time;
 
 namespace TerrariaOverhaul.Common.Crosshairs;
@@ -32,6 +33,9 @@ public sealed class CrosshairSystem : ModSystem
 	}
 
 	private const int MaxImpulses = 32;
+
+	public static readonly ConfigEntry<bool> EnableCrosshair = new(ConfigSide.ClientOnly, true, "Interface");
+	public static readonly ConfigEntry<bool> EnableCrosshairAnimations = new(ConfigSide.ClientOnly, true, "Interface");
 
 	// Base
 	private static SpriteFrame crosshairBaseFrame = new(4, 2);
@@ -77,6 +81,10 @@ public sealed class CrosshairSystem : ModSystem
 
 	public static void AddImpulse(CrosshairEffects effects, float lengthInSeconds)
 	{
+		if (!EnableCrosshairAnimations) {
+			return;
+		}
+
 		if (impulses == null || impulseCount >= MaxImpulses) {
 			return;
 		}
@@ -101,6 +109,10 @@ public sealed class CrosshairSystem : ModSystem
 
 	private static bool ShouldShowCursor()
 	{
+		if (!EnableCrosshair) {
+			return false;
+		}
+
 		if (Main.dedServ || Main.gameMenu) {
 			return false;
 		}
