@@ -1,0 +1,370 @@
+// HoverForDescriptionTip: "Hover over an option to see its description"
+
+Accessibility: {
+	DisplayName: "Accesibilità"
+	Description: "Overhaul contiene una serie di semplici cambiamenti che permette a chiunque di sperimentale il gioco in maniera più confortevole."
+
+	ForceAutoReuse: {
+		DisplayName: "Forza il riuso automatico"
+		Description:
+			'''
+			Quando attivato, quasi ogni oggetto nel gioco potrà essere utilizzato ripetutamente tenendo premuto il pulsante per usarlo.
+			Previene la sindrome del tunnel carpale, raccomandato da 10 dottori su 10.
+			'''
+	}
+}
+
+Ambience: {
+	DisplayName: "Atmosfera"
+	Description: "Overhaul contiene molte implementazioni che aiutano il mondo di gioco a essere più immersivo."
+
+	EnableAmbientSounds: {
+		DisplayName: "Attiva Suoni Atmosferici"
+		Description: "Aggiunge loop audio come: uccelli, cavallette, vento, rumori cavernosi, etc."
+	}
+
+	EnablePlayerFootsteps: {
+		DisplayName: "Attiva rumore Passi del Giocatore"
+		Description: "Aggiunge il rumore dei passi del personaggio giocabile"
+	}
+
+	EnableLowPassFiltering: {
+		// DisplayName: "Enable Low Pass Filtering"
+		// Description: ""
+	}
+
+	EnableReverb: {
+		// DisplayName: "Enable Reverb"
+		// Description: ""
+	}
+}
+
+Aesthetics: {
+	// DisplayName: "Aesthetics"
+	// Description: "This category contains nice-to-have features that mainly aim to increase immersion or beauty of the game, but may affect gameplay in the process."
+
+	DestroyStumpsAfterTreeFalls: {
+		// DisplayName: "Destroy Stumps After Tree Falling Animations"
+		// Description: "When enabled, tree falling animations' behavior of redirecting stump hits a block higher will be compensated with removal of the stump after the animation's end.'"
+	}
+
+	EnableAimableFlashlights: {
+		// DisplayName: "Enable Aimable Flashlights"
+		// Description: "When enabled, lighting from equipment such as the 'Mining Helmet' will become aimable towards the cursor."
+	}
+
+	EnableTreeFallingAnimations: {
+		// DisplayName: "Enable Tree Falling Animations"
+		// Description: "When enabled, trees will physically fall down instead of exploding into items."
+	}
+}
+
+Awareness: {
+	DisplayName: "Consapevolezza"
+	Description:
+		'''
+		Overhaul Implementa molti aspetti che aiutano ad aumentare la consapevolezza del giocatore sullo stato del loro personaggio, 
+		Migliorando inoltre l'immedesimazione nel processo.
+		'''
+
+	LowHealthFilteringIntensity: {
+		DisplayName: "Intensità del filtro poca vita"
+		Description: "Controlla l'intensità del filtro audio low pass (ovattante) che avviene quando hai poca vita"
+	}
+
+	LowHealthSoundVolume: {
+		DisplayName: "Volume del suono poca vita"
+		Description: "Controlla il volume del suono che si sente quando hai poca vita."
+	}
+
+	LowManaSoundVolume: {
+		DisplayName: "Volume del suono mana basso"
+		Description: "Controlla il volume del suono che si sente quando hai poco mana"
+	}
+
+	ManaRegenerationSoundVolume: {
+		DisplayName: "Volume del suono di rigenerazione del mana"
+		Description: "Controlla il volume del suono che si sente quando il mana si sta rigenerando."
+	}
+}
+
+Balance: {
+	// DisplayName: "Balance & Difficulty"
+	// Description: "Overhaul implements multiple changes to game balance, and strives to turn game modes to into proper difficulty levels."
+
+	EnableBannerRework: {
+		DisplayName: "Attiva Modifica agli stendardi"
+		Description:
+			'''
+			La modifica agli stendardi ne rimuove gli effetti di diminuzione della vita e danni dei nemici, rimpiazzandoli con bottino e monete raddoppiate.
+			Sia la possibilità che la quantità del bottino è aumentata.
+			'''
+	}
+
+	EnableDifficultyChanges: {
+		DisplayName: "Attiva cambiamenti della difficoltà"
+		Description: "Attiva tutti i cambiamenti sulla difficoltà della mod."
+	}
+}
+
+BloodAndGore: {
+	DisplayName: "Sangue e violenza"
+	Description:
+		'''
+		Overhaul migliora l'audio, l'aspetto e l'interagibilità della violenza,
+		migliorando vastamente la soddisfazione del combattimento nel gioco.
+		'''
+
+	EnableDecals: {
+		DisplayName: "Attiva decalcomanie"
+		Description: "Aggiunge decalcomanie, Conosciute anche come ''sangue sui blocchi."
+	}
+
+	EnableGoreStay: {
+		DisplayName: "Attiva permanenza interiora"
+		Description: "Quando attiva, le interiora non spariranno prima di ~10 secondi."
+	}
+}
+
+Camera: {
+	DisplayName: "Visuale"
+	Description: "Overhaul implementa molti aspetti della visuale che migliorano drasticamente la presentazione del gioco."
+
+	CameraSmoothness: {
+		DisplayName: "Fluidità visuale"
+		Description:
+			'''
+			Quanto smorzamento è applicato al movimento della visuale per migliorare la sensazione di velocità.
+			Impostare a 0 per disattivare completamente l'effetto.
+			'''
+	}
+
+	LimitCameraUpdateRate: {
+		DisplayName: "Limite frequenza aggiornamento schermo"
+		Description:
+			'''
+			Quando attivo, La frequenza di aggiornamento dello schermo è bloccata 60hz per prevenire che il personaggio giocabile si comporti stranamente su monitor ad alta frequenza di aggiornamento.
+			Per il momento è meglio se lasci questa opzione attiva.
+			'''
+	}
+
+	ScreenShakeStrength: {
+		DisplayName: "Intensità tremolio schermo"
+		Description:
+			'''
+			Controlla l'intensità degli effeti che scuotono la visuale.
+			Impostare a 0 per disattivare completamente l'effetto.
+			'''
+	}
+}
+
+Enemies: {
+	DisplayName: "Nemici"
+	Description: "Overhaul contiene qualche addizione al comportamento dei nemici per rendere il combatterli un po' più divertenti."
+
+	EnableEnemyLunges: {
+		DisplayName: "Attiva assalti nemici"
+		Description: "Quando attivo, i nemici che camminano potrebbero saltarti addosso quando ti si avvicinano."
+	}
+}
+
+Guns: {
+	DisplayName: "Armi da fuoco"
+	Description: "Overhaul si concentra molto nel migliorare il gameplay e la sensazione delle armi da fuoco del gioco."
+
+	EnableAimingRecoil: {
+		DisplayName: "Attiva il rinculo (sperimentale)"
+		Description:
+			'''
+			Quando attivo, le armi da fuoco possono spostare il cursore del giocatore quando si spara.
+			Addizione sperimentale, disabilitata di base.
+			'''
+	}
+}
+
+Melee: {
+	DisplayName: "Corpo a corpo"
+	Description: "Overhaul reimmagina la sensazione e fluidità delle armi corpo a corpo, permettendoti di squarciare e tagliare come mai prima d'ora!"
+
+	EnableMeleeAirCombat: {
+		DisplayName: "Attiva combattimento aereo"
+		Description:
+			'''
+			Attiva il combattimento corpo a corpo aereo, che ti permette di propellerti in qualsiasi direzione usando i tasti per il movimento ogni volta che colpisci un nemico a mezz'aria.
+			Usa i tuoi nemici come sgabelli; Incatena i tuoi attacchi su nemici volanti; Ottiene maggiore momento per colpire in caduta i bruti a terra.
+			'''
+	}
+
+	EnableProjectileSwordManaUsage: {
+		DisplayName: "Attiva l'utilizzo di mana dei proiettili della spada"
+		Description:
+			'''
+			Sperimentale.
+			Quando attiva, le spade che sparano proiettili userannò un po' di mana.
+			la rigenerazione di mana dei maghi e le regole del rilascio del mana si applicano sempre, quindi il cambiamento non è significativo.
+			'''
+	}
+
+	EnableMeleeSwingVelocity: {
+		DisplayName: "Attiva velocità fendente"
+		Description:
+			'''
+			Quando attiva, Brandire un arma corpo a corpo può propellerti verso la direzione del fendente.
+			Questo può essere ulteriormente controllato con i tasti di movimento: Non verrai mai lanciato in avanti se ti stai muovendo indietro.
+			Usalo insieme agli attacchi pesanti per potenziare in modo significativo i tuoi salti ed i danni to significantly boost your jumps and damage.
+			'''
+	}
+
+	EnableAxePowerAttacks: {
+		DisplayName: "Attiva attacchi pesanti ascia"
+		Description: "Dona l'abilità di sferrare attacchi caricati pesanti con le ascie, premendo il tasto destro del mouse."
+	}
+
+	EnableBroadswordPowerAttacks: {
+		DisplayName: "Attiva attachi pesanti spada"
+		Description: "Dona l'abilità di sferrare attacchi caricati pesanti con le spade, premendo il tasto destro del mouse."
+	}
+
+	EnableHammerPowerAttacks: {
+		DisplayName: "Attiva attacchi pesanti martello"
+		Description: "Dona l'abilità di sferrare attacchi caricati pesanti con i martelli, premendo il tasto destro del mouse."
+	}
+}
+
+Music: {
+	DisplayName: "Musica"
+	Description:
+		'''
+		Overhaul contiene dei miglioramenti alla riproduzione della musica del gioco.
+		C'è anche una colonna sonora remasterizzata creata appositamente - Clicca il bottone in alto a sinistra per ottenerla!
+		'''
+
+	EnableMusicPlaybackPositionPreservation: {
+		DisplayName: "Attiva conservazione posizione della riproduzione musicale"
+		Description:
+			'''
+			Quando attiva, la musica verrà messa in pausa invece di fermarsi.
+			Questo significa che ogni volta che ritorni in un bioma dove sei già stato, la sua musica riprenderà da dove l'hai lasciata.
+			Migliora drasticamente l'atmosfera del gioco, in quanto non rimarrai bloccato a sentire sempre la parte iniziale di ogni musica quando ti muovi per il mondo.
+			'''
+	}
+}
+
+Movement: {
+	DisplayName: "Movimento giocatore"
+	Description: "Overhaul migliora ampiamente e rinfresca quasi ogni aspetto del muoversi in giro, cosa che fai molto."
+
+	EnableAutoJump: {
+		DisplayName: "Attiva salto automatico"
+		Description: "Quando attiva, I giocatori saranno sempre in grado di tener premuto spazio per saltare ripetutamente."
+	}
+
+	EnableVerticalAccelerationChanges: {
+		// DisplayName: "Enable Vertical Acceleration Changes"
+		// Description: "Toggle air friction and (almost) unlimited maximum fall speed."
+	}
+
+	EnableHorizontalAccelerationChanges: {
+		// DisplayName: "Enable Horizontal Acceleration Changes"
+		// Description: "Toggle changes to horizontal friction, run max speed and acceleration."
+	}
+
+	EnableBunnyhopping: {
+		// DisplayName: "Enable Bunnyhopping"
+		/* Description:
+			'''
+			Bunnyhopping gives you a slight horizontal boost every time you jump.
+			Turning this off will disable certain accessories.
+			''' */
+	}
+
+	EnableClimbing: {
+		// DisplayName: "Enable Climbing"
+		// Description: "Climbing lets you reach new heights by holding the up button."
+	}
+
+	EnableGrapplingHookPhysics: {
+		// DisplayName: "Enable Grappling Hook Physics"
+		/* Description:
+			'''
+			When enabled, grappling hooks' behavior will be changed to allow swinging around on them using movement keys.
+			NOTE: The grappling hook button can be held down to execute a vanilla-like pull, so you don't need to choose between the two behaviors and can combine them.
+			NOTE: This feature does not apply to every hook in the game, also multihooks revert to vanilla behavior whenever more than one hook is connected.
+			''' */
+	}
+
+	EnableWallJumping: {
+		// DisplayName: "Enable Wall Jumping"
+		/* Description:
+			'''
+			Wall jumping is a new movement mechanic that requires climbing gear or spike shoes.
+			It is done by hitting a wall with your back while holding the up button with horizontal movement buttons released.
+			''' */
+	}
+
+	EnableWallFlips: {
+		// DisplayName: "Enable Wall Flips"
+		/* Description:
+			'''
+			A wall flip is a new movement mechanic that does not require any accessories.
+			It is done by hitting a wall with your front with enough velocity while holding the horizontal movement opposite of the player's direction.
+			''' */
+	}
+}
+
+Visuals: {
+	// DisplayName: "Visuals"
+	// Description: "Overhaul contains a few improvements to player characters' visual appearance, so that the game feels more responsive."
+
+	AlwaysShowAimableWeapons: {
+		// DisplayName: "Always Show Aimable Weapons"
+		// Description: "Toggle weapons with the 'holding out' use style being visible when not firing."
+	}
+
+	EnableImprovedMeleeAnimations: {
+		// DisplayName: "Enable Improved Melee Animations"
+		/* Description:
+			'''
+			When enabled, melee weapon swing animations will be changed to a more immediate swing, with alternating directions.
+			This is best kept on, as it best mimics the timing and direction of melee damage collision.
+			''' */
+	}
+
+	EnableMeleeSlashVisualization: {
+		// DisplayName: "Enable Melee Slash Visualization"
+		/* Description:
+			'''
+			When enabled, a circular slash sprite will appear when swinging melee weapons.
+			This is best kept on, as it best mimics the range and collision arc of the weapon.
+			''' */
+	}
+
+	EnablePlayerHeadRotation: {
+		// DisplayName: "Enable Player Head Rotation"
+		// Description: "Toggles player characters looking at their cursors."
+	}
+
+	EnablePlayerTilting: {
+		// DisplayName: "Enable Player Tilting"
+		// Description: "Toggles player characters being slightly tilted based on their velocity. This makes them look a lot more alive."
+	}
+
+	EnableEnemyTiltingEffects: {
+		// DisplayName: "Enable Enemy Tilting Effects"
+		// Description: ""
+	}
+}
+
+Tweaks: {
+	// DisplayName: "Tweaks"
+	// Description: "This category contains tiny technical utilities that you're unlikely to care about."
+
+	DisplaySystemCursorWithDisabledUI: {
+		// DisplayName: "Display System Cursor With Disabled UI"
+		/* Description:
+			'''
+			When enabled, the operational system's cursor will be enabled when game interface is disabled using the F11 hotkey.
+			This is a tiny utility change that eases recording gameplay footage without UI, as recording software can disable capture of the OS cursor.
+			''' */
+	}
+}

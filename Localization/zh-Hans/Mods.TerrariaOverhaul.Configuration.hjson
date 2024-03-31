@@ -1,0 +1,358 @@
+// HoverForDescriptionTip: "Hover over an option to see its description"
+
+Accessibility: {
+	DisplayName: "无障碍"
+	Description: "Overhaul包含一些简单的游戏性修改，以便所有人以更舒适的方式体验游戏。"
+
+	ForceAutoReuse: {
+		DisplayName: "强制自动挥舞"
+		Description:
+			'''
+			启用后，游戏中的几乎所有物品都可以通过按住使用按钮来持续使用。
+			预防腕管综合症，医生百分百推荐。
+			'''
+	}
+}
+
+Ambience: {
+	DisplayName: "环境"
+	Description: "Overhaul包含一些令游戏世界更加身临其境的功能"
+
+	EnableAmbientSounds: {
+		DisplayName: "启用环境音效"
+		Description: "各式各样的环境音效，如鸟、蟋蟀、风、洞穴声等"
+	}
+
+	EnablePlayerFootsteps: {
+		DisplayName: "启用脚步声"
+		Description: "玩家角色的脚步声"
+	}
+
+	EnableLowPassFiltering: {
+		// DisplayName: "Enable Low Pass Filtering"
+		// Description: ""
+	}
+
+	EnableReverb: {
+		// DisplayName: "Enable Reverb"
+		// Description: ""
+	}
+}
+
+Aesthetics: {
+	// DisplayName: "Aesthetics"
+	// Description: "This category contains nice-to-have features that mainly aim to increase immersion or beauty of the game, but may affect gameplay in the process."
+
+	DestroyStumpsAfterTreeFalls: {
+		// DisplayName: "Destroy Stumps After Tree Falling Animations"
+		// Description: "When enabled, tree falling animations' behavior of redirecting stump hits a block higher will be compensated with removal of the stump after the animation's end.'"
+	}
+
+	EnableAimableFlashlights: {
+		// DisplayName: "Enable Aimable Flashlights"
+		// Description: "When enabled, lighting from equipment such as the 'Mining Helmet' will become aimable towards the cursor."
+	}
+
+	EnableTreeFallingAnimations: {
+		// DisplayName: "Enable Tree Falling Animations"
+		// Description: "When enabled, trees will physically fall down instead of exploding into items."
+	}
+}
+
+Awareness: {
+	DisplayName: "意识"
+	Description: "Overhaul包含一些帮助玩家提高对角色状态的意识的功能，提升沉浸感。"
+
+	LowHealthFilteringIntensity: {
+		DisplayName: "残血音频过滤强度"
+		Description: "控制当你生命值较低时低通滤波（消音）效果的强度。"
+	}
+
+	LowHealthSoundVolume: {
+		DisplayName: "残血音效音量"
+		Description: "控制生命值低时播放的音效的音量。"
+	}
+
+	LowManaSoundVolume: {
+		DisplayName: "低魔力音效音量"
+		Description: "控制魔力值低时播放的音效的音量。"
+	}
+
+	ManaRegenerationSoundVolume: {
+		DisplayName: "魔力恢复音效音量"
+		Description: "控制魔力恢复时播放的音效的音量。"
+	}
+}
+
+Balance: {
+	// DisplayName: "Balance & Difficulty"
+	// Description: "Overhaul implements multiple changes to game balance, and strives to turn game modes to into proper difficulty levels."
+
+	EnableBannerRework: {
+		DisplayName: "旗帜"
+		Description: "Overhaul包含对敌怪旗效果的修改，其效果不再止步于令敌怪变弱。"
+	}
+
+	EnableDifficultyChanges: {
+		DisplayName: "启用难度修改"
+		Description: "本模组对游戏整体难度的重新平衡。"
+	}
+}
+
+BloodAndGore: {
+	DisplayName: "暴力"
+	Description:
+		'''
+		Overhaul改善了与暴力相关的音效、视效以及交互，
+		大大提高了游戏的战斗手感。
+		'''
+
+	EnableDecals: {
+		DisplayName: "启用血迹糊砖效果"
+		Description: "爆血会在方块上留下血迹"
+	}
+
+	EnableGoreStay: {
+		DisplayName: "敌怪残骸不消失"
+		Description: "启用后，敌怪的残骸不再会在约10秒后消失。"
+	}
+}
+
+Camera: {
+	DisplayName: "相机"
+	Description: "Overhaul包含许多相机优化功能，极大地改进了游戏的呈现方式。"
+
+	CameraSmoothness: {
+		DisplayName: "相机平滑移动"
+		Description:
+			'''
+			应用多少阻尼以改善摄像机运动的速度感。
+			将其设为零以完全禁用该功能。
+			'''
+	}
+
+	LimitCameraUpdateRate: {
+		DisplayName: "限制相机更新率"
+		Description:
+			'''
+			启用后，相机更新率被锁定为60hz，以防止玩家角色在高刷新率显示器上出现抽搐现象。
+			目前最好将其保持开启状态。
+			'''
+	}
+
+	ScreenShakeStrength: {
+		DisplayName: "屏幕震动强度"
+		Description: "控制屏幕震动效果的强度，要完全禁用屏幕抖动请设为零。"
+	}
+}
+
+Enemies: {
+	DisplayName: "敌怪"
+	Description: "Overhaul对敌怪的行为进行了一些修改，旨在使战斗过程变得更加有趣。"
+
+	EnableEnemyLunges: {
+		DisplayName: "启用敌怪冲锋"
+		Description: "启用后，步行敌怪在接近你时可能会扑向你。"
+	}
+}
+
+Guns: {
+	DisplayName: "枪械"
+	Description: "Overhaul包含一些提升游戏玩法和枪械手感的设置。"
+
+	EnableAimingRecoil: {
+		DisplayName: "启用枪械后坐力（实验性）"
+		Description:
+			'''
+			启用后，枪械射击时会使玩家鼠标光标移位，以模拟后坐力。
+			实验性功能，默认禁用。
+			'''
+	}
+}
+
+Melee: {
+	DisplayName: "近战"
+	Description: "Overhaul彻底重制了游戏内近战武器的手感，允许你尽情砍杀！"
+
+	EnableMeleeAirCombat: {
+		DisplayName: "启用空中冲锋"
+		Description:
+			'''
+			每次在空中击中敌人时，你可以使用方向键向任何方向冲锋。
+			利用敌怪作为阶梯；对空中的敌怪进行连续攻击；以极大的动量向地面敌怪下砸。
+			'''
+	}
+
+	EnableProjectileSwordManaUsage: {
+		DisplayName: "带剑气的剑消耗魔力"
+		Description:
+			'''
+			实验性功能
+			启用后，能够发射射弹的剑将消耗一定魔力。
+			法师的魔力恢复和魔力星掉落仍然适用，因此该更改并不显著。
+			'''
+	}
+
+	EnableMeleeSwingVelocity: {
+		DisplayName: "启用挥砍推进"
+		Description:
+			'''
+			启用后，挥舞近战武器可以令玩家角色向挥舞的方向加速。
+			可以通过使用方向键来控制，在保持向后移动时不会向前加速。
+			与重击一起使用，可以显著提高你的跳跃高度和伤害。
+			'''
+	}
+
+	EnableAxePowerAttacks: {
+		DisplayName: "启用战斧重击"
+		Description: "允许你通过右键使用斧头施展重击。"
+	}
+
+	EnableBroadswordPowerAttacks: {
+		DisplayName: "启用阔剑重击"
+		Description: "允许你通过右键使用阔剑施展重击。"
+	}
+
+	EnableHammerPowerAttacks: {
+		DisplayName: "启用战锤重击"
+		Description: "允许你通过右键使用锤子施展重击。"
+	}
+}
+
+Music: {
+	DisplayName: "音乐"
+	Description:
+		'''
+		Overhaul包含了对游戏音乐播放行为的几项改进。
+		此外，还包含一套完整的重制音乐 - 点击屏幕左上角的按钮以启用！
+		'''
+
+	EnableMusicPlaybackPositionPreservation: {
+		DisplayName: "保持音乐播放进度"
+		Description:
+			'''
+			启用后，音轨会暂停在已播放到的位置，而不是从头开始。
+			也就是说，每当你回到你已经去过的生物群落时，其音乐将接着你离开时的进度播放。
+			在环游世界时不再总是“循环播放”音乐的开头，极大地改善了游戏体验。
+			'''
+	}
+}
+
+Movement: {
+	DisplayName: "移动"
+	Description: "Overhaul极大地改善和重制了贯穿全游的玩家角色移动的每个方面。"
+
+	EnableAutoJump: {
+		DisplayName: "启用自动跳跃"
+		Description: "启用后，玩家将始终能够按住空格键进行连续跳跃。"
+	}
+
+	EnableVerticalAccelerationChanges: {
+		DisplayName: "应用垂直加速度更改"
+		Description: "空气阻力和（几乎）无限制的最大坠落速度。"
+	}
+
+	EnableHorizontalAccelerationChanges: {
+		DisplayName: "应用水平加速度更改"
+		Description: "水平阻力、最大奔跑速度和加速度的更改。"
+	}
+
+	EnableBunnyhopping: {
+		DisplayName: "启用连跳加速"
+		Description:
+			'''
+			连跳会在每次跳跃时给你带来轻微的水平速度提升。
+			关闭此功能将禁用某些饰品的效果。
+			'''
+	}
+
+	EnableClimbing: {
+		DisplayName: "启用攀登"
+		Description: "此功能可以让你通过按住向上键来爬升至更高的高度。"
+	}
+
+	EnableGrapplingHookPhysics: {
+		DisplayName: "启用钩爪物理"
+		Description:
+			'''
+			启用后，钩爪的行为将改变，可以通过方向键绕着钩子晃荡。
+			注意：按住钩爪快捷键不放会将你拉到钩爪除，就像原版一样，因此你不需要在这两种行为之间进行选择，而是可以将它们结合起来使用。
+			注意：此功能不适用于游戏中的所有钩爪，此外，同时勾住多处时行为与原版一致。
+			'''
+	}
+
+	EnableWallJumping: {
+		DisplayName: "启用蹬墙跳"
+		Description:
+			'''
+			蹬墙跳是一种新的运动机制，需要装备有攀爬装备或钉鞋才能完成。
+			背对着冲向墙，在触碰墙面的同时按下向上键，同时松开水平方向键，即可完成此动作。
+			'''
+	}
+
+	EnableWallFlips: {
+		DisplayName: "启用蹬墙空翻"
+		Description:
+			'''
+			蹬墙空翻是一种新的运动机制，不需要任何额外饰品即可完成。
+			在以足够的速度撞击墙壁的瞬间，按下反向移动键以改变运动方向，即可完成此动作。
+			'''
+	}
+}
+
+Visuals: {
+	DisplayName: "视效"
+	Description: "Overhaul包含一些对玩家角色视觉效果的改进，以提升游戏反馈"
+
+	AlwaysShowAimableWeapons: {
+		DisplayName: "总是显示可瞄准的武器"
+		Description: "可瞄准武器在不使用时是否会被持握于玩家手中。"
+	}
+
+	EnableImprovedMeleeAnimations: {
+		DisplayName: "启用近战动画改善"
+		Description:
+			'''
+			启用后，近战武器挥舞动画将改为更直接的挥舞，且挥舞方向交替切换。
+			推荐开启，因为其极大程度地模拟了造成近战伤害的时机和方向。
+			'''
+	}
+
+	EnableMeleeSlashVisualization: {
+		DisplayName: "启用近战斩击视效"
+		Description:
+			'''
+			当启用时，挥舞近战武器时会出现一个圆形斩击特效。
+			推荐开启，因为其最极大程度地模拟了武器的攻击范围和弧度。
+			'''
+	}
+
+	EnablePlayerHeadRotation: {
+		DisplayName: "启用玩家头部旋转"
+		Description: "玩家是否总是会看向鼠标光标位置。"
+	}
+
+	EnablePlayerTilting: {
+		DisplayName: "启用玩家倾斜"
+		Description: "玩家是否会基于速度，向运动方向略微倾斜。这将使他们看起来更有活力。"
+	}
+
+	EnableEnemyTiltingEffects: {
+		// DisplayName: "Enable Enemy Tilting Effects"
+		// Description: ""
+	}
+}
+
+Tweaks: {
+	DisplayName: "辅助"
+	Description: "这个类别包含了一些你可能不会注意到的微小技术性实用工具。"
+
+	DisplaySystemCursorWithDisabledUI: {
+		DisplayName: "界面隐藏时显示系统光标"
+		Description:
+			'''
+			启用后，若使用F11热键隐藏游戏界面，将会显示系统鼠标光标。
+			这是一个微小的实用更改，可以在没有UI的情况下轻松录制游戏画面，因为录制软件可以设置不捕获系统光标。
+			'''
+	}
+}
