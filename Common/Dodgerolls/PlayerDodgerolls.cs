@@ -14,6 +14,7 @@ using TerrariaOverhaul.Common.Items;
 using TerrariaOverhaul.Common.Movement;
 using TerrariaOverhaul.Content.Buffs;
 using TerrariaOverhaul.Core.AudioEffects;
+using TerrariaOverhaul.Core.Configuration;
 using TerrariaOverhaul.Core.Networking;
 using TerrariaOverhaul.Utilities;
 
@@ -49,6 +50,9 @@ public struct DodgerollStats
 
 public sealed class PlayerDodgerolls : ModPlayer
 {
+	public static readonly ConfigEntry<bool> EnableDodgerolls = new(ConfigSide.Both, true, "Movement");
+	public static readonly ConfigEntry<bool> EnableDodgerollAudioCues = new(ConfigSide.ClientOnly, true, "Movement", "Awareness");
+
 	public static readonly SoundStyle DodgerollSound = new($"{nameof(TerrariaOverhaul)}/Assets/Sounds/Player/Armor", 3) {
 		Volume = 0.65f,
 		PitchVariance = 0.2f
@@ -65,7 +69,6 @@ public sealed class PlayerDodgerolls : ModPlayer
 
 	public static ModKeybind DodgerollKey { get; private set; } = null!;
 	public static DodgerollStats DefaultStats { get; set; } = new();
-
 
 	public DodgerollStats Stats = DefaultStats;
 	public Timer TirednessTimer;
@@ -109,6 +112,10 @@ public sealed class PlayerDodgerolls : ModPlayer
 
 	public override bool PreItemCheck()
 	{
+		if (!EnableDodgerolls) {
+			return base.PreItemCheck();
+		}
+
 		CurrentCharges = Math.Min(CurrentCharges, Stats.MaxCharges);
 
 		UpdateCooldowns();
@@ -124,6 +131,17 @@ public sealed class PlayerDodgerolls : ModPlayer
 
 	public override bool CanUseItem(Item item)
 	{
+		if (!EnableDodgerolls) {
+			return base.CanUseItem(item);
+		}
+
+		// Never disallow using grappling hooks.
+		if (item.shoot > ProjectileID.None
+		&& ContentSampleUtils.TryGetProjectile(item.shoot, out var proj)
+		&& proj.aiStyle == ProjAIStyleID.Hook) {
+			return base.CanUseItem(item);
+		}
+
 		// Disallow item use during a dodgeroll;
 		if (IsDodging) {
 			return false;
@@ -134,15 +152,19 @@ public sealed class PlayerDodgerolls : ModPlayer
 			return false;
 		}
 
-		return true;
+		return base.CanUseItem(item);
 	}
 
 	public void QueueDodgeroll(uint minAttemptTimer, Direction1D direction, bool force = false)
 	{
+		if (!EnableDodgerolls) {
+			return;
+		}
+
 		if (force) {
 			CurrentCharges = Math.Max(CurrentCharges, 1);
 		} else if (CurrentCharges == 0) {
-			if (!Main.dedServ && Player.IsLocal()) {
+			if (!Main.dedServ && Player.IsLocal() && EnableDodgerollAudioCues) {
 				SoundEngine.PlaySound(FailureSound);
 			}
 
@@ -172,7 +194,7 @@ public sealed class PlayerDodgerolls : ModPlayer
 				soundStyle.Pitch = MathHelper.Lerp(-0.5f, 0.0f, CurrentCharges / (float)Stats.MaxCharges);
 			}
 
-			if (!Main.dedServ && Player.IsLocal()) {
+			if (!Main.dedServ && Player.IsLocal() && EnableDodgerollAudioCues) {
 				SoundEngine.PlaySound(soundStyle);
 			}
 		}
@@ -434,6 +456,10 @@ public sealed class PlayerDodgerolls : ModPlayer
 
 	private static bool LateCanBeHitByEntity(Player player, Entity entity)
 	{
+		if (!EnableDodgerolls) {
+			return true;
+		}
+
 		if (player.TryGetModPlayer(out PlayerDodgerolls dodgerolls) && dodgerolls.IsDodging) {
 			dodgerolls.OnDodgeEntity(player, entity);
 

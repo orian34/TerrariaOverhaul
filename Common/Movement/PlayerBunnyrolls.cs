@@ -6,6 +6,7 @@ using Terraria.Audio;
 using Terraria.ID;
 using Terraria.ModLoader;
 using TerrariaOverhaul.Common.Dodgerolls;
+using TerrariaOverhaul.Core.Configuration;
 using TerrariaOverhaul.Utilities;
 
 namespace TerrariaOverhaul.Common.Movement;
@@ -13,6 +14,8 @@ namespace TerrariaOverhaul.Common.Movement;
 // Or 'Roll Jumps'. A bunnyhop performed while roll-landing.
 public sealed class PlayerBunnyrolls : ModPlayer, IPlayerOnBunnyhopHook
 {
+	public static readonly ConfigEntry<bool> EnableRollJumps = new(ConfigSide.Both, true, "Movement");
+
 	public static readonly SoundStyle BunnyrollSound = new($"{nameof(TerrariaOverhaul)}/Assets/Sounds/Player/Bunnyroll") {
 		Volume = 0.9f,
 		PitchVariance = 0.2f,
@@ -20,6 +23,10 @@ public sealed class PlayerBunnyrolls : ModPlayer, IPlayerOnBunnyhopHook
 	
 	public void OnBunnyhop(Player player, ref float boostAdd, ref float boostMultiplier)
 	{
+		if (!EnableRollJumps) {
+			return;
+		}
+
 		if (!Player.TryGetModPlayer(out PlayerDodgerolls dodgerolls) || !dodgerolls.IsDodging) {
 			return;
 		}
