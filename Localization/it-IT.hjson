@@ -1,14 +1,3 @@
-UI: {
-	Creative: "Viaggio"
-	Normal: "Sono troppo giovane per minare"
-	Expert: "Bone Me Plenty"
-	Master: "Sono Cthulhu Incarnato"
-	WorldDescriptionCreative: "La modalità creativa / accessibilità (per coloro che vogliono essere in controllo)"
-	WorldDescriptionNormal: "meno danno dai nemici, ma stesse ricompense (Per i più rilassati)"
-	WorldDescriptionExpert: "La nuova esperienza standard (Per coloro che vogliono una giusta sfida)"
-	WorldDescriptionMaster: "Punizioni estreme e nuove ricompense (per i veri duri)"
-}
-
 Mods: {
 	TerrariaOverhaul: {
 		MainMenu: {
@@ -399,6 +388,17 @@ Mods: {
 						''' */
 				}
 			}
+		}
+
+		DifficultyLevels: {
+			Creative: "Viaggio"
+			Normal: "Sono troppo giovane per minare"
+			Expert: "Bone Me Plenty"
+			Master: "Sono Cthulhu Incarnato"
+			WorldDescriptionCreative: "La modalità creativa / accessibilità (per coloro che vogliono essere in controllo)"
+			WorldDescriptionNormal: "meno danno dai nemici, ma stesse ricompense (Per i più rilassati)"
+			WorldDescriptionExpert: "La nuova esperienza standard (Per coloro che vogliono una giusta sfida)"
+			WorldDescriptionMaster: "Punizioni estreme e nuove ricompense (per i veri duri)"
 		}
 
 		Seasons: {

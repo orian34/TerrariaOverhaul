@@ -92,7 +92,7 @@ public sealed class TextSystem : ModSystem
 			var languageManager = LanguageManager.Instance;
 
 			foreach (var (key, value) in loadTranslations!(ModInstance, Language.ActiveCulture)) {
-				localizedTextSetValue!(languageManager!.GetText(key), value);
+				SetLocalizedTextValue(languageManager!.GetText(key), value);
 			}
 		}
 
@@ -110,6 +110,11 @@ public sealed class TextSystem : ModSystem
 		LanguageRefreshCount = 0;
 
 		return true;
+	}
+
+	public static void SetLocalizedTextValue(LocalizedText localizedText, string value)
+	{
+		localizedTextSetValue!(localizedText, value);
 	}
 
 	private static void InjectLanguageRefreshCounter(ILContext context)

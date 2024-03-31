@@ -1,0 +1,105 @@
+﻿using System.Collections.Generic;
+using Microsoft.Xna.Framework;
+using Terraria;
+using Terraria.Localization;
+using Terraria.ModLoader;
+using TerrariaOverhaul.Core.Configuration;
+using TerrariaOverhaul.Core.Localization;
+
+namespace TerrariaOverhaul.Common.Balance;
+
+// So convoluted.
+internal sealed class DifficultyRenameSystem : ModSystem
+{
+	private const string KeyVanilla = "UI";
+	private const string KeyMod = $"Mods.{nameof(TerrariaOverhaul)}.DifficultyLevels";
+
+	public static readonly ConfigEntry<bool> EnableDifficultyRenames = new(ConfigSide.ClientOnly, true, "Balance");
+
+	private static readonly Dictionary<string, string> textBackups = new();
+	private static readonly string[] keys = {
+		"Creative",
+		"Normal",
+		"Expert",
+		"Master",
+		"WorldDescriptionCreative",
+		"WorldDescriptionNormal",
+		"WorldDescriptionExpert",
+		"WorldDescriptionMaster",
+	};
+	private static bool isEnabled;
+
+	public override void Load()
+	{
+		On_LanguageManager.LoadFilesForCulture += LoadFilesForCulture;
+	}
+
+	public override void Unload()
+	{
+		Main.OnPreDraw -= OnPreDraw;
+
+		if (isEnabled) {
+			Undo();
+		}
+
+		textBackups.Clear();
+	}
+
+	public override void PostSetupContent()
+	{
+		Backup();
+
+		Main.OnPreDraw += OnPreDraw;
+
+		if (EnableDifficultyRenames) {
+			Apply();
+		}
+	}
+
+	private static void OnPreDraw(GameTime gameTime)
+	{
+		bool shouldBeEnabled = EnableDifficultyRenames;
+
+		if (isEnabled != shouldBeEnabled) {
+			if (shouldBeEnabled) {
+				Apply();
+			} else {
+				Undo();
+			}
+		}
+	}
+
+	private static void Backup()
+	{
+		foreach (string key in keys) {
+			textBackups[key] = Language.GetTextValue($"{KeyVanilla}.{key}");
+		}
+	}
+
+	private static void Apply()
+	{
+		foreach (string key in keys) {
+			TextSystem.SetLocalizedTextValue(Language.GetText($"{KeyVanilla}.{key}"), Language.GetTextValue($"{KeyMod}.{key}"));
+		}
+
+		isEnabled = true;
+	}
+
+	private static void Undo()
+	{
+		foreach (string key in keys) {
+			if (textBackups.TryGetValue(key, out string? value)) {
+				TextSystem.SetLocalizedTextValue(Language.GetText($"{KeyVanilla}.{key}"), value);
+			}
+		}
+
+		isEnabled = false;
+	}
+
+	private static void LoadFilesForCulture(On_LanguageManager.orig_LoadFilesForCulture orig, LanguageManager manager, GameCulture culture)
+	{
+		orig(manager, culture);
+
+		Backup();
+	}
+}

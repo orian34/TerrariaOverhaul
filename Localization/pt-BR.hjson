@@ -1,14 +1,3 @@
-UI: {
-	Creative: "Jornada"
-	Normal: "Muito Jovem Para Minerar"
-	Expert: "Um Ossinho Não Dói"
-	Master: "Eu Sou A Encarnação de Cthulhu"
-	WorldDescriptionCreative: "O modo Criativo / Acessível (Para aqueles que querem estar no controle)"
-	WorldDescriptionNormal: "Menos danos de inimigos, mesmas recompensas (Para os descompromissados)"
-	WorldDescriptionExpert: "A nova experiência padrão (Para aqueles que gostam de um desafio justo)"
-	WorldDescriptionMaster: "Punição extrema e novas recompensas (Para os verdadeiramente desumanos)"
-}
-
 Mods: {
 	TerrariaOverhaul: {
 		MainMenu: {
@@ -391,6 +380,17 @@ Mods: {
 						''' */
 				}
 			}
+		}
+
+		DifficultyLevels: {
+			Creative: "Jornada"
+			Normal: "Muito Jovem Para Minerar"
+			Expert: "Um Ossinho Não Dói"
+			Master: "Eu Sou A Encarnação de Cthulhu"
+			WorldDescriptionCreative: "O modo Criativo / Acessível (Para aqueles que querem estar no controle)"
+			WorldDescriptionNormal: "Menos danos de inimigos, mesmas recompensas (Para os descompromissados)"
+			WorldDescriptionExpert: "A nova experiência padrão (Para aqueles que gostam de um desafio justo)"
+			WorldDescriptionMaster: "Punição extrema e novas recompensas (Para os verdadeiramente desumanos)"
 		}
 
 		Seasons: {
