@@ -17,8 +17,11 @@ public sealed class CameraSystem : ModSystem
 
 	// Not ideal, but the game has no entity interpolation for camera smoothness to not make the local player spazz out.
 	// That can be implemented in the future, but current experiments were not fruitful, due to bad timings.
-	public static readonly ConfigEntry<bool> LimitCameraUpdateRate = new(ConfigSide.ClientOnly, true, "Camera");
-	
+	private static readonly ConfigEntry<bool> limitCameraUpdateRateOption = new("LimitCameraUpdateRate", ConfigSide.ClientOnly, true, "Camera") {
+		IsHidden = true,
+	};
+	private static bool? limitCameraUpdateRateOverride;
+
 	private readonly static SortedList<int, CameraModifierDelegate> cameraModifiers = new();
 
 	private static Vector2 lastPositionRemainder;
@@ -35,6 +38,8 @@ public sealed class CameraSystem : ModSystem
 			UpdateCache();
 		}
 	}
+
+	public static bool LimitCameraUpdateRate => limitCameraUpdateRateOverride ?? limitCameraUpdateRateOption;
 
 	public override void Load()
 	{
@@ -83,6 +88,13 @@ public sealed class CameraSystem : ModSystem
 				PostCameraUpdate();
 			};
 		});
+	}
+
+	public override void PostSetupContent()
+	{
+		if (ModLoader.HasMod("HighFPSSupport")) {
+			limitCameraUpdateRateOverride = false;
+		}
 	}
 
 	public override void Unload()

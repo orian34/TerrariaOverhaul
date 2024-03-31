@@ -71,6 +71,8 @@
 - Fixed a few broken keys in Italian localization.
 - Fixed an injection not working in Debug builds of TML.
 - Fixed combo breaking sounds still playing when `Bunny Paw`'s cues are disabled.
+### Compatibility
+- Now compatible with `HighFPSSupport` out of the box, not requiring `LimitCameraUpdateRate` option to be set to `false` by the user.
 
 # 5.0 BETA 13C
 
