@@ -43,10 +43,11 @@
   **Accessibility:** `EnableJumpInputBuffering`.
   **Ambience:** `EnableUnderwaterMuffling`.
   **Archery:** `EnableArcheryArrowVisualization`, `EnableBowSoundReplacements`, `EnableBowFiringDelays`, `EnableBowChargedShots`, `EnableBowChargeHovering`, `EnableBowHoverJumps`, `EnableArrowFragments`.
-  **Balance:** `EnableDamageRandomizationRemoval`.
+  **Balance:** `EnableDamageRandomizationRemoval`, `EnableHealthDropsRework`, `EnableManaDropsRework`.
   **BloodAndGore:** `EnableAdvancedParticles`, `EnableGoreAudio`, `EnableGoreBleeding`, `EnableGoreBurning`, `EnableGoreGibbing`, `EnableGorePhysics`, `EnablePlayerCharacterGore`, `ParticleMultiplierSafe`, `ParticleMultiplierViolent`.
   **Guns:** `EnableAlternateGunFiringModes`, `EnableBulletCasings`, `EnableBulletImpactAudio`, `EnableGunSoundReplacements`, `EnableMuzzleflashes`, `EnableMinigunRecoilHovering`, `EnableStarCannonRecoilHovering`.
   **Interface:** `EnableCrosshair`, `EnableCrosshairAnimations`.
+  **Magic:** `EnableMagicSoundReplacements`, `EnableMagicPowerAttacks`, `EnableManaRegenerationRework`, `EnableManaRegenerationIcon`.
   **Melee:** `EnableAxeSoundReplacements`, `EnableBroadswordSoundReplacements`, `EnableHammerSoundReplacements`, `EnableImprovedMeleeCollision`, `EnablePickaxeSoundReplacements`, `EnableMeleeAttackAiming`, `EnableMeleeKillingBlows`, `EnableMeleeVelocityBasedDamage`, `EnableMeleeVelocityBasedDamageIcon`.
   **Movement:** `EnableDodgerolls`, `EnableDodgerollAudioCues`, `EnableRollJumps`.
   **Music:** `EnableBossDeathMusicStop`.

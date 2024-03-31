@@ -7,12 +7,15 @@ using Terraria.Audio;
 using Terraria.ID;
 using Terraria.ModLoader;
 using TerrariaOverhaul.Content.Dusts;
+using TerrariaOverhaul.Core.Configuration;
 using TerrariaOverhaul.Utilities;
 
 namespace TerrariaOverhaul.Common.ResourceDrops;
 
 public sealed class ManaPickupChanges : ResourcePickupChanges<ManaPickupChanges>
 {
+	public static readonly ConfigEntry<bool> EnableManaDropsRework = new(ConfigSide.Both, true, "Balance", "Magic");
+
 	public const int ManaPerPickup = 5;
 
 	public static readonly int[] ManaTypes = {
@@ -42,7 +45,7 @@ public sealed class ManaPickupChanges : ResourcePickupChanges<ManaPickupChanges>
 
 	public override bool AppliesToEntity(Item item, bool lateInstantiation)
 	{
-		return ManaTypes.Contains(item.type);
+		return EnableManaDropsRework && ManaTypes.Contains(item.type);
 	}
 
 	public override void ApplyPickupEffect(Item item, Player player)

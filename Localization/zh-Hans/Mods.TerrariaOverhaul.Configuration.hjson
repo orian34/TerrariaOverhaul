@@ -151,6 +151,16 @@ Balance: {
 		// DisplayName: "Enable Damage Randomization Removal"
 		// Description: "When enabled, all damage numbers in the game will be made fair and predictable."
 	}
+
+	EnableHealthDropsRework: {
+		// DisplayName: "Enable Health Drops Rework"
+		// Description: ""
+	}
+
+	EnableManaDropsRework: {
+		// DisplayName: "Enable Mana Drops Rework"
+		// Description: ""
+	}
 }
 
 BloodAndGore: {
@@ -316,6 +326,34 @@ Interface: {
 	EnableCrosshairAnimations: {
 		// DisplayName: "Enable Crosshair Animations"
 		// Description: "Whether the crosshair should animate in reaction to weapons firing and going on cooldowns."
+	}
+}
+
+Magic: {
+	// DisplayName: "Magic"
+
+	EnableMagicSoundReplacements: {
+		// DisplayName: "Enable Magic Sound Replacements"
+		// Description: "Whether to give new sound effects to some magic weapons."
+	}
+
+	EnableMagicPowerAttacks: {
+		// DisplayName: "Enable Magic Power Attacks"
+		// Description: "When enabled, most magic weapons will be able to perform a charged attack via alternate use."
+	}
+
+	EnableManaRegenerationRework: {
+		// DisplayName: "Enable Mana Regeneration Rework"
+		// Description: "When enabled, mana regeneration logic will be reworked and rebalanced to encourage movement."
+	}
+
+	EnableManaRegenerationIcon: {
+		// DisplayName: "Enable Mana Regeneration Icon"
+		/* Description:
+			'''
+			Whether to show the 'Mana Absorption' buff icon when magic weapon are equipped.
+			This option does not affect gameplay.
+			''' */
 	}
 }
 

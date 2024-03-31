@@ -6,6 +6,7 @@ using Terraria.ID;
 using Terraria.ModLoader;
 using TerrariaOverhaul.Common.Camera;
 using TerrariaOverhaul.Common.Charging;
+using TerrariaOverhaul.Core.Configuration;
 using TerrariaOverhaul.Core.ItemComponents;
 using TerrariaOverhaul.Core.ItemOverhauls;
 using TerrariaOverhaul.Utilities;
@@ -14,6 +15,9 @@ namespace TerrariaOverhaul.Common.Magic;
 
 public partial class MagicWeapon : ItemOverhaul
 {
+	public static readonly ConfigEntry<bool> EnableMagicSoundReplacements = new(ConfigSide.ClientOnly, true, "Magic");
+	public static readonly ConfigEntry<bool> EnableMagicPowerAttacks = new(ConfigSide.Both, true, "Magic");
+
 	public static readonly SoundStyle MagicBlastSound = new($"{nameof(TerrariaOverhaul)}/Assets/Sounds/Items/Magic/MagicBlast", 3) {
 		PitchVariance = 0.1f,
 	};
@@ -61,29 +65,31 @@ public partial class MagicWeapon : ItemOverhaul
 	{
 		base.SetDefaults(item);
 
-		if (item.UseSound == SoundID.Item43) {
+		if (EnableMagicSoundReplacements && item.UseSound == SoundID.Item43) {
 			item.UseSound = MagicBlastSound;
 		}
 
 		ContentSampleUtils.TryGetProjectile(item.shoot, out var shotProjectile);
 
-		item.EnableComponent<ItemPowerAttacks>(c => {
-			c.ChargeLengthMultiplier = 2f;
+		if (EnableMagicPowerAttacks) {
+			item.EnableComponent<ItemPowerAttacks>(c => {
+				c.ChargeLengthMultiplier = 2f;
 
-			var modifiers = new CommonStatModifiers();
+				var modifiers = new CommonStatModifiers();
 
-			modifiers.ProjectileDamageMultiplier = modifiers.MeleeDamageMultiplier = 1.75f;
-			modifiers.ProjectileKnockbackMultiplier = modifiers.MeleeKnockbackMultiplier = 1.5f;
-			modifiers.ProjectileSpeedMultiplier = 2f;
+				modifiers.ProjectileDamageMultiplier = modifiers.MeleeDamageMultiplier = 1.75f;
+				modifiers.ProjectileKnockbackMultiplier = modifiers.MeleeKnockbackMultiplier = 1.5f;
+				modifiers.ProjectileSpeedMultiplier = 2f;
 
-			// Workaround for Vilethorn-type projectiles stretching too far.
-			// Preferably they'd be still sped up in some way, but it's all too hardcoded in vanilla.
-			if (shotProjectile?.aiStyle == ProjAIStyleID.Vilethorn) {
-				modifiers.ProjectileSpeedMultiplier = 1.0f;
-			}
+				// Workaround for Vilethorn-type projectiles stretching too far.
+				// Preferably they'd be still sped up in some way, but it's all too hardcoded in vanilla.
+				if (shotProjectile?.aiStyle == ProjAIStyleID.Vilethorn) {
+					modifiers.ProjectileSpeedMultiplier = 1.0f;
+				}
 
-			c.StatModifiers.Single = modifiers;
-		});
+				c.StatModifiers.Single = modifiers;
+			});
+		}
 
 		if (!Main.dedServ) {
 			static float ScreenShakePowerFunction(float progress)

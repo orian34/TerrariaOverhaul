@@ -5,18 +5,23 @@ using MonoMod.Cil;
 using Terraria;
 using Terraria.ModLoader;
 using TerrariaOverhaul.Content.Buffs;
+using TerrariaOverhaul.Core.Configuration;
 
 namespace TerrariaOverhaul.Common.Magic;
 
 public class PlayerManaRebalance : ModPlayer
 {
+	public static readonly ConfigEntry<bool> EnableManaRegenerationRework = new(ConfigSide.Both, true, "Magic");
+	// Both-sided just in case it causes network issues. May not be true.
+	public static readonly ConfigEntry<bool> EnableManaRegenerationIcon = new(ConfigSide.Both, true, "Magic");
+
 	public static float BaseManaRegen => 7f; //20f
 	public static float ManaRegenBonusMultiplier => 0.4f; // 'Mana Regeneration Band' adds whooping 25 regen per second. This exists to battle disbalance from values like that.
 	public static float MinRegenVelocity => 1f;
 	public static float MaxRegenVelocity => 15f;
 	public static float MaxRegenVelocityMultiplier => 5f;
 
-	private static bool IsEnabled => true;
+	private static bool IsEnabled => EnableManaRegenerationRework;
 
 	public float VelocityManaRegenIntensity { get; private set; }
 	public float VelocityManaRegenMultiplier { get; private set; } = 1f;
@@ -64,7 +69,7 @@ public class PlayerManaRebalance : ModPlayer
 
 						manaRegen *= instance.VelocityManaRegenMultiplier;
 						
-						if (instance.VelocityManaRegenMultiplier > 1f && p.statMana < p.statManaMax2) {
+						if (EnableManaRegenerationIcon && instance.VelocityManaRegenMultiplier > 1f && p.statMana < p.statManaMax2) {
 							p.AddBuff(ModContent.BuffType<ManaAbsorption>(), 30);
 						}
 					}

@@ -5,12 +5,15 @@ using Microsoft.Xna.Framework.Graphics;
 using Terraria;
 using Terraria.Audio;
 using Terraria.ID;
+using TerrariaOverhaul.Core.Configuration;
 using TerrariaOverhaul.Utilities;
 
 namespace TerrariaOverhaul.Common.ResourceDrops;
 
 public sealed class HealthPickupChanges : ResourcePickupChanges<HealthPickupChanges>
 {
+	public static readonly ConfigEntry<bool> EnableHealthDropsRework = new(ConfigSide.Both, true, "Balance");
+
 	public const int HealthPerPickup = 5;
 
 	public static readonly int[] LifeTypes = {
@@ -40,7 +43,7 @@ public sealed class HealthPickupChanges : ResourcePickupChanges<HealthPickupChan
 
 	public override bool AppliesToEntity(Item item, bool lateInstantiation)
 	{
-		return LifeTypes.Contains(item.type);
+		return EnableHealthDropsRework && LifeTypes.Contains(item.type);
 	}
 
 	public override float GetPickupRange(Item item, Player player)

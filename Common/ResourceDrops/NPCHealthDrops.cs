@@ -5,6 +5,7 @@ using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
 using TerrariaOverhaul.Common.EntitySources;
+using TerrariaOverhaul.Core.Configuration;
 using TerrariaOverhaul.Utilities;
 
 namespace TerrariaOverhaul.Common.ResourceDrops;
@@ -19,6 +20,10 @@ public sealed class NPCHealthDrops : GlobalNPC
 		On_NPC.NPCLoot += (orig, npc) => {
 			orig(npc);
 
+			if (!HealthPickupChanges.EnableHealthDropsRework) {
+				return;
+			}
+
 			if (Main.netMode == NetmodeID.MultiplayerClient) {
 				return;
 			}
@@ -31,7 +36,12 @@ public sealed class NPCHealthDrops : GlobalNPC
 		};
 
 		On_NPC.NPCLoot_DropHeals += (orig, npc, closestPlayer) => {
-			// Juuuust don't.
+			if (HealthPickupChanges.EnableHealthDropsRework) {
+				// Juuuust don't.
+				return;
+			}
+
+			orig(npc, closestPlayer);
 		};
 	}
 

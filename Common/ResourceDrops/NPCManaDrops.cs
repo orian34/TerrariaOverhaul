@@ -6,6 +6,7 @@ using Terraria.ID;
 using Terraria.ModLoader;
 using TerrariaOverhaul.Common.EntitySources;
 using TerrariaOverhaul.Content.Dusts;
+using TerrariaOverhaul.Core.Configuration;
 using TerrariaOverhaul.Utilities;
 
 #pragma warning disable CA1822 // Mark members as static
@@ -28,6 +29,10 @@ public sealed class NPCManaDrops : GlobalNPC
 	public override void SetDefaults(NPC npc)
 	{
 		if (npc.damage <= 0 || NPCID.Sets.ProjectileNPC[npc.type]) {
+			return;
+		}
+
+		if (!ManaPickupChanges.EnableManaDropsRework) {
 			return;
 		}
 
