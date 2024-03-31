@@ -9,6 +9,7 @@ using Terraria.GameContent;
 using Terraria.ID;
 using Terraria.ModLoader;
 using TerrariaOverhaul.Common.TextureColors;
+using TerrariaOverhaul.Core.Configuration;
 using TerrariaOverhaul.Core.ItemComponents;
 using TerrariaOverhaul.Utilities;
 
@@ -36,6 +37,8 @@ public sealed class ItemMuzzleflashes : ItemComponent
 	}
 
 	private const int SegmentCount = 3;
+
+	public static readonly ConfigEntry<bool> EnableMuzzleflashes = new(ConfigSide.ClientOnly, true, "Guns");
 
 	private static Color[] defaultColors = null!;
 	private static MuzzleflashStyle[] defaultStyles = null!;
@@ -174,7 +177,7 @@ public sealed class ItemMuzzleflashes : ItemComponent
 
 	public override bool? UseItem(Item item, Player player)
 	{
-		if (Enabled) {
+		if (Enabled && EnableMuzzleflashes) {
 			ResetColors();
 			StartMuzzleflash(null);
 		}

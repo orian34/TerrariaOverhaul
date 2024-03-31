@@ -1,6 +1,7 @@
 ﻿using Microsoft.Xna.Framework;
 using Terraria;
 using Terraria.ModLoader;
+using TerrariaOverhaul.Core.Configuration;
 using TerrariaOverhaul.Core.ItemComponents;
 
 namespace TerrariaOverhaul.Common.Guns;
@@ -8,9 +9,13 @@ namespace TerrariaOverhaul.Common.Guns;
 [Autoload(Side = ModSide.Client)]
 public sealed class ItemBulletCasings : ItemComponent
 {
+	public static readonly ConfigEntry<bool> EnableBulletCasings = new(ConfigSide.ClientOnly, true, "Guns");
+
 	public int CasingCount = 1;
 	public int CasingGoreType = -1;
 	public bool SpawnOnUse = true;
+
+	private new bool Enabled => base.Enabled && EnableBulletCasings;
 
 	public override bool? UseItem(Item item, Player player)
 	{

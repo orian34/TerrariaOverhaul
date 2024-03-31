@@ -1,15 +1,30 @@
 ﻿using Terraria;
 using Terraria.Audio;
 using Terraria.ID;
+using TerrariaOverhaul.Common.Items;
+using TerrariaOverhaul.Common.Recoil;
+using TerrariaOverhaul.Core.Configuration;
+using TerrariaOverhaul.Core.ItemComponents;
+using TerrariaOverhaul.Core.ItemOverhauls;
+using TerrariaOverhaul.Core.Time;
+using TerrariaOverhaul.Utilities;
 
 namespace TerrariaOverhaul.Common.Guns;
 
-public class StarCannon : Minigun
+public class StarCannon : ItemOverhaul
 {
-	public static readonly SoundStyle RocketLauncherFireSound = new($"{nameof(TerrariaOverhaul)}/Assets/Sounds/Items/Guns/StarCannon/StarCannonFire") {
+	public static readonly ConfigEntry<bool> EnableStarCannonRecoilHovering = new(ConfigSide.Both, true, "Guns");
+
+	public static readonly SoundStyle FireSound = new($"{nameof(TerrariaOverhaul)}/Assets/Sounds/Items/Guns/StarCannon/StarCannonFire") {
 		Volume = 0.2f,
 		PitchVariance = 0.2f,
 	};
+
+	private float speedFactor;
+
+	public virtual float MinSpeedFactor => 0.333f;
+	public virtual float AccelerationTime => 1f;
+	public virtual float DecelerationTime => 1f;
 
 	public override bool ShouldApplyItemOverhaul(Item item)
 	{
@@ -28,6 +43,38 @@ public class StarCannon : Minigun
 	{
 		base.SetDefaults(item);
 
-		item.UseSound = RocketLauncherFireSound;
+		speedFactor = MinSpeedFactor;
+
+		if (Guns.EnableGunSoundReplacements) {
+			item.UseSound = FireSound;
+		}
+
+		if (EnableStarCannonRecoilHovering) {
+			item.EnableComponent<ItemUseVelocityRecoil>(e => {
+				e.BaseVelocity = new(4.0f, 20.85f);
+				e.MaxVelocity = new(3.0f, 5.0f);
+			});
+		}
+
+		if (!Main.dedServ) {
+			item.EnableComponent<ItemAimRecoil>();
+			item.EnableComponent<ItemPlaySoundOnEveryUse>();
+		}
+	}
+
+	public override float UseSpeedMultiplier(Item item, Player player)
+	{
+		return base.UseSpeedMultiplier(item, player) * speedFactor;
+	}
+
+	public override void HoldItem(Item item, Player player)
+	{
+		base.HoldItem(item, player);
+
+		if (player.controlUseItem) {
+			speedFactor = MathUtils.StepTowards(speedFactor, 1f, AccelerationTime * TimeSystem.LogicDeltaTime);
+		} else {
+			speedFactor = MinSpeedFactor;
+		}
 	}
 }

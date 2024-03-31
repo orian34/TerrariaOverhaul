@@ -2,9 +2,6 @@
 using Terraria;
 using Terraria.Audio;
 using Terraria.ID;
-using TerrariaOverhaul.Common.Camera;
-using TerrariaOverhaul.Common.Crosshairs;
-using TerrariaOverhaul.Common.Items;
 using TerrariaOverhaul.Common.Recoil;
 using TerrariaOverhaul.Core.ItemComponents;
 using TerrariaOverhaul.Core.ItemOverhauls;
@@ -28,7 +25,9 @@ public class Flamethrower : ItemOverhaul
 	{
 		base.SetDefaults(item);
 
-		item.UseSound = null;
+		//if (Guns.EnableGunSoundReplacements) {
+		//	item.UseSound = null;
+		//}
 
 		if (!Main.dedServ) {
 			item.EnableComponent<ItemAimRecoil>();
@@ -40,7 +39,7 @@ public class Flamethrower : ItemOverhaul
 
 	public override bool? UseItem(Item item, Player player)
 	{
-		if (!soundId.IsValid || !SoundEngine.TryGetActiveSound(soundId, out _)) {
+		if (Guns.EnableGunSoundReplacements && !soundId.IsValid || !SoundEngine.TryGetActiveSound(soundId, out _)) {
 			soundId = SoundEngine.PlaySound(FireSound, player.Center);
 		}
 
@@ -51,7 +50,7 @@ public class Flamethrower : ItemOverhaul
 	{
 		base.HoldItem(item, player);
 
-		if (SoundEngine.TryGetActiveSound(soundId, out var activeSound)) {
+		if (Guns.EnableGunSoundReplacements && SoundEngine.TryGetActiveSound(soundId, out var activeSound)) {
 			if (!player.ItemAnimationActive && player.itemTime <= 0) {
 				activeSound.Stop();
 

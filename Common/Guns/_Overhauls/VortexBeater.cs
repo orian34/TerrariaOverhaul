@@ -18,6 +18,13 @@ namespace TerrariaOverhaul.Common.Guns;
 [ItemAttachment(ItemID.VortexBeater)]
 public sealed class VortexBeater : ItemOverhaul
 {
+	public static readonly SoundStyle FireSound = new($"{nameof(TerrariaOverhaul)}/Assets/Sounds/Items/Guns/AssaultRifle/AssaultRifleFire", 3) {
+		Volume = 0.130f,
+		Pitch = 0.6f,
+		PitchVariance = 0.0f,
+		MaxInstances = 1,
+	};
+
 	public override void Load()
 	{
 		base.Load();
@@ -32,12 +39,9 @@ public sealed class VortexBeater : ItemOverhaul
 	{
 		base.SetDefaults(item);
 
-		item.UseSound = new($"{nameof(TerrariaOverhaul)}/Assets/Sounds/Items/Guns/AssaultRifle/AssaultRifleFire", 3) {
-			Volume = 0.130f,
-			Pitch = 0.6f,
-			PitchVariance = 0.0f,
-			MaxInstances = 1,
-		};
+		if (Guns.EnableGunSoundReplacements) {
+			item.UseSound = FireSound;
+		}
 
 		if (!Main.dedServ) {
 			item.EnableComponent<ItemAimRecoil>();

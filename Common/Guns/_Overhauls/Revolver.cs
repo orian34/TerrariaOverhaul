@@ -4,8 +4,6 @@ using Terraria;
 using Terraria.Audio;
 using Terraria.ID;
 using Terraria.ModLoader;
-using TerrariaOverhaul.Common.Camera;
-using TerrariaOverhaul.Common.Crosshairs;
 using TerrariaOverhaul.Common.Items;
 using TerrariaOverhaul.Common.Recoil;
 using TerrariaOverhaul.Content.Gores;
@@ -33,7 +31,9 @@ public class Revolver : ItemOverhaul
 	{
 		base.SetDefaults(item);
 
-		item.UseSound = RevolverFireSound;
+		if (Guns.EnableGunSoundReplacements) {
+			item.UseSound = RevolverFireSound;
+		}
 
 		if (!Main.dedServ) {
 			item.EnableComponent<ItemAimRecoil>();
@@ -49,12 +49,12 @@ public class Revolver : ItemOverhaul
 
 	public override bool AltFunctionUse(Item item, Player player)
 	{
-		return true;
+		return Guns.EnableAlternateGunFiringModes;
 	}
 
 	public override float UseTimeMultiplier(Item item, Player player)
 	{
-		if (player.altFunctionUse == 2) {
+		if (Guns.EnableAlternateGunFiringModes && player.altFunctionUse == 2) {
 			return 1f / (SpinShotCount - 1);
 		}
 
@@ -63,7 +63,7 @@ public class Revolver : ItemOverhaul
 
 	public override float UseSpeedMultiplier(Item item, Player player)
 	{
-		if (player.altFunctionUse == 2) {
+		if (Guns.EnableAlternateGunFiringModes && player.altFunctionUse == 2) {
 			return 0.6f;
 		}
 
@@ -74,7 +74,7 @@ public class Revolver : ItemOverhaul
 	{
 		base.ModifyShootStats(item, player, ref position, ref velocity, ref type, ref damage, ref knockback);
 
-		if (player.altFunctionUse == 2) {
+		if (Guns.EnableAlternateGunFiringModes && player.altFunctionUse == 2) {
 			velocity = velocity.RotatedByRandom(MathHelper.ToRadians(12f));
 			damage = (int)(damage * 0.75f);
 		}
@@ -82,7 +82,7 @@ public class Revolver : ItemOverhaul
 
 	public override bool? UseItem(Item item, Player player)
 	{
-		if (player.altFunctionUse == 2) {
+		if (Guns.EnableAlternateGunFiringModes && player.altFunctionUse == 2) {
 			player.reuseDelay = Math.Max(player.reuseDelay, item.useAnimation * 2);
 		}
 

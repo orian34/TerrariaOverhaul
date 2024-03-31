@@ -2,9 +2,6 @@
 using Terraria.Audio;
 using Terraria.ID;
 using Terraria.ModLoader;
-using TerrariaOverhaul.Common.Camera;
-using TerrariaOverhaul.Common.Crosshairs;
-using TerrariaOverhaul.Common.Items;
 using TerrariaOverhaul.Common.Recoil;
 using TerrariaOverhaul.Content.Gores;
 using TerrariaOverhaul.Core.ItemComponents;
@@ -33,8 +30,10 @@ public class Shotgun : ItemOverhaul
 
 	public override void SetDefaults(Item item)
 	{
-		item.UseSound = ShotgunFireSound;
-		PumpSound = ShotgunPumpSound;
+		if (Guns.EnableGunSoundReplacements) {
+			item.UseSound = ShotgunFireSound;
+			PumpSound = ShotgunPumpSound;
+		}
 
 		if (!Main.dedServ) {
 			item.EnableComponent<ItemAimRecoil>();

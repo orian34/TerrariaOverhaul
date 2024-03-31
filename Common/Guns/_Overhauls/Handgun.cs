@@ -2,9 +2,6 @@
 using Terraria.Audio;
 using Terraria.ID;
 using Terraria.ModLoader;
-using TerrariaOverhaul.Common.Camera;
-using TerrariaOverhaul.Common.Crosshairs;
-using TerrariaOverhaul.Common.Items;
 using TerrariaOverhaul.Common.Recoil;
 using TerrariaOverhaul.Content.Gores;
 using TerrariaOverhaul.Core.ItemComponents;
@@ -36,7 +33,9 @@ public class Handgun : ItemOverhaul
 	{
 		base.SetDefaults(item);
 
-		item.UseSound = HandgunFireSound;
+		if (Guns.EnableGunSoundReplacements) {
+			item.UseSound = HandgunFireSound;
+		}
 
 		if (!Main.dedServ) {
 			item.EnableComponent<ItemAimRecoil>();

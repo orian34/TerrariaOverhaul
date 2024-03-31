@@ -38,6 +38,9 @@
 - ##### Brand new configuration screen!
   (Thanks, **@justreq**!) Players will now be able to configure the mod in-game via a very accessible user interface, complete with option descriptions, some image previews, and a handy search function! Not only that, but the screen even features video previews for some of the mod's features, making it also excellent for familiarizing oneself with what Overhaul has to offer.
 - Configuration files now use the `.toml` format instead of `.json`. It's a lot more human-friendly, and has a much simpler syntax. In addition to that, it also supports comments, so config entries' descriptions will now be included there.
+- Added the following new options:
+  **Guns:** `EnableAlternateGunFiringModes`, `EnableBulletCasings`, `EnableBulletImpactAudio`, `EnableGunSoundReplacements`, `EnableMuzzleflashes`, `EnableMinigunRecoilHovering`, `EnableStarCannonRecoilHovering`.
+  **Visuals:** `EnableVisualWeaponRecoil`.
 - Redesigned a half of the config backend, hopefully making it more robust in networking, filesystem operations, and error handling.
 ### Changes
 - Fighter AI enemies will no longer leap at their targets if they're not facing them.

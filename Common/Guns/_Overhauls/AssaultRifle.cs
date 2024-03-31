@@ -2,8 +2,6 @@
 using Terraria.Audio;
 using Terraria.ID;
 using Terraria.ModLoader;
-using TerrariaOverhaul.Common.Camera;
-using TerrariaOverhaul.Common.Crosshairs;
 using TerrariaOverhaul.Common.Items;
 using TerrariaOverhaul.Common.Recoil;
 using TerrariaOverhaul.Content.Gores;
@@ -38,7 +36,9 @@ public class AssaultRifle : ItemOverhaul
 	{
 		base.SetDefaults(item);
 
-		item.UseSound = AssaultRifleFireSound;
+		if (Guns.EnableGunSoundReplacements) {
+			item.UseSound = AssaultRifleFireSound;
+		}
 
 		if (!Main.dedServ) {
 			item.EnableComponent<ItemAimRecoil>();

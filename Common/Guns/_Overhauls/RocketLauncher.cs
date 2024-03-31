@@ -1,9 +1,6 @@
 ﻿using Terraria;
 using Terraria.Audio;
 using Terraria.ID;
-using TerrariaOverhaul.Common.Camera;
-using TerrariaOverhaul.Common.Crosshairs;
-using TerrariaOverhaul.Common.Items;
 using TerrariaOverhaul.Common.Recoil;
 using TerrariaOverhaul.Common.Tags;
 using TerrariaOverhaul.Core.ItemComponents;
@@ -40,7 +37,9 @@ public class RocketLauncher : ItemOverhaul
 	{
 		base.SetDefaults(item);
 
-		item.UseSound = RocketLauncherFireSound;
+		if (Guns.EnableGunSoundReplacements) {
+			item.UseSound = RocketLauncherFireSound;
+		}
 
 		if (!Main.dedServ) {
 			item.EnableComponent<ItemAimRecoil>();

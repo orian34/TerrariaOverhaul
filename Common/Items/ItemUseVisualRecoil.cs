@@ -3,6 +3,7 @@ using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
 using TerrariaOverhaul.Common.EntityEffects;
+using TerrariaOverhaul.Core.Configuration;
 using TerrariaOverhaul.Core.ItemComponents;
 using TerrariaOverhaul.Utilities;
 
@@ -11,6 +12,8 @@ namespace TerrariaOverhaul.Common.Items;
 [Autoload(Side = ModSide.Client)]
 public sealed class ItemUseVisualRecoil : ItemComponent
 {
+	public static readonly ConfigEntry<bool> EnableVisualWeaponRecoil = new(ConfigSide.Both, true, "Visuals", "Guns");
+
 	public float Power { get; set; }
 
 	public override void OnEnabled(Item item)
@@ -54,7 +57,7 @@ public sealed class ItemUseVisualRecoil : ItemComponent
 
 	public override bool? UseItem(Item item, Player player)
 	{
-		if (Enabled && Power != 0f) {
+		if (Enabled && EnableVisualWeaponRecoil && Power != 0f) {
 			player.GetModPlayer<PlayerHoldOutAnimation>().VisualRecoil += Power;
 		}
 

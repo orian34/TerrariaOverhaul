@@ -3,12 +3,15 @@ using Terraria;
 using Terraria.Audio;
 using Terraria.ModLoader;
 using TerrariaOverhaul.Common.Tags;
+using TerrariaOverhaul.Core.Configuration;
 
 namespace TerrariaOverhaul.Common.ProjectileEffects;
 
 [Autoload(Side = ModSide.Client)]
 public class ProjectileRicochetSound : GlobalProjectile
 {
+	public static readonly ConfigEntry<bool> EnableBulletImpactAudio = new(ConfigSide.ClientOnly, true, "Guns");
+
 	public static readonly SoundStyle RicochetSound = new($"{nameof(TerrariaOverhaul)}/Assets/Sounds/HitEffects/Ricochet", 2) {
 		Volume = 0.1f,
 	};
@@ -18,7 +21,9 @@ public class ProjectileRicochetSound : GlobalProjectile
 
 	public override bool OnTileCollide(Projectile projectile, Vector2 oldVelocity)
 	{
-		SoundEngine.PlaySound(RicochetSound, projectile.Center);
+		if (EnableBulletImpactAudio) {
+			SoundEngine.PlaySound(RicochetSound, projectile.Center);
+		}
 
 		return true;
 	}

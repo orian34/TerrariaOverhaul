@@ -1,7 +1,6 @@
 ﻿using System.Collections.Generic;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
-using ReLogic.Content;
 using Terraria;
 using Terraria.DataStructures;
 using Terraria.GameContent;
@@ -20,7 +19,7 @@ public class MuzzleflashPlayerDrawLayer : PlayerDrawLayer
 		=> new AfterParent(PlayerDrawLayers.HeldItem);
 
 	public override bool GetDefaultVisibility(PlayerDrawSet drawInfo)
-		=> true;
+		=> ItemMuzzleflashes.EnableMuzzleflashes;
 
 	protected override void Draw(ref PlayerDrawSet drawInfo)
 	{
