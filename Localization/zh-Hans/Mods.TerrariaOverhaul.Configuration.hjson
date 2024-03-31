@@ -12,6 +12,11 @@ Accessibility: {
 			预防腕管综合症，医生百分百推荐。
 			'''
 	}
+
+	EnableJumpInputBuffering: {
+		// DisplayName: "Enable Jump Input Buffering"
+		// Description: "Allows you to press the jump button a bit prior landing, having your jump still be performed."
+	}
 }
 
 Ambience: {
@@ -30,12 +35,17 @@ Ambience: {
 
 	EnableLowPassFiltering: {
 		// DisplayName: "Enable Low Pass Filtering"
-		// Description: ""
+		// Description: "Whether to enable any 'muffling' sound processing."
 	}
 
 	EnableReverb: {
 		// DisplayName: "Enable Reverb"
-		// Description: ""
+		// Description: "Whether to enable any reverberation sound processing."
+	}
+
+	EnableUnderwaterMuffling: {
+		// DisplayName: "Enable Underwater Muffling"
+		// Description: "If enabled - going underwater will reduce the sound frequency range via 'low-pass filtering'."
 	}
 }
 
@@ -97,6 +107,11 @@ Balance: {
 		DisplayName: "启用难度修改"
 		Description: "本模组对游戏整体难度的重新平衡。"
 	}
+
+	EnableDamageRandomizationRemoval: {
+		// DisplayName: "Enable Damage Randomization Removal"
+		// Description: "When enabled, all damage numbers in the game will be made fair and predictable."
+	}
 }
 
 BloodAndGore: {
@@ -115,6 +130,51 @@ BloodAndGore: {
 	EnableGoreStay: {
 		DisplayName: "敌怪残骸不消失"
 		Description: "启用后，敌怪的残骸不再会在约10秒后消失。"
+	}
+
+	EnablePlayerCharacterGore: {
+		// DisplayName: "Enable Player Character Gore"
+		// Description: "When enabled, player characters will create dynamically-generated gore on death, instead of having their bits fly off-screen."
+	}
+
+	EnableAdvancedParticles: {
+		// DisplayName: "Enable Advanced Particles"
+		// Description: "When enabled, vanilla blood & similar particles will be replaced with Overhaul's advanced linear particles, which are able to leave decals."
+	}
+
+	EnableGoreAudio: {
+		// DisplayName: "Enable Gore Audio"
+		// Description: "Whether interactions with gores can produce sounds."
+	}
+
+	EnableGoreGibbing: {
+		// DisplayName: "Enable Gore Gibbing"
+		// Description: "Whether gores can be destroyed, with some breaking into smaller pieces."
+	}
+
+	EnableGorePhysics: {
+		// DisplayName: "Enable Gore Physics"
+		// Description: "Whether gores (& similar clutter, like bullet casings) can bounce and float in water."
+	}
+
+	EnableGoreBleeding: {
+		// DisplayName: "Enable Gore Bleeding"
+		// Description: "Whether gores can spawn particles when flying through the air."
+	}
+
+	EnableGoreBurning: {
+		// DisplayName: "Enable Gore Burning"
+		// Description: "Whether gores can be set on fire."
+	}
+
+	ParticleMultiplierSafe: {
+		// DisplayName: "Particle Spawn Rate (Safe)"
+		// Description: "If set below 1.0 - reduces the amount of normal (non-bloody) particles. Set to '0.0' to completely disable them."
+	}
+
+	ParticleMultiplierViolent: {
+		// DisplayName: "Particle Spawn Rate (Violent)"
+		// Description: "If set below 1.0 - reduces the amount of blood particles. Set to '0.0' to completely disable them."
 	}
 }
 
@@ -168,6 +228,41 @@ Guns: {
 			实验性功能，默认禁用。
 			'''
 	}
+
+	EnableBulletImpactAudio: {
+		// DisplayName: "Enable Bullet Impact Audio"
+		// Description: "When enabled, bullet-like projectiles produce a new sound when hitting the ground."
+	}
+
+	EnableGunSoundReplacements: {
+		// DisplayName: "Enable Gun Sound Replacements"
+		// Description: "When enabled, all guns affected by Overhaul will receive new satisfying sound effects."
+	}
+
+	EnableAlternateGunFiringModes: {
+		// DisplayName: "Enable Alternate Gun Firing Modes"
+		// Description: "When enabled, some guns will get new alternate firing modes."
+	}
+
+	EnableBulletCasings: {
+		// DisplayName: "Enable Bullet Casings"
+		// Description: "When enabled, some weapons will emit ammo casings that fit them."
+	}
+
+	EnableMuzzleflashes: {
+		// DisplayName: "Enable Muzzleflashes"
+		// Description: "When enabled, firing weapons will produce pretty muzzleflashes."
+	}
+
+	EnableMinigunRecoilHovering: {
+		// DisplayName: "Enable Minigun Recoil Hovering"
+		// Description: "When enabled, minigun-like weapons will allow players to slightly hover in the air by firing downwards."
+	}
+
+	EnableStarCannonRecoilHovering: {
+		// DisplayName: "Enable Star Cannon Recoil Hovering"
+		// Description: "When enabled, the Star Cannon (and similar weapons) will allow players to slightly hover in the air by firing downwards."
+	}
 }
 
 Melee: {
@@ -217,6 +312,63 @@ Melee: {
 		DisplayName: "启用战锤重击"
 		Description: "允许你通过右键使用锤子施展重击。"
 	}
+
+	EnableMeleeKillingBlows: {
+		// DisplayName: "Enable Melee Killing Blows"
+		// Description: "When enabled, broadswords will be able to perform 'Killing Blows' by power-striking already hurt foes, increasing damage whenever that would finish the enemy."
+	}
+
+	EnableMeleeAttackAiming: {
+		// DisplayName: "Enable Melee Attack Aiming"
+		/* Description:
+			'''
+			When enabled, melee weapons will become fully aimable.
+			Requires the 'Enable Improved Melee Collision' option to be enabled to actually affect gameplay.
+			''' */
+	}
+
+	EnableImprovedMeleeCollision: {
+		// DisplayName: "Enable Improved Melee Collision"
+		/* Description:
+			'''
+			When enabled, melee weapons' collision will be changed from a static rectangle to that of a circular arc.
+			Enabling the 'Enable Melee Attack Aiming' option is heavily recommended.
+			''' */
+	}
+
+	EnableMeleeVelocityBasedDamage: {
+		// DisplayName: "Enable Melee Velocity Based Damage"
+		// Description: "When enabled, all your melee damage will be affected by how fast you're moving."
+	}
+
+	EnableMeleeVelocityBasedDamageIcon: {
+		// DisplayName: "Enable Melee Velocity Based Damage Icon"
+		/* Description:
+			'''
+			Whether to show the 'Hack and Slash' buff icon when broadswords are equipped.
+			This option does not affect gameplay.
+			''' */
+	}
+
+	EnableAxeSoundReplacements: {
+		// DisplayName: "Enable Axe Sound Replacements"
+		// Description: "Whether to give new sound effects to axes."
+	}
+
+	EnableBroadswordSoundReplacements: {
+		// DisplayName: "Enable Broadsword Sound Replacements"
+		// Description: "Whether to give new sound effects to broadswords."
+	}
+
+	EnableHammerSoundReplacements: {
+		// DisplayName: "Enable Hammer Sound Replacements"
+		// Description: "Whether to give new sound effects to hammers."
+	}
+
+	EnablePickaxeSoundReplacements: {
+		// DisplayName: "Enable Pickaxe Sound Replacements"
+		// Description: "Whether to give new sound effects to pickaxes."
+	}
 }
 
 Music: {
@@ -235,6 +387,11 @@ Music: {
 			也就是说，每当你回到你已经去过的生物群落时，其音乐将接着你离开时的进度播放。
 			在环游世界时不再总是“循环播放”音乐的开头，极大地改善了游戏体验。
 			'''
+	}
+
+	EnableBossDeathMusicStop: {
+		// DisplayName: "Enable Boss Death Music Stop"
+		// Description: "When enabled, music will be temporarily stopped whenever a boss is killed. For a dramatic effect."
 	}
 }
 
@@ -298,6 +455,25 @@ Movement: {
 			在以足够的速度撞击墙壁的瞬间，按下反向移动键以改变运动方向，即可完成此动作。
 			'''
 	}
+
+	EnableRollJumps: {
+		// DisplayName: "Enable Roll Jumps"
+		// Description: "When enabled, the players will be able to perform a 'Roll Jump' by combining a landing jump (bunnyhop) with a well-timed dodgeroll."
+	}
+
+	EnableDodgerolls: {
+		// DisplayName: "Enable Dodgerolls"
+		/* Description:
+			'''
+			When enabled, players will be able to perform a dodgeroll via an assigned button.
+			Dodgerolls grant short-term invincibility, as well as tons of movement opportunities.
+			''' */
+	}
+
+	EnableDodgerollAudioCues: {
+		// DisplayName: "Enable Dodgeroll Audio Cues"
+		// Description: "Toggles sounds that denote that a dodgeroll charge has been refilled, or that there's no charges left."
+	}
 }
 
 Visuals: {
@@ -339,7 +515,12 @@ Visuals: {
 
 	EnableEnemyTiltingEffects: {
 		// DisplayName: "Enable Enemy Tilting Effects"
-		// Description: ""
+		// Description: "Toggles enemy sprites being slightly tilted depending on their velocity"
+	}
+
+	EnableVisualWeaponRecoil: {
+		// DisplayName: "Enable Visual Weapon Recoil"
+		// Description: "When enabled, firing weapons will slightly rotate their sprites in player characters' hands."
 	}
 }
 
@@ -354,5 +535,20 @@ Tweaks: {
 			启用后，若使用F11热键隐藏游戏界面，将会显示系统鼠标光标。
 			这是一个微小的实用更改，可以在没有UI的情况下轻松录制游戏画面，因为录制软件可以设置不捕获系统光标。
 			'''
+	}
+}
+
+Interface: {
+	// DisplayName: "Interface"
+	// Description: "Everything relating to Graphical User Interface and Heads-Up Displays."
+
+	EnableCrosshair: {
+		// DisplayName: "Enable Crosshair"
+		// Description: "When enabled, the mouse cursor will be replaced with an advanced animated crosshair when using projectile-firing weapons."
+	}
+
+	EnableCrosshairAnimations: {
+		// DisplayName: "Enable Crosshair Animations"
+		// Description: "Whether the crosshair should animate in reaction to weapons firing and going on cooldowns."
 	}
 }
