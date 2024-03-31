@@ -40,6 +40,7 @@
 - Configuration files now use the `.toml` format instead of `.json`. It's a lot more human-friendly, and has a much simpler syntax. In addition to that, it also supports comments, so config entries' descriptions will now be included there.
 - Added the following new options:
   **Guns:** `EnableAlternateGunFiringModes`, `EnableBulletCasings`, `EnableBulletImpactAudio`, `EnableGunSoundReplacements`, `EnableMuzzleflashes`, `EnableMinigunRecoilHovering`, `EnableStarCannonRecoilHovering`.
+  **Melee:** `EnableAxeSoundReplacements`, `EnableBroadswordSoundReplacements`, `EnableHammerSoundReplacements`, `EnableImprovedMeleeCollision`, `EnablePickaxeSoundReplacements`, `EnableMeleeAttackAiming`, `EnableMeleeKillingBlows`, `EnableMeleeVelocityBasedDamage`, `EnableMeleeVelocityBasedDamageIcon`.
   **Visuals:** `EnableVisualWeaponRecoil`.
 - Redesigned a half of the config backend, hopefully making it more robust in networking, filesystem operations, and error handling.
 ### Changes

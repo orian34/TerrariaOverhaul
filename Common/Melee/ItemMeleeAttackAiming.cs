@@ -1,6 +1,5 @@
 ﻿using System;
 using Microsoft.Xna.Framework;
-using Mono.Cecil.Cil;
 using MonoMod.Cil;
 using Terraria;
 using Terraria.DataStructures;
@@ -8,6 +7,7 @@ using Terraria.ID;
 using Terraria.ModLoader;
 using TerrariaOverhaul.Common.Damage;
 using TerrariaOverhaul.Common.Hooks.Items;
+using TerrariaOverhaul.Core.Configuration;
 using TerrariaOverhaul.Core.Debugging;
 using TerrariaOverhaul.Core.ItemComponents;
 using TerrariaOverhaul.Utilities;
@@ -16,23 +16,28 @@ namespace TerrariaOverhaul.Common.Melee;
 
 public sealed class ItemMeleeAttackAiming : ItemComponent, ICanMeleeCollideWithNPC, IModifyItemNewProjectile
 {
+	public static readonly ConfigEntry<bool> EnableMeleeAttackAiming = new(ConfigSide.Both, true, "Melee");
+	public static readonly ConfigEntry<bool> EnableImprovedMeleeCollision = new(ConfigSide.Both, true, "Melee");
+
 	private Vector2 attackDirection;
-	private float attackAngle;
+	private Vector2 sourceAttackDirection;
 
 	public int AttackId { get; private set; }
+	public float AttackAngle { get; private set; }
+	public float SourceAttackAngle { get; private set; }
 
 	public Vector2 AttackDirection {
 		get => attackDirection;
 		set {
 			attackDirection = value;
-			attackAngle = value.ToRotation();
+			AttackAngle = value.ToRotation();
 		}
 	}
-	public float AttackAngle {
-		get => attackAngle;
+	public Vector2 SourceAttackDirection {
+		get => sourceAttackDirection;
 		set {
-			attackAngle = value;
-			attackDirection = value.ToRotationVector2();
+			sourceAttackDirection = value;
+			SourceAttackAngle = value.ToRotation();
 		}
 	}
 
@@ -45,12 +50,23 @@ public sealed class ItemMeleeAttackAiming : ItemComponent, ICanMeleeCollideWithN
 
 	public override void UseAnimation(Item item, Player player)
 	{
-		AttackDirection = player.LookDirection();
+		SourceAttackDirection = player.LookDirection();
+
+		if (EnableMeleeAttackAiming) {
+			AttackDirection = SourceAttackDirection;
+		} else {
+			AttackDirection = new Vector2(SourceAttackDirection.X >= 0f ? 1f : -1f, 0f);
+		}
+
 		AttackId++;
 	}
 
 	public override void ModifyHitNPC(Item item, Player player, NPC target, ref NPC.HitModifiers modifiers)
 	{
+		if (!EnableMeleeAttackAiming) {
+			return;
+		}
+
 		// Make directional knockback work with melee.
 		if (target.TryGetGlobalNPC(out NPCDirectionalKnockback npcKnockback)) {
 			npcKnockback.SetNextKnockbackDirection(AttackDirection);
@@ -59,7 +75,7 @@ public sealed class ItemMeleeAttackAiming : ItemComponent, ICanMeleeCollideWithN
 
 	bool? ICanMeleeCollideWithNPC.CanMeleeCollideWithNPC(Item item, Player player, NPC target, Rectangle itemRectangle)
 	{
-		if (!Enabled) {
+		if (!Enabled || !EnableImprovedMeleeCollision) {
 			return null;
 		}
 
@@ -85,7 +101,7 @@ public sealed class ItemMeleeAttackAiming : ItemComponent, ICanMeleeCollideWithN
 
 	public static float GetAttackRange(Item item, Player player, Rectangle? itemRectangle = null)
 	{
-		Rectangle itemHitbox = GetMeleeHitbox(player, item);
+		Rectangle itemHitbox = itemRectangle ?? GetMeleeHitbox(player, item);
 
 		if (!Main.dedServ && DebugSystem.EnableDebugRendering) {
 			DebugSystem.DrawRectangle(itemHitbox, Color.LightGoldenrodYellow);
@@ -200,6 +216,16 @@ public sealed class ItemMeleeAttackAiming : ItemComponent, ICanMeleeCollideWithN
 		// Skip a weird FieryGreatsword/Volcano block that culls collision for whatever reason.
 		var il = new ILCursor(context);
 
+		static int ModifyCheckedItemType(int itemType)
+		{
+			// We just make the type check fail.
+			if (EnableMeleeAttackAiming) {
+				return int.MaxValue;
+			}
+
+			return itemType;
+		}
+
 		// Match:
 		//   ldarg.1
 		//   ldfld int32 Terraria.Item::'type'
@@ -221,7 +247,6 @@ public sealed class ItemMeleeAttackAiming : ItemComponent, ICanMeleeCollideWithN
 
 		il.Index = emitIndex;
 
-		il.Emit(OpCodes.Pop);
-		il.Emit(OpCodes.Ldc_I4, int.MinValue);
+		il.EmitDelegate(ModifyCheckedItemType);
 	}
 }

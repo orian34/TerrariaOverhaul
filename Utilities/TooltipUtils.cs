@@ -20,6 +20,12 @@ public static class TooltipUtils
 	{
 		const Keys Key = Keys.LeftAlt;
 
+		var lines = getLines();
+
+		if (!lines.Any()) {
+			return false;
+		}
+
 		void AddTooltip(string name, string text, Color color)
 		{
 			tooltips.Add(new TooltipLine(mod, name, text) {
@@ -31,7 +37,7 @@ public static class TooltipUtils
 			static string MatchEvaluator(Match match)
 				=> StringUtils.ColoredText(combatInfoAccentColorAlt, match.Groups[1].Value);
 
-			var lines = getLines().Select(s => "◙ " + combatInfoAccentRegex.Replace(s, MatchEvaluator).Replace("\n", "\n   "));
+			lines = lines.Select(s => "◙ " + combatInfoAccentRegex.Replace(s, MatchEvaluator).Replace("\n", "\n   "));
 
 			AddTooltip("CombatInfoSeparator", mod.GetTextValue("CommonTooltips.CombatInfo"), combatInfoAccentColor);
 			AddTooltip("CombatInfo", string.Join("\r\n", lines), combatInfoBaseColor);

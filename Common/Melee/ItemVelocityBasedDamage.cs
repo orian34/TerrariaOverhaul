@@ -4,6 +4,7 @@ using Terraria;
 using Terraria.ModLoader;
 using TerrariaOverhaul.Common.CombatTexts;
 using TerrariaOverhaul.Content.Buffs;
+using TerrariaOverhaul.Core.Configuration;
 using TerrariaOverhaul.Core.ItemComponents;
 using TerrariaOverhaul.Utilities;
 using static TerrariaOverhaul.Utilities.ColorUtils;
@@ -12,6 +13,10 @@ namespace TerrariaOverhaul.Common.Melee;
 
 public sealed class ItemVelocityBasedDamage : ItemComponent
 {
+	public static readonly ConfigEntry<bool> EnableMeleeVelocityBasedDamage = new(ConfigSide.Both, true, "Melee");
+	// Both-sided just in case it causes network issues. May not be true.
+	public static readonly ConfigEntry<bool> EnableMeleeVelocityBasedDamageIcon = new(ConfigSide.Both, true, "Melee");
+
 	private static readonly Gradient<Color> damageScaleColor = new(
 		(0.000f, FromHexRgba(0x_c8cdda_ff)),
 		(0.100f, FromHexRgba(0x_dbe5fd_ff)),
@@ -33,6 +38,8 @@ public sealed class ItemVelocityBasedDamage : ItemComponent
 	public float MinMultiplierSpeed { get; set; } = 0.9f;
 	public float MaxMultiplierSpeed { get; set; } = 12.00f;
 
+	public new bool Enabled => base.Enabled && EnableMeleeVelocityBasedDamage;
+
 	public override void SetStaticDefaults()
 	{
 		visualBuffType = ModContent.BuffType<HackAndSlash>();
@@ -40,7 +47,7 @@ public sealed class ItemVelocityBasedDamage : ItemComponent
 
 	public override void HoldItem(Item item, Player player)
 	{
-		if (Enabled && player.IsLocal() && visualBuffType > 0) {
+		if (Enabled && EnableMeleeVelocityBasedDamageIcon && player.IsLocal() && visualBuffType > 0) {
 			player.AddBuff(visualBuffType, 5, quiet: true);
 		}
 	}

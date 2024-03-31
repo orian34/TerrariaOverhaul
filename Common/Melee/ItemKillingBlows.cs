@@ -7,6 +7,7 @@ using Terraria.Audio;
 using Terraria.DataStructures;
 using Terraria.ID;
 using TerrariaOverhaul.Common.Charging;
+using TerrariaOverhaul.Core.Configuration;
 using TerrariaOverhaul.Core.ItemComponents;
 using TerrariaOverhaul.Core.Networking;
 using TerrariaOverhaul.Utilities;
@@ -16,6 +17,8 @@ namespace TerrariaOverhaul.Common.Melee;
 public sealed class ItemKillingBlows : ItemComponent
 {
 	private delegate void NPCDamageModifier(NPC npc, ref double damage);
+
+	public static readonly ConfigEntry<bool> EnableMeleeKillingBlows = new(ConfigSide.Both, true, "Melee");
 
 	public static readonly SoundStyle KillingBlowSound = new($"{nameof(TerrariaOverhaul)}/Assets/Sounds/Items/Melee/KillingBlow", 2) {
 		Volume = 0.6f,
@@ -29,6 +32,8 @@ public sealed class ItemKillingBlows : ItemComponent
 
 	public int MaxKillingBlowsPerUse { get; set; } = 1;
 	public float DamageMultiplier { get; set; } = 1.5f;
+
+	public new bool Enabled => base.Enabled && EnableMeleeKillingBlows;
 
 	public override void Load()
 	{

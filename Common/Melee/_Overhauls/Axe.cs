@@ -5,7 +5,6 @@ using Terraria.Audio;
 using Terraria.ID;
 using Terraria.ModLoader;
 using TerrariaOverhaul.Common.Charging;
-using TerrariaOverhaul.Common.Damage;
 using TerrariaOverhaul.Common.Interaction;
 using TerrariaOverhaul.Core.Configuration;
 using TerrariaOverhaul.Core.ItemComponents;
@@ -25,6 +24,7 @@ public class Axe : ItemOverhaul
 	};
 
 	public static readonly ConfigEntry<bool> EnableAxePowerAttacks = new(ConfigSide.Both, true, "Melee");
+	public static readonly ConfigEntry<bool> EnableAxeSoundReplacements = new(ConfigSide.ClientOnly, true, "Melee");
 
 	public override bool ShouldApplyItemOverhaul(Item item)
 	{
@@ -55,7 +55,7 @@ public class Axe : ItemOverhaul
 	{
 		// Defaults
 
-		if (item.UseSound.HasValue && !item.UseSound.Value.IsTheSameAs(SoundID.Item15)) {
+		if (EnableAxeSoundReplacements && item.UseSound.HasValue && !item.UseSound.Value.IsTheSameAs(SoundID.Item15)) {
 			item.UseSound = AxeNormalSwingSound;
 		}
 

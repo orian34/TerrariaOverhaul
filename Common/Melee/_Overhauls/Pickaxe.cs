@@ -4,8 +4,8 @@ using Terraria;
 using Terraria.Audio;
 using Terraria.ID;
 using Terraria.ModLoader;
-using TerrariaOverhaul.Common.Damage;
 using TerrariaOverhaul.Common.Interaction;
+using TerrariaOverhaul.Core.Configuration;
 using TerrariaOverhaul.Core.ItemComponents;
 using TerrariaOverhaul.Core.ItemOverhauls;
 using TerrariaOverhaul.Utilities;
@@ -14,6 +14,8 @@ namespace TerrariaOverhaul.Common.Melee;
 
 public class Pickaxe : ItemOverhaul
 {
+	public static readonly ConfigEntry<bool> EnablePickaxeSoundReplacements = new(ConfigSide.ClientOnly, true, "Melee");
+
 	public static readonly SoundStyle PickaxeNormalSwingSound = new($"{nameof(TerrariaOverhaul)}/Assets/Sounds/Items/Melee/CuttingSwingMediumAlt", 3) {
 		Volume = 0.4f,
 		PitchVariance = 0.1f,
@@ -43,7 +45,7 @@ public class Pickaxe : ItemOverhaul
 	{
 		// Defaults
 
-		if (item.UseSound.HasValue && !item.UseSound.Value.IsTheSameAs(SoundID.Item15)) {
+		if (EnablePickaxeSoundReplacements && item.UseSound.HasValue && !item.UseSound.Value.IsTheSameAs(SoundID.Item15)) {
 			item.UseSound = PickaxeNormalSwingSound;
 		}
 

@@ -5,7 +5,6 @@ using Terraria.Audio;
 using Terraria.ID;
 using Terraria.ModLoader;
 using TerrariaOverhaul.Common.Charging;
-using TerrariaOverhaul.Common.Damage;
 using TerrariaOverhaul.Common.Interaction;
 using TerrariaOverhaul.Core.Configuration;
 using TerrariaOverhaul.Core.ItemComponents;
@@ -26,6 +25,7 @@ public class Hammer : ItemOverhaul
 	};
 
 	public static readonly ConfigEntry<bool> EnableHammerPowerAttacks = new(ConfigSide.Both, true, "Melee");
+	public static readonly ConfigEntry<bool> EnableHammerSoundReplacements = new(ConfigSide.ClientOnly, true, "Melee");
 
 	public override bool ShouldApplyItemOverhaul(Item item)
 	{
@@ -51,7 +51,7 @@ public class Hammer : ItemOverhaul
 	{
 		// Defaults
 
-		if (item.UseSound.HasValue && !item.UseSound.Value.IsTheSameAs(SoundID.Item15)) {
+		if (EnableHammerSoundReplacements && item.UseSound.HasValue && !item.UseSound.Value.IsTheSameAs(SoundID.Item15)) {
 			item.UseSound = HammerNormalSwing;
 		}
 

@@ -31,6 +31,7 @@ public partial class Broadsword : ItemOverhaul, IModifyItemNPCHitSound
 	};
 
 	public static readonly ConfigEntry<bool> EnableBroadswordPowerAttacks = new(ConfigSide.Both, true, "Melee");
+	public static readonly ConfigEntry<bool> EnableBroadswordSoundReplacements = new(ConfigSide.ClientOnly, true, "Melee");
 
 	public override bool ShouldApplyItemOverhaul(Item item)
 	{
@@ -58,7 +59,7 @@ public partial class Broadsword : ItemOverhaul, IModifyItemNPCHitSound
 
 		// Defaults
 
-		if (item.UseSound.HasValue && !item.UseSound.Value.IsTheSameAs(SoundID.Item15)) {
+		if (EnableBroadswordSoundReplacements && item.UseSound.HasValue && !item.UseSound.Value.IsTheSameAs(SoundID.Item15)) {
 			item.UseSound = SwordMediumSwing;
 		}
 
