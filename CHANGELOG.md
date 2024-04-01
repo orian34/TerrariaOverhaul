@@ -32,12 +32,17 @@
 
 # Work In Progress
 
+Nothing yet!
+
+# 5.0 BETA 14
+
 ### Additions
+- Updated for newest TML, please make sure you're up to date!
 - **Kirbyrocket**'s rendition of **DM Dokuro**'s `Chaos Elemental` music track will now play with Overhaul's main menu theme.
 - Muffling (low-pass filtering) will now be applied to sounds located underwater. Previously it's only been applied if the local player is underwater.
 ### Configuration
 - ##### Brand new configuration screen!
-  (Thanks, **@justreq**!) Players will now be able to configure the mod in-game via a very accessible user interface, complete with option descriptions, some image previews, and a handy search function! Not only that, but the screen even features video previews for some of the mod's features, making it also excellent for familiarizing oneself with what Overhaul has to offer.
+  (Thanks, **@justreq**!) Players will now be able to configure the mod in-game via a very accessible user interface, complete with option descriptions, some image previews, and a handy search function! Not only that, but the screen even features video previews for some of the mod's features, making it also excellent for familiarizing oneself with what Overhaul has to offer. Although most per-option previews are yet to be added.
 - Configuration files now use the `.toml` format instead of `.json`. It's a lot more human-friendly, and has a much simpler syntax. In addition to that, it also supports comments, so config entries' descriptions will now be included there.
 - Reorganized some existing options.
 - Added the following new options:
