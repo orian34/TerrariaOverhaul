@@ -33,6 +33,7 @@
 # Work In Progress
 
 ### Additions
+- **Kirbyrocket**'s rendition of **DM Dokuro**'s `Chaos Elemental` music track will now play with Overhaul's main menu theme.
 - Muffling (low-pass filtering) will now be applied to sounds located underwater. Previously it's only been applied if the local player is underwater.
 ### Configuration
 - ##### Brand new configuration screen!

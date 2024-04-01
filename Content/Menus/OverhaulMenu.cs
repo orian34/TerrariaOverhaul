@@ -14,6 +14,8 @@ public sealed class OverhaulMenu : ModMenu
 	private Asset<Texture2D>? logoGlowmask;
 	//private BlendState blendState;
 
+	public override int Music => MusicLoader.GetMusicSlot($"{nameof(TerrariaOverhaul)}/Assets/Music/KRDM_ChaosElemental");
+
 	public override Asset<Texture2D>? Logo => logoOverhaul;
 
 	public override void Load()
