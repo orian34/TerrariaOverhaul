@@ -72,7 +72,7 @@ public sealed class MainMenuOverlaySystem : ModSystem
 			//new MenuLink(Text.Localized($"{MenuKey}.ForumPage"), @"https://forums.terraria.org/index.php?threads/60369"),
 			
 			// Wiki page
-			new MenuLink(Text.Localized($"{MenuKey}.WikiPage"), @"https://terrariamods.gamepedia.com/Terraria_Overhaul"),
+			new MenuLink(Text.Localized($"{MenuKey}.WikiPage"), @"https://mirsar.io/TerrariaOverhaul/Wiki"),
 
 			// Github page
 			new MenuLink(Text.Localized($"{MenuKey}.Github"), @"https://github.com/Mirsario/TerrariaOverhaul"),
