@@ -107,7 +107,7 @@ public sealed class TextSystem : ModSystem
 			catch { }
 		}
 
-		LanguageRefreshCount = 0;
+		LanguageRefreshCount++;
 
 		return true;
 	}
