@@ -1,5 +1,5 @@
 <p align="center">
-	<img src="https://github.com/Mirsario/TerrariaOverhaul/blob/dev/Content/Menus/Logo.png?raw=true"/>
+	<img src="https://github.com/Mirsario/TerrariaOverhaul/blob/dev/Logo_Header.png?raw=true"/>
 </p>
 
 
