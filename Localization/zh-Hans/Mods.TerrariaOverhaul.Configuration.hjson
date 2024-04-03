@@ -1,4 +1,6 @@
 HoverForDescriptionTip: "将鼠标悬停在选项上可查看其说明"
+// OptionOn: "On"
+// OptionOff: "Off"
 
 Accessibility: {
 	DisplayName: "无障碍"
@@ -317,12 +319,12 @@ Guns: {
 Interface: {
 	DisplayName: "界面"
 	Description: "一切与图形用户界面和头顶显示有关的内容。"
-  
+
 	EnableCrosshair: {
 		DisplayName: "启用准星"
 		Description: "启用后，当使用投射物发射武器时，鼠标光标将被替换为先进的动画准星。"
 	}
-  
+
 	EnableCrosshairAnimations: {
 		DisplayName: "启用准星动画"
 		Description: "准星是否应对武器射击和进入冷却状态进行动画处理。"

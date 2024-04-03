@@ -3,6 +3,7 @@ using Microsoft.Xna.Framework;
 using Terraria.Audio;
 using Terraria.GameContent.UI.Elements;
 using Terraria.ID;
+using Terraria.Localization;
 using Terraria.UI;
 using TerrariaOverhaul.Core.Interface;
 using TerrariaOverhaul.Utilities;
@@ -66,7 +67,7 @@ public class ToggleElement : UIElement, IConfigEntryController
 		// Text.
 		// NOTE: TextOrigin fields are useless.
 
-		textOff = container.AddElement(new UIText("Off").With(e => {
+		textOff = container.AddElement(new UIText(Language.GetText($"Mods.{nameof(TerrariaOverhaul)}.Configuration.OptionOff")).With(e => {
 			e.Recalculate();
 
 			var dimensions = e.GetDimensions();
@@ -75,7 +76,7 @@ public class ToggleElement : UIElement, IConfigEntryController
 			e.Left = StyleDimension.FromPixelsAndPercent(-dimensions.Width * 0.5f, 0.25f);
 		}));
 
-		textOn = container.AddElement(new UIText("On").With(e => {
+		textOn = container.AddElement(new UIText(Language.GetText($"Mods.{nameof(TerrariaOverhaul)}.Configuration.OptionOn")).With(e => {
 			e.Recalculate();
 
 			var dimensions = e.GetDimensions();

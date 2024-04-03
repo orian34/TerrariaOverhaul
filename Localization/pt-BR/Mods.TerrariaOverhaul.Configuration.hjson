@@ -1,4 +1,6 @@
 // HoverForDescriptionTip: "Hover over an option to see its description"
+// OptionOn: "On"
+// OptionOff: "Off"
 
 Accessibility: {
 	// DisplayName: "Accessibility"
