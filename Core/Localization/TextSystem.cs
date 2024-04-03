@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Reflection;
+using System.Threading;
 using MonoMod.Cil;
 using Terraria.Localization;
 using Terraria.ModLoader;
@@ -19,8 +20,9 @@ public sealed class TextSystem : ModSystem
 	private static bool forcedLocalizationLoad;
 	private static LoadTranslationsDelegate? loadTranslations;
 	private static LocalizedTextSetValueDelegate? localizedTextSetValue;
+	private static int languageRefreshCount;
 
-	internal static int LanguageRefreshCount { get; private set; }
+	internal static int LanguageRefreshCount => languageRefreshCount;
 	private static Mod ModInstance => OverhaulMod.Instance;
 
 	public override void Load()
@@ -107,7 +109,7 @@ public sealed class TextSystem : ModSystem
 			catch { }
 		}
 
-		LanguageRefreshCount++;
+		Interlocked.Increment(ref languageRefreshCount);
 
 		return true;
 	}
@@ -122,7 +124,7 @@ public sealed class TextSystem : ModSystem
 		var il = new ILCursor(context);
 
 		il.EmitDelegate(static () => {
-			LanguageRefreshCount++;
+			Interlocked.Increment(ref languageRefreshCount);
 		});
 	}
 }
