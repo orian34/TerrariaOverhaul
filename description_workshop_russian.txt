@@ -1,4 +1,4 @@
-﻿[img]https://raw.githubusercontent.com/Mirsario/TerrariaOverhaul/1.4/Content/Menus/Logo.png[/img]
+﻿[img]https://raw.githubusercontent.com/Mirsario/TerrariaOverhaul/dev/Logo_Header.png[/img]
 
 Большой мод для Terraria, направленный на повышение общего удовольствия от игры за счёт улучшения таких аспектов, как: внешний вид, ощущения и механика боя, движение, камера, атмосфера и даже весь саундтрек.
 
@@ -8,8 +8,29 @@
 - Во много раз высшим качеством и вниманием к деталям;
 - Почти безупречная совместимость с контентными модами, что в ближайшее время будет доработана до идеала.
 
-[url=https://github.com/Mirsario/TerrariaOverhaul/issues/108]Нажмите здесь, чтобы узнать больше о состоянии ремейка.[/url]
+[h1]F.A.Q.[/h1]
+[quote][b]How do I configure the mod?[/b]
+Just click 'Configuration' in the top left corner of main menu![/quote]
+[quote][b]Why are some features missing?[/b]
+Please read the description above![/quote]
+[quote][b]I can't move, use items, etc.![/b]
+Redownload the mod! TML 2024.02 should be loading Overhaul 5.0.0.38![/quote]
+[quote][b]My camera gets stuck in place![/b]
+This seems to occur when using [b]Subtle[/b] Frameskip together with the [b]HighFpsSupport[/b] mod.
+Navigate to the vanilla Video settings and set Frameskip to [b]Off[/b].
+The mod's author has been notified, no need to message them.[/quote]
 
-[url=https://discord.gg/RNGq9N8]Нажмите здесь, чтобы присоединиться к Discord-серверу Overhaul[/url] (Англоязычный.)
+[h1]Links[/h1]
+- [url=https://discord.gg/RNGq9N8]Chat and ask questions on our [b]Discord Server[/b] 💬[/url]
+- [url=https://patreon.com/Mirsario]Show your support on [b]Patreon[/b] ❤️[/url]
+- [url=https://mirsar.io/Project/TerrariaOverhaul]See update posts on [b]mirsar.io[/b] 👁️[/url]
+- [url=https://mirsar.io/TerrariaOverhaul/Wiki]Check out our [i]brand new[/i] [b]Wiki[/b] 📝[/url]
+- [url=https://github.com/MIrsario/TerrariaOverhaul]Contribute on [b]GitHub[/b] ⚙️[/url]
 
-[url=https://github.com/Mirsario/TerrariaOverhaul]Нажмите здесь, чтобы открыть репозиторий Overhaul на GitHub.[/url]
+[h1]Contributing[/h1]
+[b]Terraria Overhaul[/b] is openly developed on [b]GitHub[/b], and all contributions are welcome and appreciated! If you're happen to be either:
+- On familiar terms with C# programming;
+- A great pixel artist;
+- Multilingual, with a supported language as your first;
+- Or have just found bugs to report;
+Then please, [url=https://github.com/MIrsario/TerrariaOverhaul/issues]consider heading over to our GitHub repository's issues and helping out![/url]

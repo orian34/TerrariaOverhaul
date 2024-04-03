@@ -1,4 +1,4 @@
-﻿[img]https://raw.githubusercontent.com/Mirsario/TerrariaOverhaul/dev/Content/Menus/Logo.png[/img]
+﻿[img]https://raw.githubusercontent.com/Mirsario/TerrariaOverhaul/dev/Logo_Header.png[/img]
 
 A large mod for Terraria that focuses on increasing overall enjoyment of the game, via improving aspects such as: combat looks, feel, & mechanics, movement, camera, ambience, and even the entire soundtrack.
 
@@ -9,19 +9,28 @@ The Work-in-Progress 5.0 version for Terraria 1.4 is a complete reimplementation
 - Near flawless compatibility with content mods, to be polished further soon.
 
 [h1]F.A.Q.[/h1]
-
-[b]How do I configure the mod?[/b]
-[quote]If clicking 'Configuration' in top left of main menu doesn't help you - Head over to the following path:
-[b]On Windows:[/b] [i][u]%userprofile%/Documents/My games/Terraria/tModLoader/TerrariaOverhaul[/u][/i]
-[b]On Linux:[/b] [i][u]~/.local/share/Terraria/tModLoader/TerrariaOverhaul[/u][/i]
-[b]On MacOS:[/b] [i][u]~/Library/Application support/Terraria/tModLoader/TerrariaOverhaul[/u][/i]
-(Where [i][u]tModLoader[/u][/i] may be [i][u]tModLoader-preview[/u][/i] if you're using a preview TML version.)
-and manually edit the [i][u]Config.json[/u][/i] file. Overhaul will automatically import configuration when it's saved.
-
-Work is currently being done towards having a rich in-game configuration screen.
-[/quote]
+[quote][b]How do I configure the mod?[/b]
+Just click 'Configuration' in the top left corner of main menu![/quote]
+[quote][b]Why are some features missing?[/b]
+Please read the description above![/quote]
+[quote][b]I can't move, use items, etc.![/b]
+Redownload the mod! TML 2024.02 should be loading Overhaul 5.0.0.38![/quote]
+[quote][b]My camera gets stuck in place![/b]
+This seems to occur when using [b]Subtle[/b] Frameskip together with the [b]HighFpsSupport[/b] mod.
+Navigate to the vanilla Video settings and set Frameskip to [b]Off[/b].
+The mod's author has been notified, no need to message them.[/quote]
 
 [h1]Links[/h1]
 - [url=https://discord.gg/RNGq9N8]Chat and ask questions on our [b]Discord Server[/b] 💬[/url]
 - [url=https://patreon.com/Mirsario]Show your support on [b]Patreon[/b] ❤️[/url]
+- [url=https://mirsar.io/Project/TerrariaOverhaul]See update posts on [b]mirsar.io[/b] 👁️[/url]
+- [url=https://mirsar.io/TerrariaOverhaul/Wiki]Check out our [i]brand new[/i] [b]Wiki[/b] 📝[/url]
 - [url=https://github.com/MIrsario/TerrariaOverhaul]Contribute on [b]GitHub[/b] ⚙️[/url]
+
+[h1]Contributing[/h1]
+[b]Terraria Overhaul[/b] is openly developed on [b]GitHub[/b], and all contributions are welcome and appreciated! If you're happen to be either:
+- On familiar terms with C# programming;
+- A great pixel artist;
+- Multilingual, with a supported language as your first;
+- Or have just found bugs to report;
+Then please, [url=https://github.com/MIrsario/TerrariaOverhaul/issues]consider heading over to our GitHub repository's issues and helping out![/url]
