@@ -50,7 +50,7 @@ public class BetterSearchBar : UIElement
 			e.SetPadding(0f);
 		}));
 
-		TextInput = Container.AddElement(new UISearchBar(Language.GetText("Search"), 0.8f).With(e => {
+		TextInput = Container.AddElement(new UISearchBar(Language.GetText($"Mods.{nameof(TerrariaOverhaul)}.Configuration.Search"), 0.8f).With(e => {
 			e.Width = StyleDimension.Fill;
 			e.Height = StyleDimension.Fill;
 			e.HAlign = 0f;

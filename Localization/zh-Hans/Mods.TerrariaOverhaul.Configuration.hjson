@@ -1,6 +1,7 @@
 HoverForDescriptionTip: "将鼠标悬停在选项上可查看其说明"
 // OptionOn: "On"
 // OptionOff: "Off"
+// Search: "Search options..."
 
 Accessibility: {
 	DisplayName: "无障碍"
