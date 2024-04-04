@@ -32,6 +32,8 @@
 
 # Work In Progress
 
+### Changes
+- For English, changed `Expert`'s difficulty level rename from `Bone Me Plenty` to `Turn Me Undead`. For obvious reasons.
 ### Localization
 - Chinese (`59.1%` -> `100%`) - PR [#232](https://github.com/Mirsario/TerrariaOverhaul/pull/232) by [**xiaoyvyv**](https://github.com/xiaoyvyv).
 - Fixed Overhaul's main menu buttons sometimes being incorrectly shown in English when a different language is selected.
