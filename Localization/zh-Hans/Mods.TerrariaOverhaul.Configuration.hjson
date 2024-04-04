@@ -306,9 +306,19 @@ Guns: {
 		Description: "启用后，射击武器将产生漂亮的枪口火焰。"
 	}
 
+	EnableMinigunDynamicFireRate: {
+		// DisplayName: "Enable Minigun Dynamic Firerate"
+		// Description: "When enabled, minigun-like weapons will speed up as they continue to fire."
+	}
+
 	EnableMinigunRecoilHovering: {
 		DisplayName: "启用机枪后坐力悬停"
 		Description: "启用后，类似机枪的武器将允许玩家通过向下开火在空中轻微悬停。"
+	}
+
+	EnableStarCannonDynamicFireRate: {
+		// DisplayName: "Enable Minigun Dynamic Firerate"
+		// Description: "When enabled, the Star Cannon (and similar weapons) will speed up as they continue to fire."
 	}
 
 	EnableStarCannonRecoilHovering: {

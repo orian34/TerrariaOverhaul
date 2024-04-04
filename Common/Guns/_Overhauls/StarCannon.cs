@@ -14,6 +14,7 @@ namespace TerrariaOverhaul.Common.Guns;
 public class StarCannon : ItemOverhaul
 {
 	public static readonly ConfigEntry<bool> EnableStarCannonRecoilHovering = new(ConfigSide.Both, true, "Guns");
+	public static readonly ConfigEntry<bool> EnableStarCannonDynamicFireRate = new(ConfigSide.Both, true, "Guns");
 
 	public static readonly SoundStyle FireSound = new($"{nameof(TerrariaOverhaul)}/Assets/Sounds/Items/Guns/StarCannon/StarCannonFire") {
 		Volume = 0.2f,
@@ -64,7 +65,13 @@ public class StarCannon : ItemOverhaul
 
 	public override float UseSpeedMultiplier(Item item, Player player)
 	{
-		return base.UseSpeedMultiplier(item, player) * speedFactor;
+		float result = base.UseSpeedMultiplier(item, player);
+
+		if (EnableStarCannonDynamicFireRate) {
+			result *= speedFactor;
+		}
+
+		return result;
 	}
 
 	public override void HoldItem(Item item, Player player)

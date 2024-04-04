@@ -318,9 +318,19 @@ Guns: {
 		Description: "When enabled, firing weapons will produce pretty muzzleflashes."
 	}
 
+	EnableMinigunDynamicFireRate: {
+		DisplayName: "Enable Minigun Dynamic Firerate"
+		Description: "When enabled, minigun-like weapons will speed up as they continue to fire."
+	}
+
 	EnableMinigunRecoilHovering: {
 		DisplayName: "Enable Minigun Recoil Hovering"
 		Description: "When enabled, minigun-like weapons will allow players to slightly hover in the air by firing downwards."
+	}
+
+	EnableStarCannonDynamicFireRate: {
+		DisplayName: "Enable Minigun Dynamic Firerate"
+		Description: "When enabled, the Star Cannon (and similar weapons) will speed up as they continue to fire."
 	}
 
 	EnableStarCannonRecoilHovering: {

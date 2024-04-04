@@ -16,6 +16,7 @@ namespace TerrariaOverhaul.Common.Guns;
 public class Minigun : ItemOverhaul
 {
 	public static readonly ConfigEntry<bool> EnableMinigunRecoilHovering = new(ConfigSide.Both, true, "Guns");
+	public static readonly ConfigEntry<bool> EnableMinigunDynamicFireRate = new(ConfigSide.Both, true, "Guns");
 
 	public static readonly SoundStyle MinigunFireSound = new($"{nameof(TerrariaOverhaul)}/Assets/Sounds/Items/Guns/Minigun/MinigunFire") {
 		Volume = 0.15f,
@@ -76,7 +77,13 @@ public class Minigun : ItemOverhaul
 
 	public override float UseSpeedMultiplier(Item item, Player player)
 	{
-		return base.UseSpeedMultiplier(item, player) * speedFactor;
+		float result = base.UseSpeedMultiplier(item, player);
+
+		if (EnableMinigunDynamicFireRate) {
+			result *= speedFactor;
+		}
+
+		return result;
 	}
 
 	public override void HoldItem(Item item, Player player)
