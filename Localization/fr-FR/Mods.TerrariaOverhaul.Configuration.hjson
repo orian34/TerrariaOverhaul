@@ -1,7 +1,7 @@
-// HoverForDescriptionTip: "Hover over an option to see its description"
-// OptionOn: "On"
-// OptionOff: "Off"
-// Search: "Search options..."
+HoverForDescriptionTip: "Survoler une option pour afficher sa description"
+OptionOn: "Activé"
+OptionOff: "Desactivé"
+Search: "Options de recherche..."
 
 Accessibility: {
 	DisplayName: "Accessibilité"
@@ -17,8 +17,8 @@ Accessibility: {
 	}
 
 	EnableJumpInputBuffering: {
-		// DisplayName: "Enable Jump Input Buffering"
-		// Description: "Allows you to press the jump button a bit prior landing, having your jump still be performed."
+		DisplayName: "Activer la Période Tampon du Saut"
+		Description: "Permet de presser la touche de saut un peu en avance sans annuler l'action une fois le sol touché."
 	}
 }
 
@@ -37,38 +37,38 @@ Ambience: {
 	}
 
 	EnableLowPassFiltering: {
-		// DisplayName: "Enable Low Pass Filtering"
-		// Description: "Whether to enable any 'muffling' sound processing."
+		DisplayName: "Activer le Filtre Passe-Bas"
+		Description: "Rajoute des effets d'étouffement sonore."
 	}
 
 	EnableReverb: {
-		// DisplayName: "Enable Reverb"
-		// Description: "Whether to enable any reverberation sound processing."
+		DisplayName: "Activer la Réverbération"
+		Description: "Rajoute des effets de réverbération sonore."
 	}
 
 	EnableUnderwaterMuffling: {
-		// DisplayName: "Enable Underwater Muffling"
-		// Description: "If enabled - going underwater will reduce the sound frequency range via 'low-pass filtering'."
+		DisplayName: "Activer le Filtrage Aquatique"
+		Description: "Réduit la portée de la fréquence sonore dans l'eau avec un filtre passe-bas."
 	}
 }
 
 Aesthetics: {
-	// DisplayName: "Aesthetics"
-	// Description: "This category contains nice-to-have features that mainly aim to increase immersion or beauty of the game, but may affect gameplay in the process."
+	DisplayName: "Esthétique"
+	Description: "Cette catégorie contient des fonctionalités visant à augmenter l'immersion ou la beauté du jeu, mais qui peuvent impacter le gameplay."
 
 	DestroyStumpsAfterTreeFalls: {
-		// DisplayName: "Destroy Stumps After Tree Falling Animations"
-		// Description: "When enabled, tree falling animations' behavior of redirecting stump hits a block higher will be compensated with removal of the stump after the animation's end.'"
+		DisplayName: "Détruire la Souche Après la Chute d'un Arbre"
+		Description: "La redirection au dessus de la souche des coups portés pour abattre un arbre est compensée par la destruction de la souche après l'animation de chute."
 	}
 
 	EnableAimableFlashlights: {
-		// DisplayName: "Enable Aimable Flashlights"
-		// Description: "When enabled, lighting from equipment such as the 'Mining Helmet' will become aimable towards the cursor."
+		DisplayName: "Activer la Visée des Lampes Torches"
+		Description: "Permet de viser au curseur avec la lumière produite par des équipements comme le 'Casque de Mineur'."
 	}
 
 	EnableTreeFallingAnimations: {
-		// DisplayName: "Enable Tree Falling Animations"
-		// Description: "When enabled, trees will physically fall down instead of exploding into items."
+		DisplayName: "Activer l'Animation d'Abattage d'Arbre"
+		Description: "Les arbres vont tomber physicalement au lieu d'exploser en objets."
 	}
 }
 
