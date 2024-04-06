@@ -1,24 +1,24 @@
 HoverForDescriptionTip: "将鼠标悬停在选项上可查看其说明"
-// OptionOn: "On"
-// OptionOff: "Off"
-// Search: "Search options..."
+OptionOn: "开"
+OptionOff: "关"
+Search: "搜索选项…"
 
 Accessibility: {
 	DisplayName: "无障碍"
-	Description: "Overhaul包含一些简单的游戏性修改，以便所有人以更舒适的方式体验游戏。"
+	Description: "Overhaul包含一些简单的游戏性修改，增加游戏舒适度。"
 
 	ForceAutoReuse: {
 		DisplayName: "强制自动挥舞"
 		Description:
 			'''
-			启用后，游戏中的几乎所有物品都可以通过按住使用按钮来持续使用。
-			预防腕管综合症，医生百分百推荐。
+			开启后，游戏中的几乎所有物品都可以通过按住使用按钮来持续使用。
+			经专业医师鼎力推荐，从此告别“鼠标手”！
 			'''
 	}
 
 	EnableJumpInputBuffering: {
-		DisplayName: "启用跳跃输入缓冲"
-		Description: "允许您在着陆前按下跳跃按钮，但仍会执行跳跃。"
+		DisplayName: "允许提前操作跳跃"
+		Description: "使玩家在落地之前稍稍提前按下跳跃键，并在玩家落地后立即执行跳跃动作。"
 	}
 }
 
@@ -27,93 +27,93 @@ Ambience: {
 	Description: "Overhaul包含一些令游戏世界更加身临其境的功能"
 
 	EnableAmbientSounds: {
-		DisplayName: "启用环境音效"
+		DisplayName: "环境音效"
 		Description: "各式各样的环境音效，如鸟、蟋蟀、风、洞穴声等"
 	}
 
 	EnablePlayerFootsteps: {
-		DisplayName: "启用脚步声"
+		DisplayName: "脚步声"
 		Description: "玩家角色的脚步声"
 	}
 
 	EnableLowPassFiltering: {
-		DisplayName: "启用低通滤波"
-		Description: "是否启用任何‘消音’声音处理。"
+		DisplayName: "低通滤波"
+		Description: "是否开启任何“消音”音效处理。"
 	}
 
 	EnableReverb: {
-		DisplayName: "启用混响"
-		Description: "是否启用任何混响声音处理。"
+		DisplayName: "混响"
+		Description: "是否开启任何混响音效处理。"
 	}
 
 	EnableUnderwaterMuffling: {
-		DisplayName: "启用水下消音"
-		Description: "如果启用 - 进入水下将通过‘低通滤波’减少声音频率范围。"
+		DisplayName: "水下消音"
+		Description: "开启后，潜入水中后会通过“低通滤波”降低声音的频率范围。"
 	}
 }
 
 Aesthetics: {
-	DisplayName: "美学"
-	Description: "此类别包含主要旨在增加游戏的沉浸感或美感的好玩功能，但可能会在过程中影响游戏性。"
+	DisplayName: "美观"
+	Description: "一些锦上添花的功能，可增加游戏沉浸感或美观性，但可能会影响游戏玩法。"
 
 	DestroyStumpsAfterTreeFalls: {
-		DisplayName: "树木倒下动画后销毁树桩"
-		Description: "启用后，树木倒下动画的行为在击中较高的方块后将在动画结束后补偿树桩的移除。"
+		DisplayName: "树倒下后摧毁树桩"
+		Description: "开启后，树木将在倒下动画结束后顺带破坏树桩"
 	}
 
 	EnableAimableFlashlights: {
-		DisplayName: "启用可瞄准手电筒"
-		Description: "启用后，诸如'采矿头盔'等设备的照明将可朝向鼠标光标。"
+		DisplayName: "可瞄准手电筒"
+		Description: "开启后，“采矿头盔”之类的照明设备将照向鼠标光标。"
 	}
 
 	EnableTreeFallingAnimations: {
-		DisplayName: "启用树木倒下动画"
-		Description: "启用后，树木将会物理倒下，而不是爆炸成物品。"
+		DisplayName: "树木倒下动画"
+		Description: "开启后，树木将会有倒下的物理效果，而非直接变成物品。"
 	}
 }
 
 Archery: {
-	DisplayName: "射箭"
+	DisplayName: "箭术"
 
 	EnableArrowFragments: {
-		DisplayName: "启用箭矢碎片"
-		Description: "启用后，被摧毁的箭矢将会分成小块。"
+		DisplayName: "箭矢碎屑"
+		Description: "开启后，受撞击的箭会碎裂成小块碎屑。"
 	}
 
 	EnableBowFiringDelays: {
-		DisplayName: "启用弓射击延迟"
-		Description: "启用后，弓的主要用途将略有延迟，使其更加独特。这不会影响其伤害输出。"
+		DisplayName: "略微延后射击"
+		Description: "开启后，弓的初次射击会稍微延迟，以增强打击感。此改动不会影响整体伤害。"
 	}
 
 	EnableBowSoundReplacements: {
-		DisplayName: "启用弓音效替换"
-		Description: "启用后，弓将获得新的音效。"
+		DisplayName: "替换弓箭音效"
+		Description: "开启后，弓将获得新的射击音效。"
 	}
 
 	EnableBowChargedShots: {
-		DisplayName: "启用弓充能射击"
-		Description: "启用后，大多数弓可以通过右键充能。"
+		DisplayName: "弓箭蓄力"
+		Description: "开启后，大多数弓可以右键蓄力射击。"
 	}
 
 	EnableBowChargeHovering: {
-		DisplayName: "启用弓充能悬停"
-		Description: "启用后，射手将能够通过充能弓并按住跳跃按钮暂时悬停在半空中。"
+		DisplayName: "弓箭蓄力浮空"
+		Description: "开启后，弓箭蓄力时在空中按住跳跃键可短暂悬浮"
 	}
 
 	EnableBowHoverJumps: {
-		DisplayName: "启用弓悬停跳跃"
-		Description: "启用后，当悬停充能时，弓将在射击时发射射手，起到双重跳跃的作用。"
+		DisplayName: "蓄力二段跳"
+		Description: "开启后，可在空中通过蓄力弓的反作用力，推动玩家进行类“二段跳”操作。"
 	}
 
 	EnableArcheryArrowVisualization: {
-		DisplayName: "启用射箭箭矢可视化"
-		Description: "启用后，箭矢将在弓和连发弓上可见，直到它们被射出。"
+		DisplayName: "拉弓箭矢可见"
+		Description: "开启后，弓和连弩将在发射箭矢前，在武器上模拟箭矢的拉弓动态效果。"
 	}
 }
 
 Awareness: {
-	DisplayName: "意识"
-	Description: "Overhaul包含一些帮助玩家提高对角色状态的意识的功能，提升沉浸感。"
+	DisplayName: "警觉"
+	Description: "Overhaul包含一些帮助玩家提高感知游戏角色状态的功能，以提升沉浸感。"
 
 	LowHealthFilteringIntensity: {
 		DisplayName: "残血音频过滤强度"
@@ -141,27 +141,27 @@ Balance: {
 	Description: "Overhaul实施多项游戏平衡变化，并努力将游戏模式转变为适当的难度级别。"
 
 	EnableBannerRework: {
-		DisplayName: "旗帜"
+		DisplayName: "重制旗帜效果"
 		Description: "Overhaul包含对敌怪旗效果的修改，其效果不再止步于令敌怪变弱。"
 	}
 
 	EnableDifficultyChanges: {
-		DisplayName: "启用难度修改"
+		DisplayName: "难度修改"
 		Description: "本模组对游戏整体难度的重新平衡。"
 	}
 
 	EnableDamageRandomizationRemoval: {
-		DisplayName: "启用伤害随机化移除"
-		Description: "启用后，游戏中所有伤害数字将变得公平可预测。"
+		DisplayName: "移除伤害浮动"
+		Description: "开启后，游戏中所有伤害将不再随机浮动，所见即所得。"
 	}
 
 	EnableHealthDropsRework: {
-		DisplayName: "启用生命值掉落重制"
+		DisplayName: "重制小红心掉落机制"
 		Description: ""
 	}
 
 	EnableManaDropsRework: {
-		DisplayName: "启用法力值掉落重制"
+		DisplayName: "重制小蓝星掉落机制"
 		Description: ""
 	}
 }
@@ -175,80 +175,80 @@ BloodAndGore: {
 		'''
 
 	EnableDecals: {
-		DisplayName: "启用血迹糊砖效果"
+		DisplayName: "开启血迹糊砖效果"
 		Description: "爆血会在方块上留下血迹"
 	}
 
 	EnableGoreStay: {
 		DisplayName: "敌怪残骸不消失"
-		Description: "启用后，敌怪的残骸不再会在约10秒后消失。"
+		Description: "开启后，敌怪的残骸不再会在约10秒后消失。"
 	}
 
 	EnablePlayerCharacterGore: {
-		DisplayName: "启用玩家角色暴力效果"
-		Description: "启用后，玩家角色在死亡时会产生动态生成的暴力效果，而不是将其部分飞到屏幕外。"
+		DisplayName: "玩家角色残骸"
+		Description: "开启后，玩家角色在死亡时会生成动态的残骸，而不是简单地将身体部分飞到屏幕外。"
 	}
 
 	EnableAdvancedParticles: {
-		DisplayName: "启用高级粒子效果"
-		Description: "启用后，原版的血液和类似的粒子将被Overhaul的高级线性粒子替换，这些粒子能够留下血迹。"
+		DisplayName: "高级粒子效果"
+		Description: "开启后，原版的血滴和类似粒子将替换为Overhaul的高级线形粒子，能够留下血迹。"
 	}
 
 	EnableGoreAudio: {
-		DisplayName: "启用暴力音效"
-		Description: "暴力交互是否会产生声音。"
+		DisplayName: "残骸触碰音效"
+		Description: "与残骸触碰是否会产生声音。"
 	}
 
 	EnableGoreGibbing: {
-		DisplayName: "启用暴力碎片效果"
-		Description: "暴力是否会被摧毁，有些暴力会破裂成更小的碎片。"
+		DisplayName: "残骸破裂效果"
+		Description: "残骸能否被摧毁，有些残骸会破裂成更小的碎片。"
 	}
 
 	EnableGorePhysics: {
-		DisplayName: "启用暴力物理效果"
-		Description: "暴力（和类似的杂乱物，如弹壳）是否可以在水中弹跳和漂浮。"
+		DisplayName: "残骸物理效果"
+		Description: "残骸（和类似的小杂物，如弹壳）能否反弹并在水中漂浮。"
 	}
 
 	EnableGoreBleeding: {
-		DisplayName: "启用暴力流血效果"
-		Description: "暴力是否会在空中飞行时产生粒子。"
+		DisplayName: "残骸流血效果"
+		Description: "残骸飞过空中时是否生成粒子"
 	}
 
 	EnableGoreBurning: {
-		DisplayName: "启用暴力燃烧效果"
-		Description: "暴力是否可以被点燃。"
+		DisplayName: "残骸燃烧效果"
+		Description: "残骸能否被点燃。"
 	}
 
 	ParticleMultiplierSafe: {
-		DisplayName: "粒子生成率（安全）"
-		Description: "如果设置低于1.0-减少正常（非血腥）粒子的数量。设置为'0.0'可完全禁用它们。"
+		DisplayName: "普通粒子生成率"
+		Description: "若设为低于1.0的值，则减少普通（非血腥）粒子的数量。设置为“0.0”以完全禁用普通粒子。"
 	}
 
 	ParticleMultiplierViolent: {
-		DisplayName: "粒子生成率（暴力）"
-		Description: "如果设置低于1.0-减少血液粒子的数量。设置为'0.0'可完全禁用它们。"
+		DisplayName: "血腥粒子生成率"
+		Description: "若设为低于1.0的值，则减少血腥粒子的数量。设置为“0.0”以完全禁用血腥粒子。"
 	}
 }
 
 Camera: {
-	DisplayName: "相机"
+	DisplayName: "镜头"
 	Description: "Overhaul包含许多相机优化功能，极大地改进了游戏的呈现方式。"
 
 	CameraSmoothness: {
-		DisplayName: "相机平滑移动"
+		DisplayName: "平滑移动镜头"
 		Description:
 			'''
-			应用多少阻尼以改善摄像机运动的速度感。
+			应用多少阻尼以提升镜头运动的速度感。
 			将其设为零以完全禁用该功能。
 			'''
 	}
 
 	LimitCameraUpdateRate: {
-		DisplayName: "限制相机更新率"
+		DisplayName: "限制镜头更新率"
 		Description:
 			'''
-			启用后，相机更新率被锁定为60hz，以防止玩家角色在高刷新率显示器上出现抽搐现象。
-			目前最好将其保持开启状态。
+			开启后，镜头更新率被锁定为60hz，以防止玩家角色在高刷新率显示器上出现抽搐现象。
+			目前最好保持开启。
 			'''
 	}
 
@@ -263,8 +263,8 @@ Enemies: {
 	Description: "Overhaul对敌怪的行为进行了一些修改，旨在使战斗过程变得更加有趣。"
 
 	EnableEnemyLunges: {
-		DisplayName: "启用敌怪冲锋"
-		Description: "启用后，步行敌怪在接近你时可能会扑向你。"
+		DisplayName: "敌怪飞扑"
+		Description: "开启后，步行敌怪在接近你时可能会扑向你。"
 	}
 }
 
@@ -273,99 +273,99 @@ Guns: {
 	Description: "Overhaul包含一些提升游戏玩法和枪械手感的设置。"
 
 	EnableAimingRecoil: {
-		DisplayName: "启用枪械后坐力（实验性）"
+		DisplayName: "枪械后坐力（实验性）"
 		Description:
 			'''
-			启用后，枪械射击时会使玩家鼠标光标移位，以模拟后坐力。
+			开启后，枪械射击时会使玩家鼠标光标移动，以模拟后坐力。
 			实验性功能，默认禁用。
 			'''
 	}
 
 	EnableBulletImpactAudio: {
-		DisplayName: "启用子弹命中音效"
-		Description: "启用后，类似子弹的抛射物击中地面时会产生新的声音。"
+		DisplayName: "子弹命中音效"
+		Description: "开启后，将改变子弹类射弹在击中物块时的音效。"
 	}
 
 	EnableGunSoundReplacements: {
-		DisplayName: "启用枪械音效替换"
-		Description: "启用后，所有受Overhaul影响的枪械都将获得新的令人满意的音效。"
+		DisplayName: "替换枪械音效"
+		Description: "开启后，所有受Overhaul影响的枪械都将获得爆爽音效。"
 	}
 
 	EnableAlternateGunFiringModes: {
-		DisplayName: "启用枪械替代射击模式"
-		Description: "启用后，一些枪械将获得新的替代射击模式。"
+		DisplayName: "新射击方式"
+		Description: "开启后，一些枪械将以新的方式射击。"
 	}
 
 	EnableBulletCasings: {
-		DisplayName: "启用子弹壳"
-		Description: "启用后，一些武器将发射适合它们的弹壳。"
+		DisplayName: "弹壳"
+		Description: "开启后，一些武器使用时会弹出与其相匹配的弹壳。"
 	}
 
 	EnableMuzzleflashes: {
-		DisplayName: "启用枪口火焰"
-		Description: "启用后，射击武器将产生漂亮的枪口火焰。"
+		DisplayName: "枪口火焰"
+		Description: "开启后，射击类武器将产生漂亮的枪口火焰。"
 	}
 
 	EnableMinigunDynamicFireRate: {
-		// DisplayName: "Enable Minigun Dynamic Firerate"
-		// Description: "When enabled, minigun-like weapons will speed up as they continue to fire."
+		DisplayName: "机枪动态射速"
+		Description: "开启后，机枪类武器会在持续开火时逐渐加快射速。"
 	}
 
 	EnableMinigunRecoilHovering: {
-		DisplayName: "启用机枪后坐力悬停"
-		Description: "启用后，类似机枪的武器将允许玩家通过向下开火在空中轻微悬停。"
+		DisplayName: "机枪后坐力浮空"
+		Description: "开启后，玩家使用机枪类武器将向下开火可略微浮空。"
 	}
 
 	EnableStarCannonDynamicFireRate: {
-		// DisplayName: "Enable Minigun Dynamic Firerate"
-		// Description: "When enabled, the Star Cannon (and similar weapons) will speed up as they continue to fire."
+		DisplayName: "星星炮动态射速"
+		Description: "开启后，星星炮（和类似武器）会在持续开火时逐渐加快射速"
 	}
 
 	EnableStarCannonRecoilHovering: {
-		DisplayName: "启用星星加农炮后坐力悬停"
-		Description: "启用后，星星加农炮（以及类似的武器）将允许玩家通过向下开火在空中轻微悬停。"
+		DisplayName: "星星炮后坐力浮空"
+		Description: "开启后，玩家使用星星炮（和类似武器）向下开火可略微浮空。"
 	}
 }
 
 Interface: {
 	DisplayName: "界面"
-	Description: "一切与图形用户界面和头顶显示有关的内容。"
+	Description: "一切与UI界面和HUD有关的内容。"
 
 	EnableCrosshair: {
-		DisplayName: "启用准星"
-		Description: "启用后，当使用投射物发射武器时，鼠标光标将被替换为先进的动画准星。"
+		DisplayName: "武器准星"
+		Description: "开启后，当使用发射型武器时，鼠标光标将变成先进的动态准星。"
 	}
 
 	EnableCrosshairAnimations: {
-		DisplayName: "启用准星动画"
-		Description: "准星是否应对武器射击和进入冷却状态进行动画处理。"
+		DisplayName: "动态准星"
+		Description: "准星是否根据武器使用状态而动态变化。"
 	}
 }
 
 Magic: {
-	DisplayName: "魔法"
+	DisplayName: "法术"
 
 	EnableMagicSoundReplacements: {
-		DisplayName: "启用魔法音效替换"
-		Description: "是否为一些魔法武器提供新的音效。"
+		DisplayName: "替换施法音效"
+		Description: "一些魔法武器将获得新的使用音效。"
 	}
 
 	EnableMagicPowerAttacks: {
-		DisplayName: "启用魔法强力攻击"
-		Description: "启用后，大多数魔法武器将能够通过替代使用执行充能攻击。"
+		DisplayName: "法术蓄力一击"
+		Description: "开启后，大多数魔法武器可右键使用施展蓄力一击。"
 	}
 
 	EnableManaRegenerationRework: {
-		DisplayName: "启用法力值再生重制"
-		Description: "启用后，法力值再生逻辑将被重新制作和平衡，以鼓励移动。"
+		DisplayName: "重制魔力恢复机制"
+		Description: "重制并平衡魔力恢复机制，以鼓励玩家移动。"
 	}
 
 	EnableManaRegenerationIcon: {
-		DisplayName: "启用法力值再生图标"
+		DisplayName: "魔力恢复图标"
 		Description:
 			'''
-			是否在装备魔法武器时显示'法力吸收'的buff图标。
-			此选项不影响游戏玩法。
+			是否在手持魔法武器时显示“魔力汲取”Buff图标。
+			此选项不影响实际游戏效果。
 			'''
 	}
 }
@@ -375,7 +375,7 @@ Melee: {
 	Description: "Overhaul彻底重制了游戏内近战武器的手感，允许你尽情砍杀！"
 
 	EnableMeleeAirCombat: {
-		DisplayName: "启用空中冲锋"
+		DisplayName: "空中冲锋"
 		Description:
 			'''
 			每次在空中击中敌人时，你可以使用方向键向任何方向冲锋。
@@ -388,91 +388,91 @@ Melee: {
 		Description:
 			'''
 			实验性功能
-			启用后，能够发射射弹的剑将消耗一定魔力。
+			开启后，能够发射射弹的剑将消耗一定魔力。
 			法师的魔力恢复和魔力星掉落仍然适用，因此该更改并不显著。
 			'''
 	}
 
 	EnableMeleeSwingVelocity: {
-		DisplayName: "启用挥砍推进"
+		DisplayName: "挥砍推进"
 		Description:
 			'''
-			启用后，挥舞近战武器可以令玩家角色向挥舞的方向加速。
+			开启后，挥舞近战武器可以令玩家角色向挥舞的方向加速。
 			可以通过使用方向键来控制，在保持向后移动时不会向前加速。
 			与重击一起使用，可以显著提高你的跳跃高度和伤害。
 			'''
 	}
 
 	EnableAxePowerAttacks: {
-		DisplayName: "启用战斧重击"
+		DisplayName: "战斧重击"
 		Description: "允许你通过右键使用斧头施展重击。"
 	}
 
 	EnableBroadswordPowerAttacks: {
-		DisplayName: "启用阔剑重击"
+		DisplayName: "阔剑重击"
 		Description: "允许你通过右键使用阔剑施展重击。"
 	}
 
 	EnableHammerPowerAttacks: {
-		DisplayName: "启用战锤重击"
+		DisplayName: "战锤重击"
 		Description: "允许你通过右键使用锤子施展重击。"
 	}
 
 	EnableMeleeKillingBlows: {
-		DisplayName: "启用近战击杀要害"
-		Description: "启用后，阔剑将能够通过对已经受伤的敌人进行强力打击来执行'击杀要害'，增加伤害，以便结束敌人。"
+		DisplayName: "致命一击"
+		Description: "开启后，阔剑可对已受伤的敌人施展“致命一击”，增加伤害并干净利落地结果敌人"
 	}
 
 	EnableMeleeAttackAiming: {
-		DisplayName: "启用近战攻击瞄准"
+		DisplayName: "近战攻击瞄准"
 		Description:
 			'''
-			启用后，近战武器将变得完全可瞄准。
-			需要启用'启用改进的近战碰撞'选项才能真正影响游戏玩法。
+			开启后，近战武器将变得完全可瞄准。
+			需要开启“改良近战攻击”选项才能真正影响游戏玩法。
 			'''
 	}
 
 	EnableImprovedMeleeCollision: {
-		DisplayName: "启用改进的近战碰撞"
+		DisplayName: "改良近战攻击"
 		Description:
 			'''
-			启用后，近战武器的碰撞将从静态矩形改为圆弧。
-			强烈建议启用'启用近战攻击瞄准'选项。
+			开启后，近战武器的攻击范围将从静态矩形改为圆弧。
+			强烈建议开启“近战攻击瞄准”选项。
 			'''
 	}
 
 	EnableMeleeVelocityBasedDamage: {
-		DisplayName: "启用基于速度的近战伤害"
-		Description: "启用后，所有你的近战伤害将受到你移动速度的影响。"
+		DisplayName: "近战伤害随移速改变"
+		Description: "开启后，近战伤害将受到你移动速度的影响。"
 	}
 
 	EnableMeleeVelocityBasedDamageIcon: {
-		DisplayName: "启用基于速度的近战伤害图标"
+		DisplayName: "指示移速对伤害的影响的图标"
 		Description:
 			'''
-			是否在装备阔剑时显示'砍杀'的buff图标。
-			此选项不影响游戏玩法。
+			是否在手持阔剑时显示“砍杀”Buff图标。
+			此选项不影响实际游戏效果。
 			'''
 	}
 
 	EnableAxeSoundReplacements: {
-		DisplayName: "启用斧头音效替换"
-		Description: "是否为斧头提供新的音效。"
+		DisplayName: "替换斧头音效"
+		Description: "是否替换斧头的音效。"
 	}
 
 	EnableBroadswordSoundReplacements: {
-		DisplayName: "启用阔剑音效替换"
-		Description: "是否为阔剑提供新的音效。"
+		DisplayName: "替换阔剑音效"
+		Description: "是否替换阔剑的音效。"
 	}
 
 	EnableHammerSoundReplacements: {
-		DisplayName: "启用锤子音效替换"
-		Description: "是否为锤子提供新的音效。"
+		DisplayName: "替换锤子音效"
+		Description: "是否替换锤子的音效。"
 	}
 
 	EnablePickaxeSoundReplacements: {
-		DisplayName: "启用镐音效替换"
-		Description: "是否为镐提供新的音效。"
+		DisplayName: "替换镐子音效"
+		Description: "是否替换镐子的音效。"
 	}
 }
 
@@ -481,22 +481,22 @@ Music: {
 	Description:
 		'''
 		Overhaul包含了对游戏音乐播放行为的几项改进。
-		此外，还包含一套完整的重制音乐 - 点击屏幕左上角的按钮以启用！
+		此外，还包含一套完整的重制音乐 - 点击屏幕左上角的按钮以开启！
 		'''
 
 	EnableMusicPlaybackPositionPreservation: {
 		DisplayName: "保持音乐播放进度"
 		Description:
 			'''
-			启用后，音轨会暂停在已播放到的位置，而不是从头开始。
-			也就是说，每当你回到你已经去过的生物群落时，其音乐将接着你离开时的进度播放。
-			在环游世界时不再总是“循环播放”音乐的开头，极大地改善了游戏体验。
+			开启后，背景音乐会暂停在已播放到的位置，而不是从头开始。
+			每当你回到你已经去过的生物群落，其音乐将接着你离开时的进度播放。
+			在跑图时不再总是“循环播放”音乐的开头，极大地改善了游戏体验。
 			'''
 	}
 
 	EnableBossDeathMusicStop: {
-		DisplayName: "启用Boss死亡音乐停止"
-		Description: "启用后，每当击败Boss时，音乐将暂时停止。以获得戏剧性效果。"
+		DisplayName: "击杀Boss后暂停音乐"
+		Description: "开启后，击杀Boss后游戏音乐将暂时停止，增强游戏体验。"
 	}
 }
 
@@ -505,22 +505,22 @@ Movement: {
 	Description: "Overhaul极大地改善和重制了贯穿全游的玩家角色移动的每个方面。"
 
 	EnableAutoJump: {
-		DisplayName: "启用自动跳跃"
-		Description: "启用后，玩家将始终能够按住空格键进行连续跳跃。"
+		DisplayName: "自动跳跃"
+		Description: "开启后，玩家将始终能够按住空格键进行连续跳跃。"
 	}
 
 	EnableVerticalAccelerationChanges: {
-		DisplayName: "应用垂直加速度更改"
+		DisplayName: "更改垂直加速度"
 		Description: "空气阻力和（几乎）无限制的最大坠落速度。"
 	}
 
 	EnableHorizontalAccelerationChanges: {
-		DisplayName: "应用水平加速度更改"
+		DisplayName: "更改水平加速度"
 		Description: "水平阻力、最大奔跑速度和加速度的更改。"
 	}
 
 	EnableBunnyhopping: {
-		DisplayName: "启用连跳加速"
+		DisplayName: "连跳加速"
 		Description:
 			'''
 			连跳会在每次跳跃时给你带来轻微的水平速度提升。
@@ -529,22 +529,22 @@ Movement: {
 	}
 
 	EnableClimbing: {
-		DisplayName: "启用攀登"
+		DisplayName: "攀登动作"
 		Description: "此功能可以让你通过按住向上键来爬升至更高的高度。"
 	}
 
 	EnableGrapplingHookPhysics: {
-		DisplayName: "启用钩爪物理效果"
+		DisplayName: "钩爪物理效果"
 		Description:
 			'''
-			启用后，钩爪的行为将改变，可以通过方向键绕着钩子晃荡。
+			开启后，钩爪的行为将改变，可以通过方向键绕着钩子晃荡。
 			注意：按住钩爪快捷键不放会将你拉到钩爪除，就像原版一样，因此你不需要在这两种行为之间进行选择，而是可以将它们结合起来使用。
 			注意：此功能不适用于游戏中的所有钩爪，此外，同时勾住多处时行为与原版一致。
 			'''
 	}
 
 	EnableWallJumping: {
-		DisplayName: "启用蹬墙跳"
+		DisplayName: "蹬墙跳"
 		Description:
 			'''
 			蹬墙跳是一种新的运动机制，需要装备有攀爬装备或钉鞋才能完成。
@@ -553,7 +553,7 @@ Movement: {
 	}
 
 	EnableWallFlips: {
-		DisplayName: "启用蹬墙空翻"
+		DisplayName: "蹬墙空翻"
 		Description:
 			'''
 			蹬墙空翻是一种新的运动机制，不需要任何额外饰品即可完成。
@@ -562,22 +562,22 @@ Movement: {
 	}
 
 	EnableRollJumps: {
-		DisplayName: "启用翻滚跳跃"
-		Description: "启用后，玩家将能够通过结合着陆跳跃（兔子跳）和适时的闪避滚动来执行'翻滚跳跃'。"
+		DisplayName: "翻滚跳跃"
+		Description: "开启后，玩家可以通过将连跳与恰当时机的翻滚结合起来，从而做出“翻滚跳跃”"
 	}
 
 	EnableDodgerolls: {
-		DisplayName: "启用闪避滚动"
+		DisplayName: "翻滚"
 		Description:
 			'''
-			启用后，玩家将能够通过指定的按钮执行闪避滚动。
-			闪避滚动授予短期无敌状态，以及大量的移动机会。
+			开启后，玩家可按下快捷键进行翻滚。
+			翻滚具有无敌帧，并带来各种走位可能。
 			'''
 	}
 
 	EnableDodgerollAudioCues: {
-		DisplayName: "启用闪避滚动音频提示"
-		Description: "切换指示闪避滚动充能已重新填充，或者没有剩余充能的声音。"
+		DisplayName: "翻滚提示音效"
+		Description: "在翻滚可用或不可用时播放音效作为提示"
 	}
 }
 
@@ -591,41 +591,41 @@ Visuals: {
 	}
 
 	EnableImprovedMeleeAnimations: {
-		DisplayName: "启用近战动画改善"
+		DisplayName: "改善近战动画"
 		Description:
 			'''
-			启用后，近战武器挥舞动画将改为更直接的挥舞，且挥舞方向交替切换。
-			推荐开启，因为其极大程度地模拟了造成近战伤害的时机和方向。
+			开启后，近战武器挥舞动画将改为更直接的挥舞，且挥舞方向交替切换。
+			建议开启，因为其极大程度地模拟了造成近战伤害的时机和方向。
 			'''
 	}
 
 	EnableMeleeSlashVisualization: {
-		DisplayName: "启用近战斩击视效"
+		DisplayName: "近战斩击视效"
 		Description:
 			'''
-			当启用时，挥舞近战武器时会出现一个圆形斩击特效。
-			推荐开启，因为其最极大程度地模拟了武器的攻击范围和弧度。
+			开启后，挥舞近战武器时会出现一个圆形斩击特效。
+			建议开启，因为其最极大程度地模拟了武器的攻击范围和弧度。
 			'''
 	}
 
 	EnablePlayerHeadRotation: {
-		DisplayName: "启用玩家头部旋转"
+		DisplayName: "玩家头部旋转"
 		Description: "玩家是否总是会看向鼠标光标位置。"
 	}
 
 	EnablePlayerTilting: {
-		DisplayName: "启用玩家倾斜"
-		Description: "玩家是否会基于速度，向运动方向略微倾斜。这将使他们看起来更有活力。"
+		DisplayName: "玩家身体倾斜"
+		Description: "玩家是否会基于速度，向运动方向略微倾斜。使其更有活力。"
 	}
 
 	EnableEnemyTiltingEffects: {
-		DisplayName: "启用敌怪倾斜效果"
-		Description: "根据其速度切换敌怪精灵略微倾斜的效果"
+		DisplayName: "敌怪身体倾斜"
+		Description: "敌怪贴图会根据速度而略微倾斜"
 	}
 
 	EnableVisualWeaponRecoil: {
-		DisplayName: "启用视觉武器后坐力"
-		Description: "启用后，射击武器将略微旋转玩家角色手中的精灵。"
+		DisplayName: "武器视觉后坐力"
+		Description: "开启后，射击类武器将略微旋转贴图以模拟后坐力震动。"
 	}
 }
 
@@ -637,8 +637,8 @@ Tweaks: {
 		DisplayName: "界面隐藏时显示系统光标"
 		Description:
 			'''
-			启用后，若使用F11热键隐藏游戏界面，将会显示系统鼠标光标。
-			这是一个微小的实用更改，可以在没有UI的情况下轻松录制游戏画面，因为录制软件可以设置不捕获系统光标。
+			开启后，若使用F11热键隐藏游戏界面，将会显示系统鼠标光标。
+			较实用的小更改，可以在没有UI的情况下轻松录制游戏画面，因为录制软件可以设置不捕获系统光标。
 			'''
 	}
 }

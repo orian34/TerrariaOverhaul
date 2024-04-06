@@ -1,6 +1,6 @@
 ﻿[img]https://raw.githubusercontent.com/Mirsario/TerrariaOverhaul/dev/Logo_Header.png[/img]
 
-这是一个大型模组，主要通过改进游戏各个方面（如战斗体验、手感和机制、移动行为、相机、环境氛围以及全部音乐）来增加游戏的整体乐趣。
+这是一个大型模组，主要通过改进游戏各个方面（如战斗体验、手感和机制、移动行为、镜头移动、环境氛围以及全部音乐）来增加游戏的整体乐趣。
 
 基于1.4的制作中的v5.0版本是一个完全重制的模组，具有以下特点：
 
@@ -9,29 +9,30 @@
 - 更高的整体质量和打磨程度
 - 与内容模组的高度兼容性，不久后将进行进一步的优化
 
-[h1]F.A.Q.[/h1]
-[quote][b]How do I configure the mod?[/b]
-Just click 'Configuration' in the top left corner of main menu![/quote]
-[quote][b]Why are some features missing?[/b]
-Please read the description above![/quote]
-[quote][b]I can't move, use items, etc.![/b]
-Redownload the mod! TML 2024.02 should be loading Overhaul 5.0.0.38![/quote]
-[quote][b]My camera gets stuck in place![/b]
-This seems to occur when using [b]Subtle[/b] Frameskip together with the [b]HighFpsSupport[/b] mod.
-Navigate to the vanilla Video settings and set Frameskip to [b]Off[/b].
-The mod's author has been notified, no need to message them.[/quote]
+[h1]常见问题[/h1]
+[quote][b]如何配置此模组的功能？[/b]
+点击主界面左上角的“配置”即可！[/quote]
+[quote][b]为什么有一些模组内容不见了？[/b]
+请见上文的简介！[/quote]
+[quote][b]我出现了动不了、用不了物品等问题！[/b]
+重新下载此模组！TML 2024.02应加载Overhaul 5.0.0.38！[/quote]
+[quote][b]我的游戏镜头卡住了！[/b]
+这个问题会在跳帧设为[b]隐蔽[/b]，且开启了[b]HighFpsSupport[/b]模组时发生
+找到原版的视频设置，并将跳帧设为[b]关[/b]即可
+那个模组的作者已知道此问题，不需要再通知他们[/quote]
 
-[h1]Links[/h1]
+[h1]链接[/h1]
 [url=https://discord.gg/RNGq9N8]在我们的[b]Discord服务器[/b]上提问和讨论 💬[/url]
 [url=https://patreon.com/Mirsario]在[b]Patreon[/b]上支持我们 ❤️[/url]
-- [url=https://mirsar.io/Project/TerrariaOverhaul]See update posts on [b]mirsar.io[/b] 👁️[/url]
-- [url=https://mirsar.io/TerrariaOverhaul/Wiki]Check out our [i]brand new[/i] [b]Wiki[/b] 📝[/url]
+- [url=https://mirsar.io/Project/TerrariaOverhaul]在[b]mirsar.io[/b]上查看更新帖子 👁️[/url]
+- [url=https://mirsar.io/TerrariaOverhaul/Wiki]查看我们的[i]全新[/i][b]Wiki[/b] 📝[/url]
 [url=https://github.com/MIrsario/TerrariaOverhaul]在[b]GitHub[/b]上贡献代码和翻译 ⚙️[/url]
 
-[h1]Contributing[/h1]
-[b]Terraria Overhaul[/b] is openly developed on [b]GitHub[/b], and all contributions are welcome and appreciated! If you're happen to be either:
-- On familiar terms with C# programming;
-- A great pixel artist;
-- Multilingual, with a supported language as your first;
-- Or have just found bugs to report;
-Then please, [url=https://github.com/MIrsario/TerrariaOverhaul/issues]consider heading over to our GitHub repository's issues and helping out![/url]
+[h1]贡献[/h1]
+[b]Terraria Overhaul[/b]是一个开源项目，在[b]GitHub[/b]上进行开发。我们欢迎并感谢任何形式的贡献！如果你满足以下条件之一：
+- 熟悉 C# 编程语言；
+- 像素画功夫了得；
+- 使用多种语言，并且精通受支持的语言之一；
+- 或只是发现了一些需要反馈的BUG；
+那么，[url=https://github.com/MIrsario/TerrariaOverhaul/issues]请访问我们GitHub仓库的Issues页面，帮助我们完善这个 MOD！[/url]
+
