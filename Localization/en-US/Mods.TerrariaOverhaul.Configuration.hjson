@@ -58,7 +58,7 @@ Aesthetics: {
 
 	DestroyStumpsAfterTreeFalls: {
 		DisplayName: "Destroy Stumps After Tree Falling Animations"
-		Description: "When enabled, tree falling animations' behavior of redirecting stump hits a block higher will be compensated with removal of the stump after the animation's end.'"
+		Description: "When enabled, tree falling animations' behavior of redirecting stump hits a block higher will be compensated with removal of the stump after the animation's end."
 	}
 
 	EnableAimableFlashlights: {
@@ -329,7 +329,7 @@ Guns: {
 	}
 
 	EnableStarCannonDynamicFireRate: {
-		DisplayName: "Enable Minigun Dynamic Firerate"
+		DisplayName: "Enable Star Cannon Dynamic Firerate"
 		Description: "When enabled, the Star Cannon (and similar weapons) will speed up as they continue to fire."
 	}
 
