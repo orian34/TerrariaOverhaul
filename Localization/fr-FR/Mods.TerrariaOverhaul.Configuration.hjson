@@ -327,6 +327,7 @@ Guns: {
 	EnableStarCannonDynamicFireRate: {
 		DisplayName: "Activer la Cadence de Tir Dynamique du Canon à Étoiles"
 		Description: "Le Canon à Étoiles (et armes similaires) accelère la cadence quand elle est continue."
+
 	}
 
 	EnableStarCannonRecoilHovering: {
