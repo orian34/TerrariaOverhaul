@@ -91,10 +91,10 @@ ItemOverhauls: {
 			'''
 
 		Broadsword: {
-			KillingBlow: "Coup Fatal!"
+			KillingBlow: "Coup de Grâce!"
 			KillingBlowInfo:
 				'''
-				Effectue un [[Coup Fatal]] en utilisant une [[attaque puissante]] sur des ennemis blessés,
+				Effectue un [[Coup de Grâce]] en utilisant une [[attaque puissante]] sur des ennemis blessés,
 				multipliant les dégâts par [[x{0}]] quand ça pourrait vaincre l'ennemi
 				'''
 		}
