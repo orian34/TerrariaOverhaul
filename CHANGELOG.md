@@ -41,6 +41,8 @@
 - Chinese (`59.1%` -> `100%`) - PRs [#232](https://github.com/Mirsario/TerrariaOverhaul/pull/232) & [#233](https://github.com/Mirsario/TerrariaOverhaul/pull/233) by [**xiaoyvyv**](https://github.com/xiaoyvyv) & [**Cyrillya**](https://github.com/Cyrillya).
 - Fixed Overhaul's main menu buttons sometimes being incorrectly shown in English when a different language is selected.
 - A few more GUI elements were made localizable.
+### Fixes
+- Fixed a rare cross-mod issue where Overhaul's falling trees would cause issues by using outdated "spawn sources" in item/loot instantiation.
 
 # 5.0 BETA 14
 

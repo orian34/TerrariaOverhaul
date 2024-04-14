@@ -201,7 +201,8 @@ public sealed class FallingTreeEntity : SimpleEntity
 			var capture = CapturedItems[i];
 			var adjustedPosition = capture.Position.RotatedBy(Rotation, Position);
 
-			Item.NewItem(capture.Source, adjustedPosition, capture.Type, capture.Stack, prefixGiven: capture.Prefix);
+			// As some time has passed since the values in 'capture.SpawnSource' were created - we mustn't use them.
+			Item.NewItem(null, adjustedPosition, capture.Type, capture.Stack, prefixGiven: capture.Prefix);
 		}
 
 		CapturedItems = null;
