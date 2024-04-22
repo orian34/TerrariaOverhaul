@@ -210,7 +210,10 @@ public sealed class ParticleSystem : ModSystem
 					if (Main.rand.NextBool(50)) {
 						SoundEngine.PlaySound(BloodDripSound, particle.Position);
 					}
-					DecalSystem.AddDecals(DecalStyle.Default, particle.Position + particle.Velocity.SafeNormalize(default) * Main.rand.NextFloat(5f), particle.Color);
+					DecalSystem.AddDecals(DecalStyle.Default, new DecalInfo {
+						PointSize = (particle.Position + particle.Velocity.SafeNormalize(default) * Main.rand.NextFloat(5f), Vector2Int.One),
+						Color = particle.Color,
+					});
 					RemoveBit(ref maskRef);
 					continue;
 				}

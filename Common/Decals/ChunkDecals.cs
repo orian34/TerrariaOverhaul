@@ -13,22 +13,6 @@ namespace TerrariaOverhaul.Common.Decals;
 [Autoload(Side = ModSide.Client)]
 public sealed class ChunkDecals : ChunkComponent
 {
-	private struct DecalInfo
-	{
-		public Texture2D texture;
-		public Rectangle destRect;
-		public Rectangle? srcRect;
-		public Color color;
-
-		public DecalInfo(Texture2D texture, Rectangle destRect, Rectangle? srcRect, Color color)
-		{
-			this.texture = texture;
-			this.destRect = destRect;
-			this.srcRect = srcRect;
-			this.color = color;
-		}
-	}
-
 	private struct DecalStyleData
 	{
 		public uint NumDecalsToDraw = 0;
@@ -85,6 +69,7 @@ public sealed class ChunkDecals : ChunkComponent
 
 		bool renderTargetSet = false;
 		var sb = Main.spriteBatch;
+		var origin = Vector2.One * 0.5f;
 
 		for (int i = 0; i < decalStyleData.Length; i++) {
 			ref var styleData = ref decalStyleData[i];
@@ -106,7 +91,7 @@ public sealed class ChunkDecals : ChunkComponent
 			for (int j = 0; j < styleData.NumDecalsToDraw; j++) {
 				DecalInfo info = styleData.DecalsToDraw[j];
 
-				sb.Draw(info.texture, info.destRect, info.srcRect, info.color);
+				sb.Draw(info.Texture, info.DstRect, info.SrcRect, info.Color, info.Rotation, origin, 0, 0f);
 			}
 
 			sb.End();
@@ -178,7 +163,7 @@ public sealed class ChunkDecals : ChunkComponent
 		}
 	}
 
-	public void AddDecals(DecalStyle decalStyle, Texture2D texture, Rectangle localDestRect, Rectangle? srcRect, Color color)
+	public void AddDecals(DecalStyle decalStyle, in DecalInfo decalInfo)
 	{
 		ref var styleData = ref decalStyleData[decalStyle.Id];
 		uint index = styleData.NumDecalsToDraw++;
@@ -187,7 +172,7 @@ public sealed class ChunkDecals : ChunkComponent
 			Array.Resize(ref styleData.DecalsToDraw, (int)BitOperations.RoundUpToPowerOf2(index + 1));
 		}
 
-		styleData.DecalsToDraw[index] = new DecalInfo(texture, localDestRect, srcRect, color);
+		styleData.DecalsToDraw[index] = decalInfo;
 	}
 
 	private static Matrix GetDefaultMatrix()

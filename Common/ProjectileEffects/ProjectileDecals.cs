@@ -125,7 +125,12 @@ public sealed class ProjectileDecals : GlobalProjectile
 			color.B = (byte)(color.B * multiplier);
 		}
 
-		DecalSystem.AddDecals(data.DecalStyle, texture, rect, color, ifChunkExists: data.IfChunkExists);
+		DecalSystem.AddDecals(data.DecalStyle, new DecalInfo {
+			Texture = texture,
+			DstRect = rect,
+			Color = color,
+			IfChunkExists = data.IfChunkExists,
+		});
 	}
 
 	[MethodImpl(MethodImplOptions.AggressiveInlining)]
