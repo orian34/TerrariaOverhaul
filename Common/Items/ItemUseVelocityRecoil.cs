@@ -13,6 +13,7 @@ public sealed class ItemUseVelocityRecoil : ItemComponent
 {
 	public Vector2 BaseVelocity { get; set; } = new(5.0f, 5.0f);
 	public Vector2 MaxVelocity { get; set; } = new(5f, 5f);
+	public (Vector2 Min, Vector2 Max) GravityFactor { get; set; } = (Vector2.One * 0.1f, Vector2.One);
 
 	public override bool? UseItem(Item item, Player player)
 	{
@@ -41,6 +42,10 @@ public sealed class ItemUseVelocityRecoil : ItemComponent
 		if (velocity.Y > 0f || player.velocity.Y == 0f) {
 			velocity.Y = 0f;
 		}
+
+		// Multiply by gravity, to prevent insane travel with featherfall potions.
+		float gravityFactor = player.gravity / Player.defaultGravity;
+		velocity *= Vector2.Clamp(Vector2.One * gravityFactor, GravityFactor.Min, GravityFactor.Max);
 
 		VelocityUtils.AddLimitedVelocity(player, velocity, MaxVelocity);
 

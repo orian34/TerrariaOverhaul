@@ -33,6 +33,7 @@
 # Work In Progress
 
 ### Changes
+- Melee weapon swing velocity and miniguns' velocity recoil are now both scaled by the player's current gravity intensity. This resolves [#204](https://github.com/Mirsario/TerrariaOverhaul/issues/204) (Featherfall weapon combos allow infinite ascension).
 - For English, changed `Expert`'s difficulty level rename from `Bone Me Plenty` to `Turn Me Undead`. For obvious reasons.
 ### Configuration
 - Added the following new options:

@@ -78,6 +78,7 @@ public sealed class ItemMeleeSwingVelocity : ItemComponent
 	public Vector2 DashVelocity { get; set; } = Vector2.One;
 	public Vector2 MaxDashVelocity { get; set; } = Vector2.One;
 	public Vector2 DefaultKeyVelocityMultiplier { get; set; } = new Vector2(2f / 3f, 1f);
+	public (Vector2 Min, Vector2 Max) GravityFactor { get; set; } = (Vector2.One * 0.1f, Vector2.One);
 
 	public IReadOnlyDictionary<string, VelocityModifier> DashVelocityModifiers => dashVelocityModifiers;
 
@@ -143,11 +144,13 @@ public sealed class ItemMeleeSwingVelocity : ItemComponent
 		);
 
 		// Multiply by controls
-
 		dashVelocity *= VelocityUtils.CalculateDirectionalInputModifierForVelocity(attackDirection, keyDirection, DefaultKeyVelocityMultiplier);
 
-		// Add the velocity
+		// Multiply by gravity, to prevent insane travel with featherfall potions.
+		float gravityFactor = player.gravity / Player.defaultGravity;
+		dashVelocity *= Vector2.Clamp(Vector2.One * gravityFactor, GravityFactor.Min, GravityFactor.Max);
 
+		// Add the velocity
 		VelocityUtils.AddLimitedVelocity(player, dashVelocity * attackDirection, maxDashVelocity);
 	}
 	
