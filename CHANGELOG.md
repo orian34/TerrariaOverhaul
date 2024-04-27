@@ -33,7 +33,9 @@
 # Work In Progress
 
 ### Changes
+- Melee weapon swing velocity and miniguns' velocity recoil are now both scaled by the player's current gravity intensity. This resolves [#204](https://github.com/Mirsario/TerrariaOverhaul/issues/204) (Featherfall weapon combos allow infinite ascension).
 - For English, changed `Expert`'s difficulty level rename from `Bone Me Plenty` to `Turn Me Undead`. For obvious reasons.
+- Removed all unused and functionless legacy content from compilation: `Charcoal`, `Calendars`, `Gramophones`, `Stone Axes`, `Stone Pickaxes`, `Ash Clots`, `Walking Ashes`. These bits will be reintroduced when required.
 ### Configuration
 - Added the following new options:
   **Guns:** `EnableMinigunDynamicFirerate`, `EnableStarCannonDynamicFirerate`.
@@ -41,6 +43,8 @@
 - Chinese (`59.1%` -> `100%`) - PRs [#232](https://github.com/Mirsario/TerrariaOverhaul/pull/232) & [#233](https://github.com/Mirsario/TerrariaOverhaul/pull/233) by [**xiaoyvyv**](https://github.com/xiaoyvyv) & [**Cyrillya**](https://github.com/Cyrillya).
 - Fixed Overhaul's main menu buttons sometimes being incorrectly shown in English when a different language is selected.
 - A few more GUI elements were made localizable.
+### Fixes
+- Fixed a rare cross-mod issue where Overhaul's falling trees would cause issues by using outdated "spawn sources" in item/loot instantiation.
 
 # 5.0 BETA 14
 

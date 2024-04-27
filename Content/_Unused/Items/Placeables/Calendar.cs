@@ -1,3 +1,5 @@
+// Unused content, may be reintroduced in the future.
+#if false
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
@@ -23,3 +25,4 @@ public class Calendar : ModItem
 		Item.rare = ItemRarityID.LightPurple;
 	}
 }
+#endif

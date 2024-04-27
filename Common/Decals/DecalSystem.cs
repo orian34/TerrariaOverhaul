@@ -13,6 +13,26 @@ using TerrariaOverhaul.Utilities;
 
 namespace TerrariaOverhaul.Common.Decals;
 
+public struct DecalInfo
+{
+	public Texture2D Texture = TextureAssets.BlackTile.Value;
+	public Rectangle DstRect;
+	public Rectangle? SrcRect;
+	public Color Color = Color.White;
+	public float Rotation;
+	public bool IfChunkExists;
+
+	public (Vector2 point, Vector2Int halfSize) PointSize {
+		set {
+			var size = value.halfSize * 2;
+			var offset = value.halfSize - Vector2.One;
+			DstRect = new Rectangle((int)(value.point.X - offset.X), (int)(value.point.Y - offset.Y), size.X, size.Y);
+		}
+	}
+
+	public DecalInfo() { }
+}
+
 [Autoload(Side = ModSide.Client)]
 public sealed class DecalSystem : ModSystem
 {
@@ -43,43 +63,34 @@ public sealed class DecalSystem : ModSystem
 		decalStyles.Add(style);
 	}
 
-	public static void ClearDecals(Rectangle dest)
-		=> AddDecals(DecalStyle.Opaque, dest, Color.Transparent, true);
+	public static void ClearDecals(Rectangle dst)
+		=> AddDecals(DecalStyle.Opaque, new DecalInfo {
+			DstRect = dst,
+			Color = Color.Transparent,
+			IfChunkExists = true,
+		});
 
-	public static void ClearDecals(Texture2D texture, Rectangle dest, Color color)
-		=> AddDecals(DecalStyle.Subtractive, texture, dest, color, true);
+	public static void ClearDecals(Texture2D texture, Rectangle dst, Color color)
+		=> AddDecals(DecalStyle.Subtractive, new DecalInfo {
+			Texture = texture,
+			DstRect = dst,
+			Color = color,
+			IfChunkExists = true,
+		});
 
-	public static void AddDecals(DecalStyle style, Rectangle dest, Color color, bool ifChunkExists = false)
-		=> AddDecals(style, TextureAssets.BlackTile.Value, dest, color, ifChunkExists);
-
-	public static void AddDecals(DecalStyle style, Vector2 point, Color color, bool ifChunkExists = false)
-	{
-		var tilePos = point.ToTileCoordinates();
-
-		if (!tilePos.IsInWorld()) {
-			return;
-		}
-
-		AddDecals(style, new Rectangle((int)(point.X / 2) * 2, (int)(point.Y / 2) * 2, 2, 2), color, ifChunkExists);
-	}
-
-	public static void AddDecals(DecalStyle style, Texture2D texture, Rectangle dest, Color color, bool ifChunkExists = false)
+	public static void AddDecals(DecalStyle style, in DecalInfo decal)
 	{
 		if (Main.dedServ || WorldGen.gen || WorldGen.IsGeneratingHardMode || !EnableDecals) { // || !ConfigSystem.local.Clientside.BloodAndGore.enableTileBlood) {
 			return;
 		}
 
-		if (texture == null) {
-			throw new ArgumentNullException(nameof(texture));
-		}
-
 		var chunkStart = new Vector2Int(
-			(int)(dest.X / 16f / Chunk.MaxChunkSize),
-			(int)(dest.Y / 16f / Chunk.MaxChunkSize)
+			decal.DstRect.X / TileUtils.TileSizeInPixels / Chunk.MaxChunkSize,
+			decal.DstRect.Y / TileUtils.TileSizeInPixels / Chunk.MaxChunkSize
 		);
 		var chunkEnd = new Vector2Int(
-			(int)(dest.Right / 16f / Chunk.MaxChunkSize),
-			(int)(dest.Bottom / 16f / Chunk.MaxChunkSize)
+			decal.DstRect.Right / TileUtils.TileSizeInPixels / Chunk.MaxChunkSize,
+			decal.DstRect.Bottom / TileUtils.TileSizeInPixels / Chunk.MaxChunkSize
 		);
 
 		// The provided rectangle will be split between chunks, possibly into multiple draws.
@@ -87,31 +98,31 @@ public sealed class DecalSystem : ModSystem
 			for (int chunkX = chunkStart.X; chunkX <= chunkEnd.X; chunkX++) {
 				var chunkPoint = new Vector2Int(chunkX, chunkY);
 
-				if (!(ifChunkExists ? ChunkSystem.TryGetChunk(chunkPoint, out Chunk chunk) : ChunkSystem.TryGetOrCreateChunk(chunkPoint, out chunk!))) {
+				if (!(decal.IfChunkExists ? ChunkSystem.TryGetChunk(chunkPoint, out Chunk chunk) : ChunkSystem.TryGetOrCreateChunk(chunkPoint, out chunk!))) {
 					continue;
 				}
 
-				var localDestRect = (RectFloat)dest;
+				var localDstRect = (RectFloat)decal.DstRect;
 
 				// Clip the destination rectangle to the chunk's bounds.
-				localDestRect = RectFloat.FromPoints(
-					Math.Max(localDestRect.x, chunk.WorldRectangle.x),
-					Math.Max(localDestRect.y, chunk.WorldRectangle.y),
-					Math.Min(localDestRect.Right, chunk.WorldRectangle.Right),
-					Math.Min(localDestRect.Bottom, chunk.WorldRectangle.Bottom)
+				localDstRect = RectFloat.FromPoints(
+					Math.Max(localDstRect.x, chunk.WorldRectangle.x),
+					Math.Max(localDstRect.y, chunk.WorldRectangle.y),
+					Math.Min(localDstRect.Right, chunk.WorldRectangle.Right),
+					Math.Min(localDstRect.Bottom, chunk.WorldRectangle.Bottom)
 				);
 
 				// Move the destination rectangle to local space.
-				localDestRect.x -= chunk.WorldRectangle.x;
-				localDestRect.y -= chunk.WorldRectangle.y;
+				localDstRect.x -= chunk.WorldRectangle.x;
+				localDstRect.y -= chunk.WorldRectangle.y;
 				// Divide the destination rectangle, since decal RTs have halved resolution.
-				localDestRect.x /= 2;
-				localDestRect.y /= 2;
-				localDestRect.width /= 2;
-				localDestRect.height /= 2;
+				localDstRect.x /= 2;
+				localDstRect.y /= 2;
+				localDstRect.width /= 2;
+				localDstRect.height /= 2;
 
 				// Clip the source rectangle.
-				var destinationRectInChunkSpace = RectFloat.FromPoints(((RectFloat)dest).Points / Chunk.MaxChunkSizeInPixels);
+				var destinationRectInChunkSpace = RectFloat.FromPoints(((RectFloat)decal.DstRect).Points / Chunk.MaxChunkSizeInPixels);
 				var clippedRectInChunkSpace = RectFloat.FromPoints(
 					Math.Max(destinationRectInChunkSpace.Left, chunk.Rectangle.Left),
 					Math.Max(destinationRectInChunkSpace.Top, chunk.Rectangle.Top),
@@ -119,15 +130,21 @@ public sealed class DecalSystem : ModSystem
 					Math.Min(destinationRectInChunkSpace.Bottom, chunk.Rectangle.Bottom)
 				);
 
-				var srcRect = (Rectangle)new RectFloat(
-					(clippedRectInChunkSpace.x - destinationRectInChunkSpace.x) * (chunk.WorldRectangle.width / dest.Width) * texture.Width,
-					(clippedRectInChunkSpace.y - destinationRectInChunkSpace.y) * (chunk.WorldRectangle.height / dest.Height) * texture.Height,
-					(clippedRectInChunkSpace.width / destinationRectInChunkSpace.width) * texture.Width,
-					(clippedRectInChunkSpace.height / destinationRectInChunkSpace.height) * texture.Height
+				var srcRect = decal.SrcRect ?? decal.Texture.Bounds;
+				var localSrcRect = (Rectangle)new RectFloat(
+					srcRect.X + (clippedRectInChunkSpace.x - destinationRectInChunkSpace.x) * (chunk.WorldRectangle.width / decal.DstRect.Width) * srcRect.Width,
+					srcRect.Y + (clippedRectInChunkSpace.y - destinationRectInChunkSpace.y) * (chunk.WorldRectangle.height / decal.DstRect.Height) * srcRect.Height,
+					(clippedRectInChunkSpace.width / destinationRectInChunkSpace.width) * srcRect.Width,
+					(clippedRectInChunkSpace.height / destinationRectInChunkSpace.height) * srcRect.Height
 				);
 
 				// Enqueue a draw for the chunk component to do on its own.
-				chunk.Components.Get<ChunkDecals>().AddDecals(style, texture, (Rectangle)localDestRect, srcRect, color);
+				var chunkDecal = decal with {
+					SrcRect = localSrcRect,
+					DstRect = (Rectangle)localDstRect,
+				};
+
+				chunk.Components.Get<ChunkDecals>().AddDecals(style, in chunkDecal);
 			}
 		}
 	}

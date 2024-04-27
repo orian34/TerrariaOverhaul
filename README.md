@@ -19,7 +19,7 @@ Below is a step by step instruction for that. It only assumes that you know at l
 
 - Get TModLoader from [Steam](https://store.steampowered.com/app/1281930/tModLoader) or [GitHub](https://github.com/tModLoader/tModLoader/releases).
 - Get Git from [git-scm](https://git-scm.com/download) or from a Linux package manager. Most defaults suffice in the installer.
-- Get .NET 6 SDK from [dotnet.microsoft.com](https://dotnet.microsoft.com/en-us/download/dotnet/6.0).
+- Get both the [.NET 6](https://dotnet.microsoft.com/en-us/download/dotnet/6.0) & [.NET 8](https://dotnet.microsoft.com/en-us/download/dotnet/8.0) SDKs.
 - Clone the mod into `%userprofile%/Documents/My games/Terraria/tModLoader/ModSources`.
 The git command for that would be `git clone https://github.com/Mirsario/TerrariaOverhaul -b dev`, where `dev` is the branch you want to clone.
 - Build the mod by running `dotnet build` in the cloned folder.

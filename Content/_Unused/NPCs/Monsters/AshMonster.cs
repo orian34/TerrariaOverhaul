@@ -1,3 +1,5 @@
+// Unused content, may be reintroduced in the future.
+#if false
 using Microsoft.Xna.Framework;
 using Terraria;
 using Terraria.GameContent.ItemDropRules;
@@ -30,8 +32,6 @@ public abstract class AshMonster : ModNPC
 		// Animation.
 		AnimationType = BaseNPC;
 		Main.npcFrameCount[Type] = Main.npcFrameCount[BaseNPC];
-
-		//OverhaulNPC.goreInfos.AddIfNeedTo(npc.type,() => new NPCGoreInfo(npc,bloodColor:Color.Transparent,goreType:""));
 	}
 
 	public override void AI()
@@ -57,18 +57,19 @@ public abstract class AshMonster : ModNPC
 		npcLoot.Add(ItemDropRule.Common(ModContent.ItemType<Charcoal>(), minimumDropped: 1, maximumDropped: 3));
 	}
 
-	/*public override void PostDraw(SpriteBatch sb, Color drawColor) //TODO: Reimplement this when tML simplifies glowmasks
-	{
-		var tex = TextureSystem.GetTexture2D("NPCs/AshSlime_Glow");
-		var effects = npc.spriteDirection==1 ? SpriteEffects.FlipHorizontally : SpriteEffects.None;
-		var origin = new Vector2(tex.Width/2,tex.Height/Main.npcFrameCount[npc.type]/2);
-		//origin.Y -= 4;
-		var position = npc.Center-Main.screenPosition;
-		sb.Draw(tex,position,npc.frame,OverhaulUtils.colorWhite,npc.rotation,origin,npc.scale,effects,0f);
-	}*/
-
-	/*protected void OverhaulInit()
-	{
-		this.SetTag(NPCTags.AutoBloodColor);
-	}*/
+	//	public override void PostDraw(SpriteBatch sb, Color drawColor) //TODO: Reimplement this when tML simplifies glowmasks
+	//	{
+	//		var tex = TextureSystem.GetTexture2D("NPCs/AshSlime_Glow");
+	//		var effects = npc.spriteDirection==1 ? SpriteEffects.FlipHorizontally : SpriteEffects.None;
+	//		var origin = new Vector2(tex.Width/2,tex.Height/Main.npcFrameCount[npc.type]/2);
+	//		//origin.Y -= 4;
+	//		var position = npc.Center-Main.screenPosition;
+	//		sb.Draw(tex,position,npc.frame,OverhaulUtils.colorWhite,npc.rotation,origin,npc.scale,effects,0f);
+	//	}
+	//	
+	//	protected void OverhaulInit()
+	//	{
+	//		this.SetTag(NPCTags.AutoBloodColor);
+	//	}
 }
+#endif

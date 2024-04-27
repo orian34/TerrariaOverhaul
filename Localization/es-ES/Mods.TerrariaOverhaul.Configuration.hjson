@@ -165,12 +165,12 @@ Balance: {
 
 	EnableHealthDropsRework: {
 		// DisplayName: "Enable Health Drops Rework"
-		// Description: ""
+		// Description: "When enabled, random health drops on enemy deaths are replaced with small guaranteed ones, with the amount depending on the closest players' health."
 	}
 
 	EnableManaDropsRework: {
 		// DisplayName: "Enable Mana Drops Rework"
-		// Description: ""
+		// Description: "When enabled, random mana drops on enemy deaths are replaced with enemies dropping mana over time as they receive damage, as long as a nearby player is not on full mana."
 	}
 }
 
