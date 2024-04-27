@@ -1,3 +1,5 @@
+// Unused content, may be reintroduced in the future.
+#if false
 using Microsoft.Xna.Framework;
 using Terraria;
 using Terraria.DataStructures;
@@ -34,7 +36,8 @@ public class Calendar : ModTile
 		AddMapEntry(Color.IndianRed, CreateMapEntryName());
 	}
 
-	/*public override bool RightClick(int x, int y)
+	/*
+	public override bool RightClick(int x, int y)
 	{
 		int days = SeasonSystem.SeasonLength - SeasonSystem.currentSeasonDay;
 
@@ -48,7 +51,8 @@ public class Calendar : ModTile
 		player.tileInteractAttempted = player.tileInteractionHappened = true;
 
 		return true;
-	}*/
+	}
+	*/
 
 	public override void MouseOver(int x, int y)
 	{
@@ -60,3 +64,4 @@ public class Calendar : ModTile
 		Item.NewItem(new EntitySource_TileBreak(x, y), x * 16, y * 16, 32, 80, ModContent.ItemType<Items.Placeables.Calendar>());
 	}
 }
+#endif

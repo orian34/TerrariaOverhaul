@@ -1,10 +1,12 @@
+// Unused content, may be reintroduced in the future.
+#if false
 using Microsoft.Xna.Framework;
 using Terraria.ID;
 using Terraria.ModLoader;
 
 namespace TerrariaOverhaul.Content.Items.Materials;
 
-public class Charcoal : ModItem
+public sealed class Charcoal : ModItem
 {
 	public override void SetDefaults()
 	{
@@ -15,8 +17,11 @@ public class Charcoal : ModItem
 		Item.ammo = 0;
 	}
 
-	/*protected void OverhaulInit() //TODO: Reimplement
+	/*
+	protected void OverhaulInit()
 	{
 		item.SetTag(ItemTags.Flammable);
-	}*/
+	}
+	*/
 }
+#endif

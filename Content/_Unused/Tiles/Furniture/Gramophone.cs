@@ -1,3 +1,5 @@
+// Unused content, may be reintroduced in the future.
+#if false
 using Microsoft.Xna.Framework;
 using Terraria;
 using Terraria.DataStructures;
@@ -43,23 +45,25 @@ public class Gramophone : ModTile
 
 	/*public override bool TileFrame(int x, int y, ref bool resetFrame, ref bool noBreak)
 	{
-		if(!Main.tile.GetUnsafe(x, y, out var tile)) {
+		if (!Main.tile.GetUnsafe(x, y, out var tile)) {
 			return false;
 		}
 
 		short frameX = (short)(tile.frameX % 36);
 		short frameY = (short)(tile.frameY % 36);
 
-		if(!TryGetTileEntity<GramophoneEntity>(x, y, out var entity)) {
+		if (!TryGetTileEntity<GramophoneEntity>(x, y, out var entity)) {
 			return false;
 		}
 
-		if(entity.IsActive) {
+		if (entity.IsActive) {
 			frameX += (short)(OverhaulMod.gameUpdateCount / AnimationFrameTime % 2 == 0 ? 36 : 72);
 		}
+
 		tile.frameX = frameX;
 		tile.frameY = frameY;
 
 		return true;
 	}*/
 }
+#endif

@@ -1,4 +1,6 @@
-﻿using Terraria;
+﻿// Unused content, may be reintroduced in the future.
+#if false
+using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
 
@@ -24,3 +26,4 @@ public class Gramophone : ModItem
 		Item.noUseGraphic = true;
 	}
 }
+#endif

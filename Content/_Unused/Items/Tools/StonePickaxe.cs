@@ -1,15 +1,17 @@
-﻿using Terraria;
+﻿// Unused content, may be reintroduced in the future.
+#if false
+using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
 using TerrariaOverhaul.Utilities;
 
 namespace TerrariaOverhaul.Content.Items.Tools;
 
-public class StoneAxe : ModItem
+public class StonePickaxe : ModItem
 {
 	public override void SetDefaults()
 	{
-		Item.CloneDefaults(ItemID.CopperAxe);
+		Item.CloneDefaults(ItemID.CopperPickaxe);
 
 		// Tool properties
 		Item.tileBoost = -1;
@@ -27,3 +29,4 @@ public class StoneAxe : ModItem
 
 	public override void AddRecipes() => this.CreateRecipe(r => r.AddIngredient(ItemID.StoneBlock, 6));
 }
+#endif
